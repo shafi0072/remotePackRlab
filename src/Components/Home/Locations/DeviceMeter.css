@@ -1,0 +1,22 @@
+.container{
+    width: 80%;
+    margin: 0 auto;
+    color: white;
+}
+.meter-col{
+    color: black;
+    border: 1px solid black;
+    border-right: none;
+    background-color: #D9D9D9;
+}
+.meter-col:last-child{
+    border-right: 1px solid black;
+}
+.meter-col p{
+    margin: 0;
+    padding: 2% 0;
+}
+.title-control{
+    padding-bottom: 1%;
+    border-bottom: 2px solid black;
+}
