@@ -1,0 +1,19 @@
+.navBackground{
+    padding: 0;
+    margin: 0;
+    background-color: rgb(1, 1, 34);
+    height: 100vh;
+    width: 100%;
+    color: white;
+}
+.navbar-item{
+    width: 100%;
+}
+.navbar-item:hover{
+    background-color: blue;
+    
+}
+.navbar-text{
+    width: 40%;
+    margin: 0 auto;
+}
