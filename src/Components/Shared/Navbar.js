@@ -35,11 +35,12 @@ const Navbar = (props) => {
         newClick.locations = true;
         setUser(newClick);
     }
+
     return (
         <div className='navBackground pt-5'>
             <ul style={{listStyle:'none', margin:'0', padding:'0'}}>
                 <li className='mb-3 navbar-item' onClick={handleHomeClick} style={{cursor:'pointer'}}><h5 className="navbar-text">User Home</h5></li>
-                <li className='mb-3 navbar-item' onClick={handleUserClick} style={{cursor:'pointer'}}><h5 className="navbar-text">User</h5></li>
+                {user.admin && <li className='mb-3 navbar-item' onClick={handleUserClick} style={{cursor:'pointer'}}><h5 className="navbar-text">User</h5></li>}
                 <li className='mb-3 navbar-item' onClick={handleDeviceClick} style={{cursor:'pointer'}}><h5 className="navbar-text">Devices</h5></li>
                 <li className='mb-3 navbar-item' onClick={handleLocationClick} style={{cursor:'pointer'}}><h5 className="navbar-text">Locations</h5></li>
             </ul>

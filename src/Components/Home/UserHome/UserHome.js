@@ -20,7 +20,7 @@ const UserHome = () => {
             <div className="col-md-9 backgroundSIDE text-center">
             <img src={logo} alt="" style={{width:'20%'}} className='mt-5' />
                 {user.userHome && <Rechart/>}
-                {user.user&& <User/>}
+                {user.user&& user.admin && <User/>}
                 {user.devices && <Devices/>}
                 {user.locations && <Location/>}
             </div>

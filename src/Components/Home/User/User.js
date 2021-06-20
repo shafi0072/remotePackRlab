@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './user.css';
-import UserForm from './UserForm'
+import UserForm from './UserForm';
+import {userContext} from '../../../App'
 const User = () => {
     const [click, setClick] = useState({
         clickToUser: true,
@@ -12,6 +13,7 @@ const User = () => {
         newClick.clickToUser = false;
         setClick(newClick)
     }
+    const [user, setUser]  = useContext(userContext)
     return (
         <div className='mt-5 text-center'>
         <h1 className='text-light'>User</h1>
