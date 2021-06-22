@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './user.css'
 
-import firebase from 'firebase/app';
+import firebase from 'firebase';
 import 'firebase/firestore';
 
 
@@ -26,13 +26,13 @@ const UserForm = () => {
         name:'',
         email:'',
         position:'',
-        Role:'',
+        Role:'admin',
         Uid:'',
     });
     const handleOnchange = (event) => {
         const newUserInfo = {...userInfo};
         newUserInfo[event.target.name] = event.target.value;
-        const RandomId = Math.random() * 10000000;
+        const RandomId = Math.random() * 100000000000000000000000000000000000000;
         newUserInfo.Uid = RandomId;
         setuserInfo(newUserInfo)
     }
@@ -41,8 +41,10 @@ const UserForm = () => {
     };
     const handleSubmit = (e) => {
         db.collection("user").add(userInfo)
-        e.preventDefautl()
+        e.preventDefault();
     }
+    console.log(userInfo);
+    
     return (
         <div style={{width:'50%', margin:'2% auto'}} className='text-center'>
             <form action="" onSubmit={handleSubmit}>
