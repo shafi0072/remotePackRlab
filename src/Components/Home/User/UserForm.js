@@ -23,8 +23,8 @@ const db = firebase.firestore();
 
 const UserForm = () => {
     const [userInfo, setuserInfo] = useState({
-        name:'',
         email:'',
+        name:'',
         position:'',
         Role:'admin',
         Uid:'',
@@ -48,17 +48,17 @@ const UserForm = () => {
     return (
         <div style={{width:'50%', margin:'2% auto'}} className='text-center'>
             <form action="" onSubmit={handleSubmit}>
-                <div className='d-flex justiy-content-around mb-4'>
-                    <label htmlFor="userEmail"  className='me-5 text-light interface-name'><h5>Email</h5></label>
-                    <input type="email" id='userEmail' className='form-control' placeholder='Enter Your Email' name="email" onChange={handleOnchange}/>
-                </div>
-                <div className='d-flex justiy-content-around mb-4' >
+            <div className='d-flex justiy-content-around mb-4' >
                     <label htmlFor="Role"  className='me-5  text-light interface-name'><h5>Role</h5></label>
                     <select id="role" className='form-control' onChange={handleOnChangeSelect}>
                         <option value="admin" >Admin</option>
                         <option value="oparetors">Oparetors</option>
                         <option value="viewers">Viewers</option>
                     </select>
+                </div>
+                <div className='d-flex justiy-content-around mb-4'>
+                    <label htmlFor="userEmail"  className='me-5 text-light interface-name'><h5>Email</h5></label>
+                    <input type="email" id='userEmail' className='form-control' placeholder='Enter Your Email' name="email" onChange={handleOnchange}/>
                 </div>
                 <div className='d-flex justiy-content-around mb-4'>
                     <label htmlFor="name" className='me-5 text-light interface-name'><h5>Name</h5></label>
