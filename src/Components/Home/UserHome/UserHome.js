@@ -6,7 +6,10 @@ import logo from '../../../Resorces/logo_RLAB.png'
 import { userContext } from '../../../App';
 import Rechart from './Rechart';
 import Devices from '../Devices/Devices';
-import Location from '../Locations/Locations'
+import Location from '../Locations/Locations';
+import firebase from 'firebase/app';
+import 'firebase/firestore';
+
 const UserHome = () => {
    
     const [user, setUser] = useContext(userContext);

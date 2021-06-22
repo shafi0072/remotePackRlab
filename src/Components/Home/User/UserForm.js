@@ -41,6 +41,12 @@ const UserForm = () => {
     };
     const handleSubmit = (e) => {
         db.collection("user").add(userInfo)
+        .then((docRef) => {
+            console.log("Document written with ID: ", docRef.id);
+        })
+        .catch((error) => {
+            console.error("Error adding document: ", error);
+        });
         e.preventDefault();
     }
     console.log(userInfo);
