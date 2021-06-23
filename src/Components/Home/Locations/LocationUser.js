@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import DevicesForm from './DevicesForm';
-
+import logo1 from '../../../Resorces/logo1.png';
+import logo2 from '../../../Resorces/logo2.png';
+import logo3 from '../../../Resorces/logo3.png';
+import './LocationStyle.css';
 const LocationUser = () => {
     const [click, setClick] = useState({
         locationCLick:true,
@@ -17,15 +20,15 @@ const LocationUser = () => {
            {click.locationCLick && <div className='row'>
            <div className="col-md-4 mb-3">
             <div class="card" style={{width: '10rem'}} onClick={handleTerminal}>
-                <img src="https://www.clipartmax.com/png/middle/301-3017435_icon-delivery-vector-image-delivery-truck-vector-png.png" class="card-img-top" alt="..."/>
+                <img src={logo1} class="card-img-top" alt="..."/>
                 <div class="card-body">
-                   <h6>Location 1</h6>
+                   <h6 className="card-text-h6">Location 1</h6>
                 </div>
             </div>
             </div>
             <div className="col-md-4 mb-3">
             <div class="card" style={{width: '10rem'}} onClick={handleTerminal}>
-                <img src="https://www.clipartmax.com/png/middle/301-3017435_icon-delivery-vector-image-delivery-truck-vector-png.png" class="card-img-top" alt="..."/>
+                <img src={logo3} class="card-img-top" alt="..."/>
                 <div class="card-body">
                    <h6>Location 2</h6>
                 </div>
@@ -33,7 +36,7 @@ const LocationUser = () => {
             </div>
             <div className="col-md-4 mb-3">
             <div class="card" style={{width: '10rem'}} onClick={handleTerminal}>
-                <img src="https://www.clipartmax.com/png/middle/301-3017435_icon-delivery-vector-image-delivery-truck-vector-png.png" class="card-img-top" alt="..."/>
+                <img src={logo2} class="card-img-top" alt="..."/>
                 <div class="card-body">
                    <h6>Location 3</h6>
                 </div>
@@ -41,7 +44,7 @@ const LocationUser = () => {
             </div>
             <div className="col-md-4 mb-3">
             <div class="card" style={{width: '10rem'}} onClick={handleTerminal}>
-                <img src="https://www.clipartmax.com/png/middle/301-3017435_icon-delivery-vector-image-delivery-truck-vector-png.png" class="card-img-top" alt="..."/>
+                <img src={logo3} class="card-img-top" alt="..."/>
                 <div class="card-body">
                    <h6>Location 4</h6>
                 </div>
@@ -49,20 +52,20 @@ const LocationUser = () => {
             </div>
             <div className="col-md-4 mb-3">
             <div class="card" style={{width: '10rem'}} onClick={handleTerminal}>
-                <img src="https://www.clipartmax.com/png/middle/301-3017435_icon-delivery-vector-image-delivery-truck-vector-png.png" class="card-img-top" alt="..."/>
+                <img src={logo1} class="card-img-top" alt="..."/>
                 <div class="card-body">
                    <h6>Location 6</h6>
                 </div>
             </div>
             </div>
-            <div className="col-md-4 mb-3">
+            {/* <div className="col-md-4 mb-3">
             <div class="card" style={{width: '10rem'}} onClick={handleTerminal}>
                 <img src="https://www.clipartmax.com/png/middle/301-3017435_icon-delivery-vector-image-delivery-truck-vector-png.png" class="card-img-top" alt="..."/>
                 <div class="card-body">
                    <h6>Location 6</h6>
                 </div>
             </div>
-            </div>
+            </div> */}
            </div>}
             {click.terminal && <DevicesForm/>}
         </div>
