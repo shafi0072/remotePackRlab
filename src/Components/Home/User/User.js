@@ -1,9 +1,11 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './user.css';
 import UserForm from './UserForm';
 import {userContext} from '../../../App'
+import UserData from './UserData'
+
 const User = (props) => {
-    const {name, email, Role} = props.data
+   const data = props.data;
     const [click, setClick] = useState({
         clickToUser: true,
         clickToFrom:false
@@ -14,21 +16,19 @@ const User = (props) => {
         newClick.clickToUser = false;
         setClick(newClick)
     }
-    const [user, setUser]  = useContext(userContext)
+    const [user, setUser]  = useContext(userContext);
+    
     return (
         <div className='mt-5 text-center'>
         
           {click.clickToUser && <div>
-          
-            <div className="clients d-flex justify-content-evenly mb-5">
-                <div className="name"><p>{name}</p></div>
-                <select name="target" id="" className='selectProparty' value={Role}>
-                    <option value="admin">Admin</option>
-                    <option value="oparetors">Oparetors</option>
-                    <option value="viewers">Viewers</option>
-                </select>
-                <button className="btn btn-primary btnArea">Edit</button>
-            </div> 
+            
+                <div className="user-map">
+                    {
+                        data.map(data => <UserData data={data}/>)
+                    }
+                </div>
+            
             <div className="button d-flex justify-content-end">
                 <button className="btn btn-primary" onClick={handleClick}>Add User</button>
             </div> 

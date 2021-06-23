@@ -25,9 +25,11 @@ if (!firebase.apps.length) {
  }
 
 const db = firebase.firestore();
+
 const UserHome = () => {
    
     const [user, setUser] = useContext(userContext);
+    
     const [dbUserData, setDbUserData] = useState();
     const [loading, setLoading] = useState(true)
     
@@ -41,9 +43,10 @@ const UserHome = () => {
             setLoading(false)
         });
         
-       return userDb
+       return userDb;
     }, []);
     console.log(dbUserData);
+    
     return (
         <div className='row'>
             
@@ -54,7 +57,7 @@ const UserHome = () => {
             <img src={logo} alt="" style={{width:'20%'}} className='mt-5' />
             
                 {user.userHome && <Rechart/>}
-                {user.user&& user.admin && dbUserData.map(data => <User data={data}/>) }
+                {user.user&& user.admin && <User data={dbUserData}/> }
                 
                 {user.devices && <Devices/>}
                 {user.locations && <Location/>}
