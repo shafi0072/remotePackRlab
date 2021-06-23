@@ -1,0 +1,105 @@
+
+/* #### Max Width 1399px ----- View 1300px  ####### */
+
+@media(max-width:1399px){
+    
+}
+
+/* #### Max Width 1299px ----- View 1200px  ####### */
+
+@media(max-width:1299px){
+
+}
+
+/* #### Max Width 1199px ----- View 1000px  ####### */
+
+@media(max-width:1199px){
+    .creatAccount{
+        display: block;
+    }
+    .loginBox{
+        width: 45%;
+    }
+    .name{
+        height: 5%;
+    }
+    .name p{
+        padding: .2% 0 2% 1%;
+        font-size: 18px;
+    }
+    .selectProparty{
+        height: 10%;
+        font-size: 18px;
+        padding: .3% 1% 4% .5%;
+    }
+    .btnArea{
+        height: 5%;
+        font-size: 18px!important;
+        padding: .5% 0;
+    }
+}
+
+/* #### Max Width 999px ----- View 850px  ####### */
+
+@media(max-width:999px){
+    .loginBox{
+        width: 55%;
+    }
+}
+
+/* #### Max Width 849px ----- View 700px  ####### */
+
+@media(max-width:849px){
+
+}
+
+/* #### Max Width 699px ----- View 600px  ####### */
+
+@media(max-width:699px){
+    .loginBox{
+        width: 70%;
+    }
+}
+
+/* #### Max Width 599px ----- View 400px  ####### */
+
+@media(max-width:599px){
+    .loginBox{
+        width: 85%;
+    }
+}
+
+
+/* #### Max Width 399px ----- View 300px  ####### */
+
+@media(max-width:399px){
+    .background{
+        background-image: none;
+    }
+    .loginBox{
+        width: 100%;
+        background-color: rgb(85, 85, 248);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
