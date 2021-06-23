@@ -23,6 +23,7 @@ const LocationUser = () => {
                 <img src={logo1} class="card-img-top" alt="..."/>
                 <div class="card-body">
                    <h6 className="card-text-h6">Location 1</h6>
+                   <p className="card-text-p">Motor Pump 5kV</p>
                 </div>
             </div>
             </div>
@@ -30,7 +31,8 @@ const LocationUser = () => {
             <div class="card" style={{width: '10rem'}} onClick={handleTerminal}>
                 <img src={logo3} class="card-img-top" alt="..."/>
                 <div class="card-body">
-                   <h6>Location 2</h6>
+                   <h6 className="card-text-h6">Location 2</h6>
+                   <p className="card-text-p">Truck FLVC01</p>
                 </div>
             </div>
             </div>
@@ -38,7 +40,8 @@ const LocationUser = () => {
             <div class="card" style={{width: '10rem'}} onClick={handleTerminal}>
                 <img src={logo2} class="card-img-top" alt="..."/>
                 <div class="card-body">
-                   <h6>Location 3</h6>
+                   <h6 className="card-text-h6">Location 3</h6>
+                   <p className="card-text-p">Dust Fun 4HP</p>
                 </div>
             </div>
             </div>
@@ -46,7 +49,8 @@ const LocationUser = () => {
             <div class="card" style={{width: '10rem'}} onClick={handleTerminal}>
                 <img src={logo3} class="card-img-top" alt="..."/>
                 <div class="card-body">
-                   <h6>Location 4</h6>
+                   <h6 className="card-text-h6">Location 4</h6>
+                   <p className="card-text-p">Truck FLHR09</p>
                 </div>
             </div>
             </div>
@@ -54,7 +58,8 @@ const LocationUser = () => {
             <div class="card" style={{width: '10rem'}} onClick={handleTerminal}>
                 <img src={logo1} class="card-img-top" alt="..."/>
                 <div class="card-body">
-                   <h6>Location 6</h6>
+                   <h6 className="card-text-h6">Location 6</h6>
+                   <p className="card-text-p">Motor Pump 2kV</p>
                 </div>
             </div>
             </div>

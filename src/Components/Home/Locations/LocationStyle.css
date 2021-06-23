@@ -1,3 +1,10 @@
 .card-text-h6{
     color: black;
+    margin-bottom: 0;
+    font-weight: bold;
+    font-size: 19px;
+}
+.card-text-p{
+    color: rgb(105, 105, 105);
+    margin-bottom: 0;
 }
