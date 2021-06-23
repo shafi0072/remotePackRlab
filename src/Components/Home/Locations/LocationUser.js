@@ -1,9 +1,28 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import DevicesForm from './DevicesForm';
 import logo1 from '../../../Resorces/logo1.png';
 import logo2 from '../../../Resorces/logo2.png';
 import logo3 from '../../../Resorces/logo3.png';
 import './LocationStyle.css';
+import firebase from 'firebase/app';
+import 'firebase/firestore';
+
+if (!firebase.apps.length) {
+    firebase.initializeApp({
+        apiKey: "AIzaSyD_H-N97ETri2j8yI5c-X1YtguoBCWtWAU",
+        authDomain: "rlab-1f739.firebaseapp.com",
+        projectId: "rlab-1f739",
+        storageBucket: "rlab-1f739.appspot.com",
+        messagingSenderId: "663446234969",
+        appId: "1:663446234969:web:0cf0efc959e952732c8e48",
+        measurementId: "G-2EFCRDJGTP"
+    });
+ }else {
+    firebase.app(); // if already initialized, use that one
+ }
+
+const db = firebase.firestore();
+
 const LocationUser = () => {
     const [click, setClick] = useState({
         locationCLick:true,
@@ -15,6 +34,23 @@ const LocationUser = () => {
         newClick.terminal = true;
         setClick(newClick)
     }
+    const [dbUserData, setDbUserData] = useState();
+    const [loading, setLoading] = useState(true)
+    
+    useEffect(() => {
+        const getDataFirebase = [];
+        const userDb = db.collection("Devices").onSnapshot((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+              getDataFirebase.push({...doc.data(), key:doc.id});
+            });
+            setDbUserData(getDataFirebase);
+            setLoading(false)
+        });
+        
+       return userDb;
+    }, []);
+    console.log(dbUserData);
+
     return (
         <div >
            {click.locationCLick && <div className='row'>
@@ -72,7 +108,7 @@ const LocationUser = () => {
             </div>
             </div> */}
            </div>}
-            {click.terminal && <DevicesForm/>}
+            {click.terminal && <DevicesForm data={dbUserData}/>}
         </div>
     );
 };
