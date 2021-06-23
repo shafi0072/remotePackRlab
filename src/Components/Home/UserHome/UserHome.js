@@ -28,14 +28,21 @@ const db = firebase.firestore();
 const UserHome = () => {
    
     const [user, setUser] = useContext(userContext);
-    const [dbUserData, setDbUserData] = useState([]);
+    const [dbUserData, setDbUserData] = useState();
+    const [loading, setLoading] = useState(true)
+    
     useEffect(() => {
-        db.collection("user").get().then((querySnapshot) => {
+        const getDataFirebase = [];
+        const userDb = db.collection("user").onSnapshot((querySnapshot) => {
             querySnapshot.forEach((doc) => {
-                setDbUserData([...dbUserData,doc.data()]);
-            })
-        })
-    },[])
+              getDataFirebase.push({...doc.data(), key:doc.id});
+            });
+            setDbUserData(getDataFirebase);
+            setLoading(false)
+        });
+        
+       return userDb
+    }, []);
     console.log(dbUserData);
     return (
         <div className='row'>
@@ -45,9 +52,10 @@ const UserHome = () => {
             </div>
             <div className="col-md-9 backgroundSIDE text-center">
             <img src={logo} alt="" style={{width:'20%'}} className='mt-5' />
-            <h1 className='text-light'>{dbUserData.length}</h1>
+            
                 {user.userHome && <Rechart/>}
                 {user.user&& user.admin && dbUserData.map(data => <User data={data}/>) }
+                
                 {user.devices && <Devices/>}
                 {user.locations && <Location/>}
             </div>

@@ -17,7 +17,7 @@ const User = (props) => {
     const [user, setUser]  = useContext(userContext)
     return (
         <div className='mt-5 text-center'>
-        <h1 className='text-light'>User</h1>
+        
           {click.clickToUser && <div>
           
             <div className="clients d-flex justify-content-evenly mb-5">
@@ -28,6 +28,9 @@ const User = (props) => {
                     <option value="viewers">Viewers</option>
                 </select>
                 <button className="btn btn-primary btnArea">Edit</button>
+            </div> 
+            <div className="button d-flex justify-content-end">
+                <button className="btn btn-primary" onClick={handleClick}>Add User</button>
             </div> 
            </div>}
             <div>
