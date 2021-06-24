@@ -24,7 +24,7 @@
         height: 5%;
     }
     .user-map{
-        margin-bottom: 4%!important;
+        margin-bottom: 3%!important;
     }
     .name p{
         padding: .2% 0 2% 1%;
@@ -65,6 +65,9 @@
     .loginBox{
         width: 70%;
     }
+    .selectProparty{
+        width: 20%!important;
+    }
 }
 
 /* #### Max Width 599px ----- View 400px  ####### */
@@ -91,6 +94,11 @@
     .loginBox{
         width: 100%;
         border: none;
+    }
+    .device-container{
+        width: 90%!important;
+        margin: 0 auto;
+        font-size: 13.5px;
     }
 }
 

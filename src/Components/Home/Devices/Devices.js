@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import firebase from 'firebase';
 import 'firebase/firestore';
+import '../../../responsive.css';
 
 
 if (!firebase.apps.length) {
@@ -47,8 +48,8 @@ const Devices = () => {
     }
     
     return (
-        <div className="d-flex justify-content-center align-items-center mt-5">
-            <form action="" onSubmit={handleSubmit}>
+        <div className="d-flex justify-content-center align-items-center mt-5 ">
+            <form action="" onSubmit={handleSubmit} className="device-container">
                 <div className="d-flex justiy-content-around mb-3">
                     <label className="text-light" htmlFor="modelOfDevice" style={{marginRight:'60px'}}>Device Model</label>
                     <input type="text" id='modeOfDevice' placeholder='Meter_ABC' name="model" onChange={handleChange}/>
