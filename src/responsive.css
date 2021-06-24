@@ -29,7 +29,7 @@
     }
     .selectProparty{
         height: 10%;
-        font-size: 18px;
+        font-size: 16px;
         padding: .3% 1% 4% .5%;
     }
     .btnArea{
@@ -44,6 +44,9 @@
 @media(max-width:999px){
     .loginBox{
         width: 55%;
+    }
+    .selectProparty{
+        font-size: 16px;
     }
 }
 
@@ -64,8 +67,13 @@
 /* #### Max Width 599px ----- View 400px  ####### */
 
 @media(max-width:599px){
+    .background{
+        padding: 0!important;
+        background-image: none;
+    }
     .loginBox{
-        width: 85%;
+        width: 100%;
+        border: none;
     }
 }
 
@@ -74,11 +82,12 @@
 
 @media(max-width:399px){
     .background{
+        padding: 0!important;
         background-image: none;
     }
     .loginBox{
         width: 100%;
-        background-color: rgb(85, 85, 248);
+        border: none;
     }
 }
 

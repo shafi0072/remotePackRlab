@@ -1,8 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 import './user.css';
+import '../../../responsive.css';
 import UserForm from './UserForm';
-import {userContext} from '../../../App'
-import UserData from './UserData'
+import {userContext} from '../../../App';
+import UserData from './UserData';
 
 const User = (props) => {
    const data = props.data;

@@ -1,5 +1,6 @@
 import React from 'react';
 import './user.css';
+import '../../../responsive.css';
 const UserData = (props) => {
     const {name, Role} = props.data
     return (
