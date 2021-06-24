@@ -4,6 +4,7 @@ import logo1 from '../../../Resorces/logo1.png';
 import logo2 from '../../../Resorces/logo2.png';
 import logo3 from '../../../Resorces/logo3.png';
 import './LocationStyle.css';
+import '../../../responsive.css';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 
@@ -52,10 +53,10 @@ const LocationUser = () => {
     console.log(dbUserData);
 
     return (
-        <div >
+        <div className="card-main-container">
            {click.locationCLick && <div className='row'>
            <div className="col-md-4 mb-3">
-            <div class="card card-container" style={{width: '10rem'}} onClick={handleTerminal}>
+            <div class="card card-container" onClick={handleTerminal}>
                 <img src={logo1} class="card-img-top" alt="..."/>
                 <div class="card-body">
                    <h6 className="card-text-h6">Location 1</h6>

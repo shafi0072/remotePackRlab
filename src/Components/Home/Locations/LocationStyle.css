@@ -1,4 +1,5 @@
 .card-container{
+    width: 10rem;
     cursor: pointer;
 }
 .card-text-h6{

@@ -3,9 +3,7 @@ import { userContext } from '../../../App';
 import LocationUser from './LocationUser';
 
 import './Location.css';
-
-
-import './Location.css';
+import '../../../responsive.css'
 
 import firebase from 'firebase';
 import 'firebase/firestore';
@@ -97,7 +95,6 @@ const Locations = () => {
             
                 <div className="title-name mb-3">
                     <label className="text-light file-text" htmlFor="image">Image</label>
-                    <label className="upload" htmlFor="">UPLOAD</label>
                     <input type="file" id='image' className="input-file" placeholder='30.5'/>
                 </div>
                 <button className="btn btn-primary" style={{marginLeft:'65%'}} type="submit">Create/Save</button>
