@@ -65,7 +65,7 @@ const LocationUser = () => {
             </div>
             </div>
             <div className="col-md-4 mb-3">
-            <div class="card card-container" style={{width: '10rem'}} onClick={handleTerminal}>
+            <div class="card card-container" onClick={handleTerminal}>
                 <img src={logo3} class="card-img-top" alt="..."/>
                 <div class="card-body">
                    <h6 className="card-text-h6">Location 2</h6>
@@ -74,7 +74,7 @@ const LocationUser = () => {
             </div>
             </div>
             <div className="col-md-4 mb-3">
-            <div class="card card-container" style={{width: '10rem'}} onClick={handleTerminal}>
+            <div class="card card-container" onClick={handleTerminal}>
                 <img src={logo2} class="card-img-top" alt="..."/>
                 <div class="card-body">
                    <h6 className="card-text-h6">Location 3</h6>
@@ -83,7 +83,7 @@ const LocationUser = () => {
             </div>
             </div>
             <div className="col-md-4 mb-3">
-            <div class="card card-container" style={{width: '10rem'}} onClick={handleTerminal}>
+            <div class="card card-container" onClick={handleTerminal}>
                 <img src={logo3} class="card-img-top" alt="..."/>
                 <div class="card-body">
                    <h6 className="card-text-h6">Location 4</h6>
@@ -92,7 +92,7 @@ const LocationUser = () => {
             </div>
             </div>
             <div className="col-md-4 mb-3">
-            <div class="card card-container" style={{width: '10rem'}} onClick={handleTerminal}>
+            <div class="card card-container" onClick={handleTerminal}>
                 <img src={logo1} class="card-img-top" alt="..."/>
                 <div class="card-body">
                    <h6 className="card-text-h6">Location 6</h6>
