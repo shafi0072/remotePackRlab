@@ -9,6 +9,7 @@ const Navbar = (props) => {
         newClick.user = false;
         newClick.devices = false;
         newClick.locations = false;
+        newClick.command = false;
         setUser(newClick);
     }
     const handleUserClick = () => {
@@ -17,6 +18,7 @@ const Navbar = (props) => {
         newClick.user = true;
         newClick.devices = false;
         newClick.locations = false;
+        newClick.command = false;
         setUser(newClick);
     };
     const handleDeviceClick = () => {
@@ -25,6 +27,7 @@ const Navbar = (props) => {
         newClick.user = false;
         newClick.devices = true;
         newClick.locations = false;
+        newClick.command = false;
         setUser(newClick);
     }
     const handleLocationClick = () => {
@@ -33,6 +36,7 @@ const Navbar = (props) => {
         newClick.user = false;
         newClick.devices = false;
         newClick.locations = true;
+        newClick.command = false;
         setUser(newClick);
     }
     const handleCommandChanger = () => {
