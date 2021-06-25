@@ -18,7 +18,7 @@ const DevicesData = (props) => {
                     {edit.editable && <div className="form-name"><p>{model}</p></div>}
                     {edit.clickEdit && <input type="text" placeholder='edit your Meter' name='one'/>}
                     <button className="btn btn-dark btnEdit" onClick={handleEdit}>Edit</button>
-                    <button className="btn btn-primary btnArea" onClick={() => props.handleSelect}>Select</button>
+                    <button className="btn btn-primary btnArea" onClick={() => props.handleSelect()}>Select</button>
                 </div>
         </div>
     );
