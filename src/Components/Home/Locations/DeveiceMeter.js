@@ -92,17 +92,17 @@ const DeveiceMeter = () => {
                 </div>
             </div>
             <div>
-                <div className="row my-2">
-                    <div className="col-md-3 text-start p-0">
+                <div className="row my-2 status-container">
+                    <div className="col-xl-3 col-md-2 text-start p-0 status-data-container">
                         <span className="status-title">Status:</span>
                         <span>Ok</span>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-xl-6 col-md-8 p-0 status-mid-data">
                         <span className="status-title">Last connection:</span>
                         <span className="status-data-date">12/12/21</span>
                         <span>06:04:25</span>
                     </div>
-                    <div className="col-md-3 text-end p-0">
+                    <div className="col-xl-3 col-md-2 text-end p-0 status-data-container">
                         <span className="status-title">Vbat:</span>
                         <span>4.1V</span>
                     </div>

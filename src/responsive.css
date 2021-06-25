@@ -94,6 +94,12 @@
     .control-input-text{
         font-size: 16px!important;
     }
+    .status-data-container{
+        text-align: center!important;
+    }
+    .status-mid-data{
+        margin: 2% 0;
+    }
 }
 /* #### Max Width 699px ----- View 600px  ####### */
 
@@ -124,6 +130,19 @@
     .control-input-number{
         width: 100%;
     }
+    .meter-button{
+        display: block!important;
+    }
+    .button1{
+        display: block;
+        width: 100%;
+        margin-bottom: 4%;
+    }
+    .button2{
+        display: block;
+        width: 100%;
+        margin-bottom: 4%;
+    }
 }
 
 
@@ -153,7 +172,18 @@
     .card-text-p{
         font-size: 17px!important;
     }
-    
+    .button1{
+        font-size: 15px;
+    }
+    .button2{
+        font-size: 15px;
+    }
+    .status-data-container{
+        font-size: 14px!important;
+    }
+    .status-mid-data{
+        font-size: 14px!important;
+    }
 }
 
 
