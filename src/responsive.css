@@ -100,6 +100,35 @@
     .status-mid-data{
         margin: 2% 0;
     }
+    .thead{
+        display: none;
+    }
+    .tbody, .meter-data{
+        display: block;
+        width: 100%;
+    }
+    .tbody{
+        margin-bottom: 3%;
+    }
+    .meter-data{
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+    .meter-data::before{
+        content: attr(data-content);
+        width: 50%;
+        position: absolute;
+        left: 0;
+        padding-left: 5%;
+        font-size: 15px;
+        font-weight: bold;
+        text-align: left;
+        margin-top: 1.5%;
+    }
+    .meter-data:last-child{
+        border-right: 0!important;
+    }
 }
 /* #### Max Width 699px ----- View 600px  ####### */
 
@@ -183,6 +212,12 @@
     }
     .status-mid-data{
         font-size: 14px!important;
+    }
+    .meter-data::before{
+        font-size: 13px;
+    }
+    .meter-data{
+        font-size: 13px;
     }
 }
 

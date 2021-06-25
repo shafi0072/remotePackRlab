@@ -56,7 +56,7 @@ const DeveiceMeter = () => {
         <div className="container">
             <h1>Meter</h1>
             <div>
-                <div className="row ">
+                <div className="row thead">
                     <div className="col-md-4 meter-col">
                         <p>Date</p>
                     </div>
@@ -73,20 +73,20 @@ const DeveiceMeter = () => {
                         <p>Current 1</p>
                     </div>
                 </div>
-                <div className="row">
-                    <div className="col-md-4 meter-data">
+                <div className="row tbody">
+                    <div className="col-md-4 meter-data" data-content="Date">
                         <p>12/12/21 08:06:15</p>
                     </div>
-                    <div className="col-md-2 meter-data">
+                    <div className="col-md-2 meter-data" data-content="Vcc 1">
                         <p>24.6V</p>
                     </div>
-                    <div className="col-md-2 meter-data">
+                    <div className="col-md-2 meter-data" data-content="Vcc 2">
                         <p>18.1V</p>
                     </div>
-                    <div className="col-md-2 meter-data">
+                    <div className="col-md-2 meter-data" data-content="Vcc 3">
                         <p>24.4V</p>
                     </div>
-                    <div className="col-md-2 meter-data">
+                    <div className="col-md-2 meter-data" data-content="Current 1">
                         <p>10A</p>
                     </div>
                 </div>
