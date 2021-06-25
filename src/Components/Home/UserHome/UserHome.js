@@ -9,7 +9,7 @@ import Devices from '../Devices/Devices';
 import Location from '../Locations/Locations';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
-
+import Command from '../Command/Command'
 if (!firebase.apps.length) {
     firebase.initializeApp({
         apiKey: "AIzaSyD_H-N97ETri2j8yI5c-X1YtguoBCWtWAU",
@@ -61,6 +61,7 @@ const UserHome = () => {
                 
                 {user.devices && <Devices/>}
                 {user.locations && <Location/>}
+                {user.command && <Command/>}
             </div>
         </div>
     );
