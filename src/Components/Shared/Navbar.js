@@ -35,6 +35,15 @@ const Navbar = (props) => {
         newClick.locations = true;
         setUser(newClick);
     }
+    const handleCommandChanger = () => {
+        const newClick = {...user}
+        newClick.userHome = false;
+        newClick.user = false;
+        newClick.devices = false;
+        newClick.locations = false;
+        newClick.command = true;
+        setUser(newClick);
+    }
 
     return (
         <div className='navBackground pt-5'>
@@ -43,6 +52,7 @@ const Navbar = (props) => {
                 {user.admin && <li className='mb-3 navbar-item' onClick={handleUserClick} style={{cursor:'pointer'}}><h5 className="navbar-text">User</h5></li>}
                 <li className='mb-3 navbar-item' onClick={handleDeviceClick} style={{cursor:'pointer'}}><h5 className="navbar-text">Devices</h5></li>
                 <li className='mb-3 navbar-item' onClick={handleLocationClick} style={{cursor:'pointer'}}><h5 className="navbar-text">Locations</h5></li>
+                <li className='mb-3 navbar-item' onClick={handleCommandChanger} style={{cursor:'pointer'}}><h5 className="navbar-text">Commands</h5></li>
             </ul>
         </div>
     );
