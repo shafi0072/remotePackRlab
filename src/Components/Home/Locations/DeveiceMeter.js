@@ -1,5 +1,6 @@
 import React from 'react';
 import './DeviceMeter.css';
+import '../../../responsive.css';
 import Rechart from '../UserHome/Rechart';
 import {
     LineChart,
@@ -73,20 +74,37 @@ const DeveiceMeter = () => {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-md-4 meter-col">
+                    <div className="col-md-4 meter-data">
                         <p>12/12/21 08:06:15</p>
                     </div>
-                    <div className="col-md-2 meter-col">
+                    <div className="col-md-2 meter-data">
                         <p>24.6V</p>
                     </div>
-                    <div className="col-md-2 meter-col">
+                    <div className="col-md-2 meter-data">
                         <p>18.1V</p>
                     </div>
-                    <div className="col-md-2 meter-col">
+                    <div className="col-md-2 meter-data">
                         <p>24.4V</p>
                     </div>
-                    <div className="col-md-2 meter-col">
+                    <div className="col-md-2 meter-data">
                         <p>10A</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div className="row my-2">
+                    <div className="col-md-3 text-start p-0">
+                        <span className="status-title">Status:</span>
+                        <span>Ok</span>
+                    </div>
+                    <div className="col-md-6">
+                        <span className="status-title">Last connection:</span>
+                        <span className="status-data-date">12/12/21</span>
+                        <span>06:04:25</span>
+                    </div>
+                    <div className="col-md-3 text-end p-0">
+                        <span className="status-title">Vbat:</span>
+                        <span>4.1V</span>
                     </div>
                 </div>
             </div>
@@ -117,17 +135,24 @@ const DeveiceMeter = () => {
             <div>
                 <p className="row title-control">Control</p>
                 <div className="row">
-                    <div className="col-md-2">
-                        <p>Period :</p>
+                    <div className="col-xl-2 col-lg-3">
+                        <p className="control-input-text">Period :</p>
                     </div>
-                    <div className="col-md-4"><input type="number"/></div>
+                    <div className="col-xl-5 col-lg-5 control-input-box"><input type="number"/></div>
+                    <div className="col-xl-5 col-lg-4"></div>
                 </div>
                 <div className="row">
-                    <div className="col-md-2">
-                        <p>Freq :</p>
+                    <div className="col-xl-2 col-lg-3">
+                        <p className="control-input-text">Freq :</p>
                     </div>
-                    <div className="col-md-4"><input type="number"/></div>
+                    <div className="col-xl-5 col-lg-5 control-input-box"><input type="number"/></div>
+                    <div className="col-xl-5 col-lg-4"></div>
                 </div>
+                <div className="meter-button d-flex justify-content-end">
+                    <div className="btn btn-primary button1"><span>INT CYCLE</span></div>
+                    <div className="btn btn-primary button2"><span>ON / OFF</span></div>
+                </div> 
+                
             </div>
         </div>
     );

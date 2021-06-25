@@ -8,15 +8,57 @@
     border: 1px solid black;
     border-right: none;
     background-color: #D9D9D9;
+    font-weight: bold;
 }
 .meter-col:last-child{
     border-right: 1px solid black;
 }
+.meter-data{
+    color: black;
+    border: 1px solid black;
+    border-right: none;
+    border-top: none;
+    background-color: white;
+}
+.meter-data:last-child{
+    border-right: 1px solid black;
+}
 .meter-col p{
     margin: 0;
-    padding: 2% 0;
+    padding: 3% 0;
+}
+.meter-data p{
+    margin: 0;
+    padding: 3% 0;
 }
 .title-control{
-    padding-bottom: 1%;
-    border-bottom: 2px solid black;
+    padding-bottom: .5%;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 2%;
+    border-bottom: 2px solid rgb(190, 190, 190);
+}
+.meter-button{
+    margin-top: 2%;
+}
+.status-title{
+    font-weight: bold;
+    margin-right: 3%;
+    display: inline;
+    text-decoration: none;
+}
+.status-data-date{
+    margin-right: 2%;
+}
+.control-input-text{
+    font-size: 20px;
+}
+.button1{
+    margin-right: 10%;
+}
+.button1:hover{
+    background-color: rgb(19, 19, 255);
+}
+.button2:hover{
+    background-color: rgb(19, 19, 255);
 }

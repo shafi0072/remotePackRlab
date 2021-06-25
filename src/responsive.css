@@ -2,7 +2,10 @@
 /* #### Max Width 1399px ----- View 1300px  ####### */
 
 @media(max-width:1399px){
-    
+    .status-title{
+        display: block!important;
+        text-decoration: underline!important;
+    }
 }
 
 /* #### Max Width 1299px ----- View 1200px  ####### */
@@ -55,6 +58,15 @@
         width: 9rem!important;
         height: 100%;
     }
+    .control-input-text{
+        font-size: 16px!important;
+        text-align: left;
+        margin-bottom: 1%;
+    }
+    .control-input-box{
+        text-align: left;
+        margin-bottom: 4%;
+    }
 }
 
 /* #### Max Width 849px ----- View 700px  ####### */
@@ -78,6 +90,9 @@
     }
     .card-text-h6{
         font-size: 22px!important;
+    }
+    .control-input-text{
+        font-size: 16px!important;
     }
 }
 /* #### Max Width 699px ----- View 600px  ####### */

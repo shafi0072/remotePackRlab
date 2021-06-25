@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import firebase from 'firebase';
 import 'firebase/firestore';
+import './Devices.css';
 import '../../../responsive.css';
 
 
@@ -70,7 +71,7 @@ const Devices = () => {
                     <label className="text-light" htmlFor="Var02" style={{marginRight:'27px'}}>Level_Alarm_var02</label>
                     <input type="text" id='Var02' placeholder='30.5' name='alarm2' onChange={handleChange}/>
                 </div>
-                <button className="btn btn-primary" style={{marginLeft:'65%'}}>Create/Save</button>
+                <button className="btn btn-primary device-button" style={{marginLeft:'65%'}}>Create/Save</button>
             </form>
         </div>
     );
