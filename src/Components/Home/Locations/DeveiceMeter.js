@@ -135,18 +135,18 @@ const DeveiceMeter = () => {
             <div>
                 <p className="row title-control">Control</p>
                 <div className="row">
-                    <div className="col-xl-2 col-lg-3">
+                    <div className="col-xl-3 col-lg-3">
                         <p className="control-input-text">Period :</p>
                     </div>
-                    <div className="col-xl-5 col-lg-5 control-input-box"><input type="number"/></div>
-                    <div className="col-xl-5 col-lg-4"></div>
+                    <div className="col-xl-5 col-lg-5 control-input-box"><input className="control-input-number" type="number"/></div>
+                    <div className="col-xl-4 col-lg-4"></div>
                 </div>
                 <div className="row">
-                    <div className="col-xl-2 col-lg-3">
+                    <div className="col-xl-3 col-lg-3">
                         <p className="control-input-text">Freq :</p>
                     </div>
-                    <div className="col-xl-5 col-lg-5 control-input-box"><input type="number"/></div>
-                    <div className="col-xl-5 col-lg-4"></div>
+                    <div className="col-xl-5 col-lg-5 control-input-box"><input className="control-input-number" type="number"/></div>
+                    <div className="col-xl-4 col-lg-4"></div>
                 </div>
                 <div className="meter-button d-flex justify-content-end">
                     <div className="btn btn-primary button1"><span>INT CYCLE</span></div>

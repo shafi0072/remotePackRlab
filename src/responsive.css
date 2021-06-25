@@ -121,6 +121,9 @@
         width: 100%;
         border: none;
     }
+    .control-input-number{
+        width: 100%;
+    }
 }
 
 
@@ -150,6 +153,7 @@
     .card-text-p{
         font-size: 17px!important;
     }
+    
 }
 
 
