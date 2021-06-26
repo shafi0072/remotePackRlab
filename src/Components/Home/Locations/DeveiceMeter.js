@@ -118,6 +118,15 @@ const DeveiceMeter = () => {
   </LineChart>
             </div>
             <div>
+            <LineChart width={700} height={170} data={data}>
+    <XAxis dataKey="name"/>
+    <YAxis/>
+    <CartesianGrid stroke="#eee" strokeDasharray="5 5"/>
+    <Line type="monotone" dataKey="uv" stroke="#8884d8" />
+    <Line type="monotone" dataKey="pv" stroke="#82ca9d" />
+  </LineChart>
+            </div>
+            <div>
                 <p className="row title-control">Control</p>
                 <div className="row">
                     <div className="col-xl-3 col-lg-3">
