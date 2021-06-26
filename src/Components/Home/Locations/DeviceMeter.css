@@ -41,6 +41,9 @@
 .meter-button{
     margin-top: 2%;
 }
+.chart-container{
+    width: 100%;
+}
 .status-title{
     font-weight: bold;
     margin-right: 3%;

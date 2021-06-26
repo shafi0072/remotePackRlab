@@ -78,15 +78,15 @@ const Locations = () => {
                 <button className="btn btn-primary mb-3" style={{marginLeft:'61.6%'}} onClick={handleClick}>Add New Device</button>
                  
                 {addDevices.click && <div>
-                <div className="d-flex justiy-content-around mb-3">
+                <div className="d-flex justify-content-around mb-3">
                     <label className="text-light" htmlFor="modelOfDevice" style={{marginRight:'60px'}}>Device_id_1</label>
                     <input type="text" id='modeOfDevice' placeholder='Meter_ABC' name="Device_id_1" onChange={handleChange}/>
                 </div>
-                <div className="d-flex justiy-content-around mb-3">
+                <div className="d-flex justify-content-around mb-3">
                     <label className="text-light" htmlFor="modelOfDevice" style={{marginRight:'60px'}}>Device_id_2</label>
                     <input type="text" id='modeOfDevice' placeholder='Meter_ABC' name="Device_id_2" onChange={handleChange}/>
                 </div>
-                <div className="d-flex justiy-content-around mb-3">
+                <div className="d-flex justify-content-around mb-3">
                     <label className="text-light" htmlFor="modelOfDevice" style={{marginRight:'60px'}}>Device_id_3</label>
                     <input type="text" id='modeOfDevice' placeholder='Meter_ABC' name="Device_id_3" onChange={handleChange}/>
                 </div>

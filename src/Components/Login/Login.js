@@ -256,7 +256,7 @@ const Login = () => {
                 </div>
 
                 <div>
-                    <button className="form-control bg-primary text-light" type='submit'>Log In</button>
+                    <button className="form-control bg-primary text-light" type='submit'>Create</button>
                 </div>
                 <div className="creatTxt">
                     <p>Already have an account?<span onClick={handleLogin} className="creatAccount">Log In</span>
