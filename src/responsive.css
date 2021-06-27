@@ -175,6 +175,9 @@
         width: 12rem!important;
         margin-right: 33%;
     }
+    .btn{
+        padding-right: 13%!important;
+    }
 }
 
 /* #### Max Width 599px ----- View 400px  ####### */
