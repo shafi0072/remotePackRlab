@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
 
-
-
-
 const Command = () => {
     const [pubSubM, setPubSubM] = useState({
         topic:'',
