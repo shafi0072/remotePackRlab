@@ -1,3 +1,7 @@
+.device-main-container{
+    width: 80%;
+    margin: 0 auto;
+}
 .device-button:hover{
     background-color: rgb(19, 19, 255);
 }

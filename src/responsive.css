@@ -175,8 +175,8 @@
         width: 12rem!important;
         margin-right: 33%;
     }
-    .btn{
-        padding-right: 13%!important;
+    .button{
+        margin-right: ;
     }
 }
 
@@ -230,9 +230,43 @@
         font-size: 18px!important;
         padding: .6% 0;
     }
+    .location-button{
+        width: 100%!important;
+        margin: 0!important;
+    }
+    .location-button-div{
+        justify-content: start!important;
+        margin-bottom: 4%;
+    }
 }
-
-
+@media(max-width:516px){
+    
+    .location-title-text{
+            margin-right: 10px!important;
+            padding-top: 1%;
+    }
+}
+@media(max-width:442px){
+    .title-name{
+        display: block!important;
+    }
+    .location-title-text{
+        display: block;
+        text-align: left;
+        margin-bottom: 2%;
+    }
+    .location-title-input{
+        width: 70%;
+        display: block;
+        text-align: left;
+    }
+    .location-button-div{
+        justify-content: start!important;
+    }
+    .location-button{
+        margin: 0!important;
+    }
+}
 /* #### Max Width 399px ----- View 300px  ####### */
 
 @media(max-width:399px){
@@ -279,6 +313,32 @@
     }
     .container{
         padding: 0;
+    }
+    .user-map{
+        height: 390px!important;
+    }
+    .device-div-container{
+        display: block!important;
+    }
+    .device-title{
+        display: block;
+        text-align: left;
+        font-size: 16px;
+        margin-bottom: 1%;
+    }
+    .device-input{
+        display: block;
+        width: 70%;
+        margin-bottom: 4%;
+    }
+    .device-button-container{
+        display: flex;
+        justify-content: start;
+    }
+    .device-button{
+        margin-left: 0!important;
+        font-size: 14px;
+        padding: 1% 4%;
     }
 }
 

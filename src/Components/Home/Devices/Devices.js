@@ -48,29 +48,32 @@ const Devices = () => {
     }
     
     return (
-        <div className="d-flex justify-content-center align-items-center mt-5 ">
+        <div className="d-flex justify-content-center align-items-center mt-5 device-main-container">
             <form action="" onSubmit={handleSubmit} className="device-container">
-                <div className="d-flex justiy-content-around mb-3">
-                    <label className="text-light" htmlFor="modelOfDevice" style={{marginRight:'60px'}}>Device Model</label>
-                    <input type="text" id='modeOfDevice' placeholder='Meter_ABC' name="model" onChange={handleChange}/>
+                <div className="d-flex justiy-content-around mb-3 device-div-container">
+                    <label className="text-light device-title" htmlFor="modelOfDevice" style={{marginRight:'60px'}}>Device Model</label>
+                    <input className="device-input" type="text" id='modeOfDevice' placeholder='Meter_ABC' name="model" onChange={handleChange}/>
                 </div>
-                <div className="d-flex justiy-content-around mb-3">
-                    <label className="text-light" htmlFor="serialNumber" style={{marginRight:'56px'}}>Serial Number</label>
-                    <input type="text" id='serialNumber' placeholder='ABC012319' name="SerialNumber" onChange={handleChange}/>
+                <div className="d-flex justiy-content-around mb-3 device-div-container">
+                    <label className="text-light device-title" htmlFor="serialNumber" style={{marginRight:'56px'}}>Serial Number</label>
+                    <input className="device-input" type="text" id='serialNumber' placeholder='ABC012319' name="SerialNumber" onChange={handleChange}/>
                 </div>
-                <div className="d-flex justiy-content-around mb-3">
-                    <label className="text-light" htmlFor="commissioningDate" style={{marginRight:'10px'}}>Commissioning Date</label>
-                    <input type="text" id='commissioningDate' placeholder='1699992929202' name="Commission" onChange={handleChange}/>
+                <div className="d-flex justiy-content-around mb-3 device-div-container">
+                    <label className="text-light device-title" htmlFor="commissioningDate" style={{marginRight:'10px'}}>Commissioning Date</label>
+                    <input className="device-input" type="text" id='commissioningDate' placeholder='1699992929202' name="Commission" onChange={handleChange}/>
                 </div>
-                <div className="d-flex justiy-content-around mb-3">
-                    <label className="text-light" htmlFor="Var01" style={{marginRight:'27px'}}>Level_Alarm_var01</label>
-                    <input type="text" id='Var01' placeholder='30.5' name="alarm1" onChange={handleChange}/>
+                <div className="d-flex justiy-content-around mb-3 device-div-container">
+                    <label className="text-light device-title" htmlFor="Var01" style={{marginRight:'27px'}}>Level_Alarm_var01</label>
+                    <input className="device-input" type="text" id='Var01' placeholder='30.5' name="alarm1" onChange={handleChange}/>
                 </div>
-                <div className="d-flex justiy-content-around mb-3">
-                    <label className="text-light" htmlFor="Var02" style={{marginRight:'27px'}}>Level_Alarm_var02</label>
-                    <input type="text" id='Var02' placeholder='30.5' name='alarm2' onChange={handleChange}/>
+                <div className="d-flex justiy-content-around mb-3 device-div-container">
+                    <label className="text-light device-title" htmlFor="Var02" style={{marginRight:'27px'}}>Level_Alarm_var02</label>
+                    <input className="device-input" type="text" id='Var02' placeholder='30.5' name='alarm2' onChange={handleChange}/>
                 </div>
-                <button className="btn btn-primary device-button" style={{marginLeft:'65%'}}>Create/Save</button>
+                <div className="device-button-container">
+                    <button className="btn btn-primary device-button" style={{marginLeft:'65%'}}>Create/Save</button>
+                </div>
+                
             </form>
         </div>
     );

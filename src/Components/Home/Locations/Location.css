@@ -1,11 +1,9 @@
 .container{
-    width: 70%;
+    width: 70%!important;
     margin: 0 auto;
 }
 .title-name{
     position: relative;
-    left: 20%;
-    top: 0%;
 }
 
 .file-text{

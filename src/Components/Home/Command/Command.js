@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import firebase from 'firebase';
 import 'firebase/firestore';
+import './Command.css';
 
 
 if (!firebase.apps.length) {
@@ -40,20 +41,23 @@ const handleSubmit = (e) => {
 }
 console.log(pubSubM);
     return (
-        <div>
-            <h1 className='text-light'>Send command in Google Cloud Pub/sub</h1>
+        <div className="command-container">
+            <h1 className='text-light command-title'>Send command in Google Cloud Pub/sub</h1>
             <div>
                 <form action="" onSubmit={handleSubmit}>
-                    <div className="d-flex justify-content-around">
-                        <label htmlFor="topic">Device_id</label>
-                        <input type="text" placeholder="Device_id" name="Device_id" id="topic" onChange={handleOnChange}/>
+                    <div className="d-flex justify-content-end topic-container">
+                        <label className="command-text" htmlFor="topic">Device_id :</label>
+                        <input className="command-input" type="text" placeholder="Device_id" name="Device_id" id="topic" onChange={handleOnChange}/>
                     </div>
                     
-                    <div className="d-flex justify-content-around">
-                        <label htmlFor="sub">Command</label>
-                        <textarea placeholder="Command" id="Command" name="Command" onChange={handleOnChange}/>
+                    <div className="d-flex justify-content-end topic-container">
+                        <label className="command-text" htmlFor="sub">Command :</label>
+                        <textarea className="command-input" placeholder="Command" id="Command" name="Command" onChange={handleOnChange}/>
                     </div>
-                    <button className="btn btn-primary" type="submit" >Send</button>
+                    <div className="text-end">
+                        <button className="btn btn-primary command-button" type="submit" >Send</button>
+                    </div>
+                    
                 </form>
             </div>
         </div>
