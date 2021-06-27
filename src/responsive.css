@@ -64,6 +64,10 @@
     .command-title{
         font-size: 28.2px;
     }
+    .card-container{
+        width: 9rem!important;
+        height: 100%;
+    }
 }
 
 /* #### Max Width 999px ----- View 850px  ####### */
@@ -76,7 +80,7 @@
         font-size: 16px;
     }
     .card-container{
-        width: 9rem!important;
+        width: 7rem!important;
         height: 100%;
     }
     .control-input-text{
@@ -102,13 +106,22 @@
     .command-title{
         font-size: 24px;
     }
+    .card-text-h6{
+        font-size: 16px!important;
+    }
+    .card-body{
+        padding: 12px;
+    }
+    .card-text-p{
+        font-size: 15px;
+    }
 }
 
 /* #### Max Width 849px ----- View 700px  ####### */
 
 @media(max-width:849px){
     .card-container{
-        width: 8rem!important;
+        width: 6.7rem!important;
         height: 100%;
     }
     .meter-col{
@@ -120,6 +133,9 @@
     }
     .command-title{
         font-size: 21.8px;
+    }
+    .card-body{
+        padding: 10px;
     }
 }
 @media(max-width:767px){
@@ -239,11 +255,9 @@
         width: 100%;
         margin-bottom: 4%;
     }
-    .btnArea{
-        font-size: 16px!important;
-    }
     .btnEdit{
         font-size: 16px!important;
+        padding: 1.2% 0;
     }
     .form-name-p{
         font-size: 16px!important;
@@ -284,6 +298,10 @@
     .command-title{
         font-size: 17.1px;
     }
+    .container{
+        padding: 0!important;
+        margin-right: 7%!important;
+    }
 }
 @media(max-width:442px){
     .title-name{
@@ -307,6 +325,9 @@
     }
     .command-title{
         font-size: 15.5px;
+    }
+    .container{
+        margin-right: 8%!important;
     }
 }
 /* #### Max Width 399px ----- View 300px  ####### */
@@ -355,6 +376,7 @@
     }
     .container{
         padding: 0;
+        margin-right: 9%!important;
     }
     .user-map{
         height: 390px!important;
@@ -401,6 +423,22 @@
     }
     .command-title{
         font-size: 15.5px;
+    }
+    .card-main-container{
+        height: 27rem!important;
+        overflow-y: scroll;
+    }
+    .btnArea{
+        width: 25%!important;
+        font-size: 15px!important;
+    }
+    .btnEdit{
+        font-size: 15px!important;
+        width: 20%!important;
+        padding: 1% 0;
+    }
+    .form-name-p{
+        font-size: 15px!important;
     }
 }
 

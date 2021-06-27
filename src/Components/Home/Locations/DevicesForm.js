@@ -22,7 +22,7 @@ const DevicesForm = (props) => {
                 {
                     data.map(data => <DevicesData data={data} handleSelect={handleSelect}/>)
                 }
-                <div className="button d-flex justify-content-around">
+                <div className="button d-flex justify-content-end deviceFrom-location-button">
                     <button className="btn btn-primary">Edit Location</button>
                 </div>    
            </div>}
