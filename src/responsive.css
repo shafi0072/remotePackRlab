@@ -6,12 +6,17 @@
         display: block!important;
         text-decoration: underline!important;
     }
+    .command-title{
+        font-size: 36px;
+    }
 }
 
 /* #### Max Width 1299px ----- View 1200px  ####### */
 
 @media(max-width:1299px){
-
+    .command-title{
+        font-size: 33.7px;
+    }
 }
 
 /* #### Max Width 1199px ----- View 1000px  ####### */
@@ -56,6 +61,9 @@
     .meter-col{
         padding: 0;
     }
+    .command-title{
+        font-size: 28.2px;
+    }
 }
 
 /* #### Max Width 999px ----- View 850px  ####### */
@@ -91,6 +99,9 @@
     .selectProparty{
         padding: .4% 1% .4% .5%!important;
     }
+    .command-title{
+        font-size: 24px;
+    }
 }
 
 /* #### Max Width 849px ----- View 700px  ####### */
@@ -106,6 +117,9 @@
     .meter-data{
         font-size: 15px;
         
+    }
+    .command-title{
+        font-size: 21.8px;
     }
 }
 @media(max-width:767px){
@@ -161,6 +175,9 @@
     .meter-data:last-child{
         border-right: 0!important;
     }
+    .command-title{
+        font-size: 26.5px;
+    }
 }
 /* #### Max Width 699px ----- View 600px  ####### */
 
@@ -189,6 +206,9 @@
     .command-input{
         display: block;
         width: 100%!important;
+    }
+    .command-title{
+        font-size: 22.9px;
     }
 }
 
@@ -250,6 +270,9 @@
         justify-content: start!important;
         margin-bottom: 4%;
     }
+    .command-title{
+        font-size: 19.8px;
+    }
     
 }
 @media(max-width:516px){
@@ -257,6 +280,9 @@
     .location-title-text{
             margin-right: 10px!important;
             padding-top: 1%;
+    }
+    .command-title{
+        font-size: 17.1px;
     }
 }
 @media(max-width:442px){
@@ -278,6 +304,9 @@
     }
     .location-button{
         margin: 0!important;
+    }
+    .command-title{
+        font-size: 15.5px;
     }
 }
 /* #### Max Width 399px ----- View 300px  ####### */
@@ -369,6 +398,9 @@
     }
     .command-button{
         width: 100%;
+    }
+    .command-title{
+        font-size: 15.5px;
     }
 }
 
