@@ -178,6 +178,18 @@
     .button{
         margin-right: ;
     }
+    .command-container{
+        display: block;
+    }
+    .command-text{
+        display: block;
+        width: 100%!important;
+        margin-right: 20px!important;
+    }
+    .command-input{
+        display: block;
+        width: 100%!important;
+    }
 }
 
 /* #### Max Width 599px ----- View 400px  ####### */
@@ -238,6 +250,7 @@
         justify-content: start!important;
         margin-bottom: 4%;
     }
+    
 }
 @media(max-width:516px){
     
@@ -339,6 +352,23 @@
         margin-left: 0!important;
         font-size: 14px;
         padding: 1% 4%;
+    }
+    .topic-container{
+        display: block!important;
+    }
+    .command-text{
+        display: block;
+        width: 100%!important;
+        text-align: left;
+        margin-bottom: 1%;
+    }
+    .command-input{
+        display: block;
+        width: 100%!important;
+        margin-bottom: 6%;
+    }
+    .command-button{
+        width: 100%;
     }
 }
 
