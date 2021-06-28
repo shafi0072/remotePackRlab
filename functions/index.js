@@ -8,7 +8,8 @@ admin.initializeApp();
 const db = admin.firestore();
 exports.helloPubSub = functions.pubsub.topic("Rlab12").onPublish((message) => {
   const data = message.json;
-  db.collection("pubsub").add(data);
+  const date = new Date();
+  db.collection("pubsub").add({data: data, date: date});
   console.log("Your pub sub is trigered");
   console.log(data);
 });
