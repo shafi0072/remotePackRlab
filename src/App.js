@@ -26,7 +26,8 @@ const App = () => {
     locations: false,
     admin: true,
     viewer:false,
-    command:false
+    command:false,
+    deviceID:''
   })
   return (
     <userContext.Provider value={[user, setUser]}>

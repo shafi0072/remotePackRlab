@@ -51,7 +51,7 @@ const data = [
     }
 ];
 const DeveiceMeter = (props) => {
-    console.log(props.mainMeterData);
+    
 
     return (
         <div className="container">

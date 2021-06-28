@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './Location.css';
 import DeveiceMeter from './DeveiceMeter';
 import DevicesData from './DevicesData';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
+import { userContext } from '../../../App';
 
 if (!firebase.apps.length) {
     firebase.initializeApp({
@@ -21,7 +22,7 @@ if (!firebase.apps.length) {
 const db = firebase.firestore();
 
 const DevicesForm = (props) => {
-    
+    const [user, setUser] = useContext(userContext)
     const [energyMeter, setEnergyMeter] = useState([]);
     const [mainMeterData, setMainMeterData] = useState([])
     const [sl, setSl] = useState({
@@ -42,7 +43,9 @@ const DevicesForm = (props) => {
             querySnapshot.forEach((doc) => {
               getDataFirebase.push({...doc.data(), key:doc.id});
             });
-            setEnergyMeter(getDataFirebase);
+            // const resultArray = arrayFunc(getDataFirebase, sl.deviceId);
+            // setEnergyMeter(resultArray);
+            
             
         });
         
@@ -52,17 +55,14 @@ const DevicesForm = (props) => {
     function arrayFunc(arr,key) {
         let resultArray;
         for(let i = 0; i < arr.length; i++){
-            if(arr[i].key === key){
+            if(arr[i].DeviceID === key){
                 resultArray = arr
             }
         }
         return resultArray
     };
 
-    useEffect(() => {
-        const resultArray = arrayFunc(energyMeter, sl.deviceId);
-        setMainMeterData(resultArray)
-    }, [])
+    console.log(user.deviceId);
     return (
             <div>
                 {sl.notClick && <div className="container">

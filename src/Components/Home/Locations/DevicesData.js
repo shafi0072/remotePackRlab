@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { userContext } from '../../../App';
 import '../../../responsive.css';
 
 const DevicesData = (props) => {
+    const [user, setUser] = useContext(userContext)
     const {model,key} = props.data;
     const [edit, setEdit] = useState({
         editable:true,
@@ -11,10 +13,13 @@ const DevicesData = (props) => {
         const newUser = {...edit};
         newUser.editable = false;
         newUser.clickEdit = true;
-        newUser.deviceId = key;
         setEdit(newUser);
+        const newUserInfo = {...user};
+        newUserInfo.deviceID = key;
+        setUser(newUserInfo);
+        
      };
-         
+       
     return (
         <div>
             <div className="clients d-flex justify-content-evenly mb-5">
