@@ -50,7 +50,8 @@ const data = [
         amt: 2100
     }
 ];
-const DeveiceMeter = () => {
+const DeveiceMeter = (props) => {
+    console.log(props.mainMeterData);
 
     return (
         <div className="container">

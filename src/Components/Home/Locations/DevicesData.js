@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../../../responsive.css';
 
 const DevicesData = (props) => {
-    const {model} = props.data;
+    const {model,key} = props.data;
     const [edit, setEdit] = useState({
         editable:true,
         clickEdit: false
@@ -11,8 +11,10 @@ const DevicesData = (props) => {
         const newUser = {...edit};
         newUser.editable = false;
         newUser.clickEdit = true;
+        newUser.deviceId = key;
         setEdit(newUser);
      };
+         
     return (
         <div>
             <div className="clients d-flex justify-content-evenly mb-5">
