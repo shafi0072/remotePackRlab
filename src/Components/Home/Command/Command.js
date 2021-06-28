@@ -39,7 +39,7 @@ const handleSubmit = (e) => {
     });
     e.preventDefault();
 }
-console.log(pubSubM);
+
     return (
         <div className="command-main-container">
             <h1 className='text-light command-title'>Send command in Google Cloud Pub/sub</h1>

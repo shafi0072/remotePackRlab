@@ -48,7 +48,7 @@ const UserForm = () => {
         });
         e.preventDefault();
     }
-    console.log(userInfo);
+    
     
     return (
         <div style={{width:'50%', margin:'2% auto'}} className='text-center'>

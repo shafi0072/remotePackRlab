@@ -61,7 +61,7 @@ const Locations = () => {
         newLocationData[e.target.name] = e.target.value;
         setLocationData(newLocationData)
     }; 
-    console.log(locationData);
+    
     return (
         <div className="container">
            {user.admin && <div className="row d-flex justify-content-end align-items-center mt-5">

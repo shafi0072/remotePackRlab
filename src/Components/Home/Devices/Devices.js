@@ -33,7 +33,7 @@ const Devices = () => {
         const newDevices = {...devicesData};
         newDevices[event.target.name] = event.target.value;
         setDevicesData(newDevices);
-        console.log(devicesData);
+        
     }
     const handleSubmit = (e) => {
         db.collection("Devices").add(devicesData)
