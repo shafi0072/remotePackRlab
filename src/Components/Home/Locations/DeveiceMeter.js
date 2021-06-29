@@ -52,8 +52,8 @@ const data = [
     }
 ];
 const DeveiceMeter = (props) => {
-    const [user, setUser] = useContext(userContext)
-    console.log('deviceId',user.deviceId);
+    
+    console.log('dataId',props.data);
     return (
         <div className="container">
             <h1>Meter</h1>

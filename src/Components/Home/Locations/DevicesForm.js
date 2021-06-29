@@ -25,8 +25,7 @@ const DevicesForm = (props) => {
     const data = props.data;
 
     const [user, setUser] = useContext(userContext)
-    const [energyMeter, setEnergyMeter] = useState([]);
-    const [mainMeterData, setMainMeterData] = useState([])
+   
     const [sl, setSl] = useState({
        
     });
@@ -38,32 +37,7 @@ const DevicesForm = (props) => {
     }
     
 
-    useEffect(() => {
-        const getDataFirebase = [];
-        const userDb = db.collection("ENER000001").onSnapshot((querySnapshot) => {
-            querySnapshot.forEach((doc) => {
-              getDataFirebase.push({...doc.data(), key:doc.id});
-            });
-            // const resultArray = arrayFunc(getDataFirebase, sl.deviceId);
-            // setEnergyMeter(resultArray);
-            
-            
-        });
-        
-       return userDb;
-    }, []);
-
-    function arrayFunc(arr,key) {
-        let resultArray;
-        for(let i = 0; i < arr.length; i++){
-            if(arr[i].DeviceID === key){
-                resultArray = arr
-            }
-        }
-        return resultArray
-    };
-
-    console.log(user.deviceId);
+  
     return (
             <div>
                 {user.notClick && <div className="container">
@@ -74,9 +48,7 @@ const DevicesForm = (props) => {
                     <button className="btn btn-primary">Edit Location</button>
                 </div>    
            </div>}
-           {
-            user.click && <DeveiceMeter mainMeterData={mainMeterData} />
-           }
+           
             </div>
         
     );
