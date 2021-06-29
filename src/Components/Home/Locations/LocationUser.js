@@ -49,8 +49,7 @@ const LocationUser = () => {
         
        return userDb;
     }, []);
-    console.log(dbUserData);
-
+    
     return (
         <div className="card-main-container">
            {click.locationCLick && <div className='row'>

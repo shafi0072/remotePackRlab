@@ -49,7 +49,7 @@ const Locations = () => {
     const handleSubmit = (e) => {
         db.collection("location").add(locationData)
         .then((docRef) => {
-            console.log("Document written with ID: ", docRef.id);
+            
         })
         .catch((error) => {
             console.error("Error adding document: ", error);
@@ -61,7 +61,7 @@ const Locations = () => {
         newLocationData[e.target.name] = e.target.value;
         setLocationData(newLocationData)
     }; 
-    console.log(locationData);
+    
     return (
         <div className="container">
            {user.admin && <div className="row d-flex justify-content-end align-items-center mt-5">

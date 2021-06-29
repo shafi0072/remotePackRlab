@@ -33,15 +33,15 @@ const Devices = () => {
         const newDevices = {...devicesData};
         newDevices[event.target.name] = event.target.value;
         setDevicesData(newDevices);
-        console.log(devicesData);
+        
     }
     const handleSubmit = (e) => {
         db.collection("Devices").add(devicesData)
         .then((docRef) => {
-            console.log("Document written with ID: ", docRef.id);
+           
         })
         .catch((error) => {
-            console.error("Error adding document: ", error);
+            
         });
 
         e.preventDefault();

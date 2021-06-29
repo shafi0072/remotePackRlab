@@ -38,7 +38,7 @@ const Login = () => {
         const newUserInfo = {...user}
         newUserInfo[e.target.name] = e.target.value;
         setUser(newUserInfo);
-        console.log(user.ConfirmPassword);
+        
     }
     const handleCreateAccount = (e) => {
         firebase.auth().createUserWithEmailAndPassword(user.email, user.ConfirmPassword)
@@ -97,7 +97,7 @@ const Login = () => {
         console.log(error);
     })
     
-    console.log(user.email);
+    
     e.preventDefault()
    }
    const updateUserInfo = name => {

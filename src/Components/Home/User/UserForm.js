@@ -41,14 +41,14 @@ const UserForm = () => {
     const handleSubmit = (e) => {
         db.collection("user").add(userInfo)
         .then((docRef) => {
-            console.log("Document written with ID: ", docRef.id);
+           
         })
         .catch((error) => {
-            console.error("Error adding document: ", error);
+            
         });
         e.preventDefault();
     }
-    console.log(userInfo);
+    
     
     return (
         <div style={{width:'50%', margin:'2% auto'}} className='text-center'>

@@ -32,14 +32,14 @@ const handleOnChange = (event) => {
 const handleSubmit = (e) => {
     db.collection("Command").add(pubSubM)
     .then((docRef) => {
-        console.log("Document written with ID: ", docRef.id);
+        
     })
     .catch((error) => {
-        console.error("Error adding document: ", error);
+        
     });
     e.preventDefault();
 }
-console.log(pubSubM);
+
     return (
         <div className="command-main-container">
             <h1 className='text-light command-title'>Send command in Google Cloud Pub/sub</h1>
