@@ -44,7 +44,7 @@ const UserHome = () => {
         
        return userDb;
     }, []);
-    console.log(dbUserData);
+   
     
     return (
         <div className='row'>

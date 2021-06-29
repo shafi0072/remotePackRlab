@@ -22,13 +22,13 @@ if (!firebase.apps.length) {
 const db = firebase.firestore();
 
 const DevicesForm = (props) => {
+    const data = props.data;
+
     const [user, setUser] = useContext(userContext)
     const [energyMeter, setEnergyMeter] = useState([]);
     const [mainMeterData, setMainMeterData] = useState([])
     const [sl, setSl] = useState({
-       notClick: true,
-       click: false,
-       deviceId:'', 
+       
     });
     const handleSelect = () => {
         const newSl = {...sl};
@@ -36,7 +36,8 @@ const DevicesForm = (props) => {
         newSl.click = true;
         setSl(newSl);
     }
-    const data = props.data
+    
+
     useEffect(() => {
         const getDataFirebase = [];
         const userDb = db.collection("ENER000001").onSnapshot((querySnapshot) => {
@@ -65,7 +66,7 @@ const DevicesForm = (props) => {
     console.log(user.deviceId);
     return (
             <div>
-                {sl.notClick && <div className="container">
+                {user.notClick && <div className="container">
                 {
                     data.map(data => <DevicesData data={data} handleSelect={handleSelect}/>)
                 }
@@ -74,7 +75,7 @@ const DevicesForm = (props) => {
                 </div>    
            </div>}
            {
-               sl.click && <DeveiceMeter mainMeterData={mainMeterData} />
+            user.click && <DeveiceMeter mainMeterData={mainMeterData} />
            }
             </div>
         

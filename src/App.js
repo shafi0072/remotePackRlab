@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import UserHome from './Components/Home/UserHome/UserHome';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import DeviceDashBoard from './Components/Home/DeviceDashBoard/DeviceDashBoard';
 export const userContext = createContext()
 const App = () => {
   const [user, setUser] = useState({
@@ -27,13 +28,16 @@ const App = () => {
     admin: true,
     viewer:false,
     command:false,
-    deviceID:''
+    notClick: true,
+    click: false,
+    deviceId:'', 
   })
   return (
     <userContext.Provider value={[user, setUser]}>
       <Router>
       <Switch>
         <Route path='/auth' component={Login} />
+        <Route path="deviceDash/:id" component={DeviceDashBoard}/>
         <PrivateRoute path = '/'>
           <UserHome/>
         </PrivateRoute>

@@ -1,7 +1,12 @@
 import React, { useContext, useState } from 'react';
 import { userContext } from '../../../App';
 import '../../../responsive.css';
-
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
 const DevicesData = (props) => {
     const [user, setUser] = useContext(userContext)
     const {model,key} = props.data;
@@ -19,14 +24,22 @@ const DevicesData = (props) => {
         setUser(newUserInfo);
         
      };
-       
+    const handleSelect = (e) => {
+        const newUser = {...user};
+        newUser.notClick = false;
+        newUser.click = true;
+        newUser.deviceID = key;
+        setUser(newUser);
+        e.preventDefault()
+    } 
+    
     return (
         <div>
             <div className="clients d-flex justify-content-evenly mb-5">
                     {edit.editable && <div className="form-name"><p className="form-name-p">{model}</p></div>}
                     {edit.clickEdit && <input type="text" placeholder='edit your Meter' name='one'/>}
                     <button className="btn btn-dark btnEdit" onClick={handleEdit}>Edit</button>
-                    <button className="btn btn-primary btnArea" onClick={() => props.handleSelect()}>Select</button>
+                    <Link to={`deviceDash/${key}`}><button className="btn btn-primary btnArea">Select</button></Link>
                 </div>
         </div>
     );

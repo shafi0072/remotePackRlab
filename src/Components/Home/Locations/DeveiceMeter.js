@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './DeviceMeter.css';
 import '../../../responsive.css';
 import Rechart from '../UserHome/Rechart';
@@ -12,6 +12,7 @@ import {
     Legend,
     ResponsiveContainer
 } from 'recharts';
+import { userContext } from '../../../App';
 const data = [
     {
         name: 'Page A',
@@ -51,8 +52,8 @@ const data = [
     }
 ];
 const DeveiceMeter = (props) => {
-    
-
+    const [user, setUser] = useContext(userContext)
+    console.log('deviceId',user.deviceId);
     return (
         <div className="container">
             <h1>Meter</h1>
