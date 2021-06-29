@@ -109,7 +109,7 @@ const DeveiceMeter = () => {
                 </div>
             </div>
             
-            <div>
+            <div className="chart-container">
                 <LineChart width={800} height={150} className="charts" data={data}>
                     <XAxis dataKey="name"/>
                     <YAxis/>

@@ -41,9 +41,6 @@
 .meter-button{
     margin-top: 2%;
 }
-.chart-container{
-    width: 100%;
-}
 .status-title{
     font-weight: bold;
     margin-right: 3%;
@@ -62,4 +59,10 @@
 }
 .button2:hover{
     background-color: rgb(19, 19, 255);
+}
+.charts{
+    width: 300px!important;
+}
+.chart-container{
+    width: 100%;
 }
