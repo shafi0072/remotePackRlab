@@ -39,7 +39,7 @@ const DevicesData = (props) => {
                     {edit.editable && <div className="form-name"><p className="form-name-p">{model}</p></div>}
                     {edit.clickEdit && <input type="text" placeholder='edit your Meter' name='one'/>}
                     <button className="btn btn-dark btnEdit" onClick={handleEdit}>Edit</button>
-                    <Link to={`deviceDash/${key}`}><button className="btn btn-primary btnArea">Select</button></Link>
+                    <Link to={`/${key}`} className="btn btn-primary btnArea">Select</Link>
                 </div>
         </div>
     );

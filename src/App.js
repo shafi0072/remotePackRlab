@@ -37,10 +37,11 @@ const App = () => {
       <Router>
       <Switch>
         <Route path='/auth' component={Login} />
-        <Route path="deviceDash/:id" component={DeviceDashBoard}/>
-        <PrivateRoute path = '/'>
+        
+        <PrivateRoute exact path = '/'>
           <UserHome/>
         </PrivateRoute>
+        <Route path="/:id" component={DeviceDashBoard}/>
       </Switch>
     </Router>
     </userContext.Provider>
