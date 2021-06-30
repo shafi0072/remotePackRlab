@@ -47,7 +47,7 @@ const Devices = () => {
             
         });
 
-        e.preventDefault();
+        
     }
     console.log(devicesData)
     return (
