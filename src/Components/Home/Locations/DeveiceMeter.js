@@ -51,7 +51,7 @@ const DeveiceMeter = (props) => {
             <h1 className="meter-text">Meter</h1>
             <div>
                 <div className="row thead">
-                    <div className="col-md-3 meter-col">
+                    <div className="col-md-4 meter-col">
                         <p>Date</p>
                     </div>
                     <div className="col-md-1 meter-col">
@@ -74,7 +74,7 @@ const DeveiceMeter = (props) => {
                     </div>
                 </div>
                 <div className="row tbody">
-                    <div className="col-md-3 meter-data" data-content="Date">
+                    <div className="col-md-4 meter-data" data-content="Date">
                         <p>12/12/21 08:06:15</p>
                     </div>
                     <div className="col-md-1 meter-data" data-content="Vcc 1">
