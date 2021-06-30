@@ -13,46 +13,39 @@ import {
     ResponsiveContainer
 } from 'recharts';
 import { userContext } from '../../../App';
-const data = [
-    {
-        name: 'Page A',
-        uv: 4000,
-        pv: 2400,
-        amt: 2400
-    }, {
-        name: 'Page B',
-        uv: 3000,
-        pv: 1398,
-        amt: 2210
-    }, {
-        name: 'Page C',
-        uv: 2000,
-        pv: 9800,
-        amt: 2290
-    }, {
-        name: 'Page D',
-        uv: 2780,
-        pv: 3908,
-        amt: 2000
-    }, {
-        name: 'Page E',
-        uv: 1890,
-        pv: 4800,
-        amt: 2181
-    }, {
-        name: 'Page F',
-        uv: 2390,
-        pv: 3800,
-        amt: 2500
-    }, {
-        name: 'Page G',
-        uv: 3490,
-        pv: 4300,
-        amt: 2100
-    }
-];
+
 const DeveiceMeter = (props) => {
      const{voltege01, voltage02, voltage03, voltage04, voltage05,vBat, txPower, rssiGateway, nMedicion, msActivo, longitude,latitude, current01} = props.data;
+
+     const data = [
+        {
+            name: 'Voltage1',
+            uv: voltege01,
+            pv: voltege01,
+            amt: voltege01
+        }, {
+            name: 'Voltage2',
+            uv: voltage02,
+            pv: voltage02,
+            amt: voltage02
+        }, {
+            name: 'Voltage3',
+            uv: voltage03,
+            pv: voltage03,
+            amt: voltage03
+        }, {
+            name: 'Voltage4',
+            uv: voltage04,
+            pv: voltage04,
+            amt: voltage04
+        },
+        {
+            name: 'Voltage4',
+            uv: voltage05,
+            pv: voltage05,
+            amt: voltage05
+        }
+    ];
     return (
         <div className="container">
             <h1 className="meter-text">Meter</h1>
@@ -61,14 +54,20 @@ const DeveiceMeter = (props) => {
                     <div className="col-md-3 meter-col">
                         <p>Date</p>
                     </div>
-                    <div className="col-md-2 meter-col">
+                    <div className="col-md-1 meter-col">
                         <p>Vcc 1</p>
                     </div>
-                    <div className="col-md-2 meter-col">
+                    <div className="col-md-1 meter-col">
                         <p>Vcc 2</p>
                     </div>
-                    <div className="col-md-2 meter-col">
+                    <div className="col-md-1 meter-col">
                         <p>Vcc 3</p>
+                    </div>
+                    <div className="col-md-1 meter-col">
+                        <p>Vcc 4</p>
+                    </div>
+                    <div className="col-md-1 meter-col">
+                        <p>Vcc 5</p>
                     </div>
                     <div className="col-md-3 meter-col">
                         <p>Current 1</p>
@@ -78,14 +77,20 @@ const DeveiceMeter = (props) => {
                     <div className="col-md-3 meter-data" data-content="Date">
                         <p>12/12/21 08:06:15</p>
                     </div>
-                    <div className="col-md-2 meter-data" data-content="Vcc 1">
+                    <div className="col-md-1 meter-data" data-content="Vcc 1">
                         <p>{voltege01}V</p>
                     </div>
-                    <div className="col-md-2 meter-data" data-content="Vcc 2">
+                    <div className="col-md-1 meter-data" data-content="Vcc 2">
                         <p>{voltage02}V</p>
                     </div>
-                    <div className="col-md-2 meter-data" data-content="Vcc 3">
+                    <div className="col-md-1 meter-data" data-content="Vcc 3">
                         <p>{voltage03}V</p>
+                    </div>
+                    <div className="col-md-1 meter-data" data-content="Vcc 3">
+                        <p>{voltage04}V</p>
+                    </div>
+                    <div className="col-md-1 meter-data" data-content="Vcc 3">
+                        <p>{voltage05}V</p>
                     </div>
                     <div className="col-md-3 meter-data" data-content="Current 1">
                         <p>{current01}A</p>
@@ -105,7 +110,7 @@ const DeveiceMeter = (props) => {
                     </div>
                     <div className="col-xl-3 col-md-2 text-end p-0 status-data-container">
                         <span className="status-title">Vbat:</span>
-                        <span>4.1V</span>
+                        <span>{vBat}V</span>
                     </div>
                 </div>
             </div>
@@ -125,14 +130,14 @@ const DeveiceMeter = (props) => {
                     <div className="col-xl-3 col-lg-3">
                         <p className="control-input-text">Period :</p>
                     </div>
-                    <div className="col-xl-5 col-lg-5 control-input-box"><input className="control-input-number" type="number"/></div>
+                    <div className="col-xl-5 col-lg-5 control-input-box"><input className="control-input-number" type="number" value={latitude}/></div>
                     <div className="col-xl-4 col-lg-4"></div>
                 </div>
                 <div className="row">
                     <div className="col-xl-3 col-lg-3">
                         <p className="control-input-text">Freq :</p>
                     </div>
-                    <div className="col-xl-5 col-lg-5 control-input-box"><input className="control-input-number" type="number"/></div>
+                    <div className="col-xl-5 col-lg-5 control-input-box"><input className="control-input-number" type="number" value={longitude}/></div>
                     <div className="col-xl-4 col-lg-4"></div>
                 </div>
                 <div className="meter-button d-flex justify-content-end">
