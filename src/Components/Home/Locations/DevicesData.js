@@ -9,7 +9,7 @@ import {
   } from "react-router-dom";
 const DevicesData = (props) => {
     const [user, setUser] = useContext(userContext)
-    const {model,key} = props.data;
+    const {model,key, format} = props.data;
     const [edit, setEdit] = useState({
         editable:true,
         clickEdit: false
@@ -39,7 +39,7 @@ const DevicesData = (props) => {
                     {edit.editable && <div className="form-name"><p className="form-name-p">{model}</p></div>}
                     {edit.clickEdit && <input type="text" placeholder='edit your Meter' name='one'/>}
                     <button className="btn btn-dark btnEdit" onClick={handleEdit}>Edit</button>
-                    <Link to={`/${key}`} className="btn btn-primary btnArea">Select</Link>
+                    <Link to={`/${format}/${key}`} className="btn btn-primary btnArea">Select</Link>
                 </div>
         </div>
     );

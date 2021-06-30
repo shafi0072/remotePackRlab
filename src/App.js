@@ -41,7 +41,7 @@ const App = () => {
         <PrivateRoute exact path = '/'>
           <UserHome/>
         </PrivateRoute>
-        <Route path="/:id" component={DeviceDashBoard}/>
+        <Route path="/:format/:id" component={DeviceDashBoard}/>
       </Switch>
     </Router>
     </userContext.Provider>
