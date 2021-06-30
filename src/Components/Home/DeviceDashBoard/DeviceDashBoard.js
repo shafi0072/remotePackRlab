@@ -3,7 +3,13 @@ import Navbar from '../../Shared/Navbar';
 import DeveiceMeter from '../Locations/DeveiceMeter';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
-import { useParams } from 'react-router-dom';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    useParams
+  } from "react-router-dom";
 
 if (!firebase.apps.length) {
     firebase.initializeApp({
@@ -19,32 +25,39 @@ if (!firebase.apps.length) {
  }
 
 const db = firebase.firestore();
-const {id} = useParams;
+
 
 const DeviceDashBoard = () => {
+    let { id } = useParams()
     const [status,setStatus] = useState([])
+    const [loading, setLoading] = useState(true)
     function arrayFunc(arr,key) {
-        let resultArray;
+        let resultArray = [];
         for(let i = 0; i < arr.length; i++){
             if(arr[i].DeviceID === key){
-                resultArray = arr
+                resultArray = arr[i];
             }
         }
         return resultArray
     };
     useEffect(() => {
-        const getDataFirebase = [];
-        const userDb = db.collection("ENER000001").onSnapshot((querySnapshot) => {
+        
+        const userDb =  db.collection("ENER000001").onSnapshot((querySnapshot) => {
+            const getDataFirebase = [];
             querySnapshot.forEach((doc) => {
               getDataFirebase.push({...doc.data(), key:doc.id});
             });
-            const resultArray = arrayFunc(getDataFirebase,id);
-        
-            console.log('dataArray',resultArray);
+            
+            if(getDataFirebase.length > 0){
+                const functionalArray = arrayFunc(getDataFirebase, id)
+                setStatus(functionalArray)
+                setLoading(false)
+            }
         });
         
-       return userDb;
-    }, []);
+     
+    }, [loading]);
+  
     return (
         <div className='row'>
             <div className="col-md-3">
