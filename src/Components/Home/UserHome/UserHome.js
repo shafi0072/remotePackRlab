@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import Navbar from '../../Shared/Navbar';
 import './UserHome.css'
 import User from '../User/User'
-import logo from '../../../Resorces/logo_RLAB.png'
+import logo from '../../../Resorces/logo_RLAB.png';
 import { userContext } from '../../../App';
 import Rechart from './Rechart';
 import Devices from '../Devices/Devices';

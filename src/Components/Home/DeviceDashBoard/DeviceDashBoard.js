@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Navbar from '../../Shared/Navbar';
 import DeveiceMeter from '../Locations/DeveiceMeter';
 import firebase from 'firebase/app';
+import logo from '../../../Resorces/logo_RLAB.png';
 import './DeviceDashBoard.css';
 import 'firebase/firestore';
 import {
@@ -61,10 +62,11 @@ const DeviceDashBoard = () => {
   
     return (
         <div className='row'>
-            <div className="col-md-3 dashboard-navbar">
+            <div className="col-md-3 dashboard-navbar" style={{margin:'0', padding:'0'}}>
                 <Navbar/>
             </div>
-            <div className="col-md-9 dashboard-background">
+            <div className="col-md-9 dashboard-background text-center">
+            <img src={logo} alt="" style={{width:'20%'}} className='mt-5' />
                 <DeveiceMeter data={status}/>
             </div>
         </div>
