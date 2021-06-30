@@ -27,8 +27,11 @@ const Devices = () => {
         Commission:'',
         alarm1:'',
         alarm2:'',
-        format:'ENER01'
+        format:''
     });
+    const handleOnChangeSelect = (event) => {
+        setDevicesData({format: event.target.value})
+    }
     const handleChange = (event) => {
         const newDevices = {...devicesData};
         newDevices[event.target.name] = event.target.value;
@@ -46,10 +49,18 @@ const Devices = () => {
 
         e.preventDefault();
     }
-    
+    console.log(devicesData)
     return (
         <div className="d-flex justify-content-center align-items-center mt-5 device-main-container">
             <form action="" onSubmit={handleSubmit} className="device-container">
+            <div className='d-flex justiy-content-around mb-4' >
+                    <label htmlFor="format"  className='me-5  text-light interface-name'><h5>Role</h5></label>
+                    <select id="format" className='form-control' onChange={handleOnChangeSelect}>
+                        <option value="ENER01" >ENER01</option>
+                        <option value="RTD01">RTD01</option>
+                        <option value="GTY01">GTY01</option>
+                    </select>
+                </div>
                 <div className="d-flex justiy-content-around mb-3 device-div-container">
                     <label className="text-light device-title" htmlFor="modelOfDevice" style={{marginRight:'60px'}}>Device Model</label>
                     <input className="device-input" type="text" id='modeOfDevice' placeholder='Meter_ABC' name="model" onChange={handleChange}/>
