@@ -392,7 +392,7 @@
     }
     .device-input{
         display: block;
-        width: 70%;
+        width: 70%!important;
         margin-bottom: 4%;
     }
     .device-button-container{
