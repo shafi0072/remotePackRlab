@@ -1,0 +1,9 @@
+.dashboard-background{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.589), rgba(0, 0, 0, 0.534)),url(../../../Resorces/80246925_1000.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.dashboard-navbar{
+    padding-right: 0;
+}

@@ -52,11 +52,10 @@ const data = [
     }
 ];
 const DeveiceMeter = (props) => {
-    
-    console.log('dataId',props.data);
+     const{voltege01, voltage02, voltage03, voltage04, voltage05,vBat, txPower, rssiGateway, nMedicion, msActivo, longitude,latitude, current01} = props.data;
     return (
         <div className="container">
-            <h1>Meter</h1>
+            <h1 className="meter-text">Meter</h1>
             <div>
                 <div className="row thead">
                     <div className="col-md-3 meter-col">
@@ -80,16 +79,16 @@ const DeveiceMeter = (props) => {
                         <p>12/12/21 08:06:15</p>
                     </div>
                     <div className="col-md-2 meter-data" data-content="Vcc 1">
-                        <p>24.6V</p>
+                        <p>{voltege01}V</p>
                     </div>
                     <div className="col-md-2 meter-data" data-content="Vcc 2">
-                        <p>18.1V</p>
+                        <p>{voltage02}V</p>
                     </div>
                     <div className="col-md-2 meter-data" data-content="Vcc 3">
-                        <p>24.4V</p>
+                        <p>{voltage03}V</p>
                     </div>
                     <div className="col-md-3 meter-data" data-content="Current 1">
-                        <p>10A</p>
+                        <p>{current01}A</p>
                     </div>
                 </div>
             </div>
