@@ -15,7 +15,7 @@ import {
 import { userContext } from '../../../App';
 
 const DeveiceMeter = (props) => {
-     const{voltege01, voltage02, voltage03, voltage04, voltage05,vBat, txPower, rssiGateway, nMedicion, msActivo, longitude,latitude, current01} = props.data;
+     const{voltege01, voltage02, voltage03, voltage04, voltage05,vBat, txPower, rssiGateway, nMedicion, msActivo, longitude,latitude, current01, rassiGateWay, resistance, temperature, nMessages} = props.data;
 
      const data = [
         {
@@ -146,6 +146,17 @@ const DeveiceMeter = (props) => {
                 </div> 
                 
             </div>
+            <ul>
+                <li className='text-dark'>txPower: {txPower}</li>
+                <li className='text-dark'>rssiGateway: {rssiGateway}</li>
+                <li className='text-dark'>nMedicion: {nMedicion}</li>
+                <li className='text-dark'>msActivo: {msActivo}</li>
+                <li className='text-dark'>rassiGateWay: {rassiGateWay}</li>
+                <li className='text-dark'>resistance: {resistance}</li>
+                <li className='text-dark'>temperature: {temperature}</li>
+                <li className='text-dark'>nMessages:{nMessages}</li>
+                
+            </ul>
         </div>
     );
 };
