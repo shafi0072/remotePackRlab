@@ -10,6 +10,8 @@ import {
     CartesianGrid,
    
 } from 'recharts';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 
 const DeveiceMeter = (props) => {
@@ -44,10 +46,14 @@ const DeveiceMeter = (props) => {
             amt: voltage05
         }
     ];
+    const [params, setParams] = useState({
+        voltage01: false
+    });
+    
     return (
         <div className="container">
             <h1 className="meter-text">Meter</h1>
-            <div>
+            {voltege01 >= 0 && <div>
                 <div className="row thead">
                     <div className="col-md-4 meter-col">
                         <p>Date</p>
@@ -94,7 +100,7 @@ const DeveiceMeter = (props) => {
                         <p>{current01}A</p>
                     </div>
                 </div>
-            </div>
+            </div>}
             <div>
                 <div className="row my-2 status-container">
                     <div className="col-xl-3 col-md-2 text-start p-0 status-data-container">
@@ -112,7 +118,7 @@ const DeveiceMeter = (props) => {
                     </div>
                 </div>
             </div>
-            <div className="chart-container">
+            {voltege01 >= 0 && <div className="chart-container">
                     <LineChart width={800} height={150} className="charts" data={data}>
                         <XAxis dataKey="name"/>
                         <YAxis/>
@@ -120,7 +126,7 @@ const DeveiceMeter = (props) => {
                         <Line type="monotone" dataKey="uv" stroke="#8884d8" />
                         <Line type="monotone" dataKey="pv" stroke="#82ca9d" />
                     </LineChart> 
-            </div>
+            </div>}
             <div className="device-meter-scroll">
                 <div>
                     <div>
@@ -146,16 +152,16 @@ const DeveiceMeter = (props) => {
                         
                     </div>
                     <ul className="row d-flex justify-content-lg-around text-light device-meter-list-container">
-                        <li className="col-md-3 text-start"><label className="device-meter-list" htmlFor="">txPower:</label> {txPower}</li>
-                        <li className="col-md-3 text-start"><label className="device-meter-list" htmlFor="">rssiGateway:</label> {rssiGateway}</li>
-                        <li className="col-md-3 text-start"><label className="device-meter-list" htmlFor="">nMedicion:</label> {nMedicion}</li>
-                        <li className="col-md-3 text-start"><label className="device-meter-list" htmlFor="">msActivo:</label> {msActivo}</li>
+                        <li className="col-md-3 text-start text-dark"><label className="device-meter-list" htmlFor="">txPower:</label> {txPower}</li>
+                        <li className="col-md-3 text-start text-dark"><label className="device-meter-list" htmlFor="">rssiGateway:</label> {rssiGateway}</li>
+                        <li className="col-md-3 text-start text-dark"><label className="device-meter-list" htmlFor="">nMedicion:</label> {nMedicion}</li>
+                        <li className="col-md-3 text-start text-dark"><label className="device-meter-list" htmlFor="">msActivo:</label> {msActivo}</li>
                     </ul>
                     <ul className="row d-flex justify-content-lg-around text-light device-meter-list-container">
-                        <li className="col-md-3 text-start"><label className="device-meter-list" htmlFor="">rassiGateWay:</label> {rassiGateWay}</li>
-                        <li className="col-md-3 text-start"><label className="device-meter-list" htmlFor="">resistance:</label> {resistance}</li>
-                        <li className="col-md-3 text-start"><label className="device-meter-list" htmlFor="">temperature:</label> {temperature}</li>
-                        <li className="col-md-3 text-start"><label className="device-meter-list" htmlFor="">nMessages:</label> {nMessages}</li>
+                        <li className="col-md-3 text-start text-dark"><label className="device-meter-list" htmlFor="">rassiGateWay:</label> {rassiGateWay}</li>
+                        <li className="col-md-3 text-start text-dark"><label className="device-meter-list" htmlFor="">resistance:</label> {resistance}</li>
+                        <li className="col-md-3 text-start text-dark"><label className="device-meter-list" htmlFor="">temperature:</label> {temperature}</li>
+                        <li className="col-md-3 text-start text-dark"><label className="device-meter-list" htmlFor="">nMessages:</label> {nMessages}</li>
                     </ul>
                 </div>
             
