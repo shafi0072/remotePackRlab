@@ -73,7 +73,8 @@ const Login = () => {
         newUserInfo.success = true;
         setUser(newUserInfo);
         history.replace(from);
-        if(res.user.email === 'safi29317@gmail.com'){
+    
+    if(res.user.email === 'safi29317@gmail.com'){
         const newUser = {...user}
         newUser.admin = true;
         newUser.viewer = false;
@@ -111,6 +112,7 @@ const Login = () => {
      console.log(error)
     });
 }
+
     return (
         <div className='background d-flex justify-content-center p-5'>
 

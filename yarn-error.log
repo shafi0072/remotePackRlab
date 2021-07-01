@@ -1,8 +1,8 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\Shafi\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add cloud-pubsub
+  C:\Program Files\nodejs\node.exe C:\Users\Shafi\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add canvasjs.react
 
 PATH: 
-  C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Users\Shafi\AppData\Local\Microsoft\WindowsApps;C:\Users\Shafi\AppData\Roaming\npm;C:\Program Files\MongoDB\Server\4.4\bin;;C:\Users\Shafi\AppData\Local\Programs\Microsoft VS Code\bin
+  C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Shafi\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files\nodejs;C:\Program Files\Git\cmd;C:\Users\Shafi\AppData\Local\Microsoft\WindowsApps;C:\Users\Shafi\AppData\Roaming\npm;C:\Program Files\MongoDB\Server\4.4\bin;C:\Users\Shafi\AppData\Local\Programs\Microsoft VS Code\bin
 
 Yarn version: 
   1.22.10
@@ -14,7 +14,17 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: ENOENT: no such file or directory, lstat 'F:\Rlab\client\node_modules\webpack-dev-middleware\node_modules\mime'
+  Error: https://registry.yarnpkg.com/canvasjs.react: Not found
+      at Request.params.callback [as _callback] (C:\Users\Shafi\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66988:18)
+      at Request.self.callback (C:\Users\Shafi\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140662:22)
+      at Request.emit (node:events:365:28)
+      at Request.<anonymous> (C:\Users\Shafi\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141634:10)
+      at Request.emit (node:events:365:28)
+      at IncomingMessage.<anonymous> (C:\Users\Shafi\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141556:12)
+      at Object.onceWrapper (node:events:471:28)
+      at IncomingMessage.emit (node:events:377:35)
+      at endReadableNT (node:internal/streams/readable:1312:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
 
 npm manifest: 
   {

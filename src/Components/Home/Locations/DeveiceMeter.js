@@ -1,18 +1,16 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import './DeviceMeter.css';
 import '../../../responsive.css';
-import Rechart from '../UserHome/Rechart';
+
 import {
     LineChart,
     Line,
     XAxis,
     YAxis,
     CartesianGrid,
-    Tooltip,
-    Legend,
-    ResponsiveContainer
+   
 } from 'recharts';
-import { userContext } from '../../../App';
+
 
 const DeveiceMeter = (props) => {
      const{voltege01, voltage02, voltage03, voltage04, voltage05,vBat, txPower, rssiGateway, nMedicion, msActivo, longitude,latitude, current01, rassiGateWay, resistance, temperature, nMessages} = props.data;
@@ -116,13 +114,14 @@ const DeveiceMeter = (props) => {
             </div>
             
             <div className="chart-container">
-                <LineChart width={800} height={150} className="charts" data={data}>
+                 <LineChart width={800} height={150} className="charts" data={data}>
                     <XAxis dataKey="name"/>
                     <YAxis/>
                     <CartesianGrid stroke="#eee" strokeDasharray="5 5"/>
                     <Line type="monotone" dataKey="uv" stroke="#8884d8" />
                     <Line type="monotone" dataKey="pv" stroke="#82ca9d" />
-                </LineChart>
+                </LineChart> 
+                
             </div>
             <div>
                 <p className="row title-control">Control</p>

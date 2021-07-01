@@ -9,7 +9,8 @@ import Devices from '../Devices/Devices';
 import Location from '../Locations/Locations';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
-import Command from '../Command/Command'
+import Command from '../Command/Command';
+import MenuIcon from '@material-ui/icons/Menu';
 if (!firebase.apps.length) {
     firebase.initializeApp({
         apiKey: "AIzaSyA47b6Rx0RioZApSMcyDooUmOpQFFs9WLE",
@@ -31,7 +32,10 @@ const UserHome = () => {
     
     const [dbUserData, setDbUserData] = useState();
     const [loading, setLoading] = useState(true)
-    
+    const [menu, setMenu] = useState({
+        showMenu:true,
+        hideMenu:false
+    })
     useEffect(() => {
         const getDataFirebase = [];
         const userDb = db.collection("user").onSnapshot((querySnapshot) => {
@@ -45,16 +49,31 @@ const UserHome = () => {
        return userDb;
     }, []);
    
-    
+    useEffect(() => {
+        if(window.outerWidth <= 500){
+            const newMenu = {...menu};
+            newMenu.showMenu = false;
+            newMenu.hideMenu = true;
+            setMenu(newMenu);
+        }
+    }, [dbUserData]);
+    const handleMenuClick = (e) => {
+        const newMenu = {...menu};
+            newMenu.showMenu = true;
+            newMenu.hideMenu = false;
+            setMenu(newMenu);
+    }
     return (
         <div className='row'>
             
-            <div className="col-md-3" style={{margin:'0', padding:'0'}}>
-                <Navbar/>
+            <div className="col-md-3 bg-dark" style={{margin:'0', padding:'0'}}>
+                {menu.showMenu && <Navbar/>}
+                {menu.hideMenu && <MenuIcon onClick = {handleMenuClick} className="text-light"/>}
             </div>
             <div className="col-md-9 backgroundSIDE text-center">
-            <img src={logo} alt="" style={{width:'20%'}} className='mt-5' />
             
+            <img src={logo} alt="" style={{width:'20%'}} className='mt-5' />
+
                 {user.userHome && <Rechart/>}
                 {user.user&& user.admin && <User data={dbUserData}/> }
                 
