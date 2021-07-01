@@ -3,6 +3,7 @@ import firebase from 'firebase';
 import 'firebase/firestore';
 import './Devices.css';
 import '../../../responsive.css';
+import { useEffect } from 'react';
 
 
 if (!firebase.apps.length) {
@@ -47,9 +48,11 @@ const Devices = () => {
             
         });
 
+        e.preventDefault()
         
     }
-    console.log(devicesData)
+    console.log(devicesData);
+    
     return (
         <div className="d-flex justify-content-center align-items-center mt-5 device-main-container">
             <form action="" onSubmit={handleSubmit} className="device-container">
