@@ -11,7 +11,7 @@ import {
    
 } from 'recharts';
 import { useState } from 'react';
-import { useEffect } from 'react';
+
 
 
 const DeveiceMeter = (props) => {

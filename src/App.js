@@ -30,6 +30,7 @@ const App = () => {
     command:false,
     notClick: true,
     click: false,
+    Role:'',
     deviceId:'', 
   })
   return (

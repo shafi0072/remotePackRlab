@@ -8,18 +8,39 @@ import firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from './firebase.config';
 import { Link, useHistory, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
+import 'firebase/firestore';
 firebase.initializeApp(firebaseConfig);
+
+if (!firebase.apps.length) {
+    firebase.initializeApp({
+        apiKey: "AIzaSyA47b6Rx0RioZApSMcyDooUmOpQFFs9WLE",
+        authDomain: "test1-68872.firebaseapp.com",
+        projectId: "test1-68872",
+        storageBucket: "test1-68872.appspot.com",
+        messagingSenderId: "504703093399",
+        appId: "1:504703093399:web:50a89636d428ac8bd2f7d2"
+    });
+ }else {
+    firebase.app(); // if already initialized, use that one
+ }
+
+const db = firebase.firestore();
 
 const Login = () => {
     const history = useHistory();
     const location = useLocation();
+
+    
 
     const { from } = location.state || { from: { pathname: "/" } };
 
     const [click, setClick] = useState({
         login: true,
         signUp: false
-    })
+    });
+    const [userData, setUserData] = useState([]);
+    const [loading, setLoading] = useState(true)
     const handleSignUp = () => {
         const newClick = {...click}
         newClick.login = false;
@@ -112,7 +133,34 @@ const Login = () => {
      console.log(error)
     });
 }
+function arrayFunc(arr,key) {
+    let resultArray = [];
+    for(let i = 0; i < arr.length; i++){
+        if(arr[i].email === key){
+            resultArray = arr[i];
+        }
+    }
+    return resultArray
+};
+useEffect(() => {
+    const userDb =  db.collection("user").onSnapshot((querySnapshot) => {
+        const getDataFirebase = [];
+        querySnapshot.forEach((doc) => {
+          getDataFirebase.push({...doc.data(), key:doc.id});
+        });
+        
+        if(getDataFirebase.length > 0){
+            const functionalArray = arrayFunc(getDataFirebase, user.email)
+            setUserData(functionalArray);
+            console.log('firestore',getDataFirebase)
+            setLoading(false)
+        }
+    });
+    return userDb;
+}, [user]);
 
+
+console.log('stateStore',userData);
     return (
         <div className='background d-flex justify-content-center p-5'>
 
