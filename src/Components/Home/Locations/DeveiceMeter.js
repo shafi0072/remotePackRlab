@@ -152,16 +152,16 @@ const DeveiceMeter = (props) => {
                         
                     </div>
                     <ul className="row d-flex justify-content-lg-around text-light device-meter-list-container">
-                        <li className="col-md-3 text-start text-dark"><label className="device-meter-list" htmlFor="">txPower:</label> {txPower}</li>
-                        <li className="col-md-3 text-start text-dark"><label className="device-meter-list" htmlFor="">rssiGateway:</label> {rssiGateway}</li>
-                        <li className="col-md-3 text-start text-dark"><label className="device-meter-list" htmlFor="">nMedicion:</label> {nMedicion}</li>
-                        <li className="col-md-3 text-start text-dark"><label className="device-meter-list" htmlFor="">msActivo:</label> {msActivo}</li>
+                        {txPower >= 0 && <li className="col-md-3 text-start text-dark"><label className="device-meter-list" htmlFor="">txPower:</label> {txPower}</li>}
+                        {rssiGateway >= 0 && <li className="col-md-3 text-start text-dark"><label className="device-meter-list" htmlFor="">rssiGateway:</label> {rssiGateway}</li>}
+                        {nMedicion >= 0 && <li className="col-md-3 text-start text-dark"><label className="device-meter-list" htmlFor="">nMedicion:</label> {nMedicion}</li>}
+                       {msActivo >= 0 && <li className="col-md-3 text-start text-dark"><label className="device-meter-list" htmlFor="">msActivo:</label> {msActivo}</li>}
                     </ul>
                     <ul className="row d-flex justify-content-lg-around text-light device-meter-list-container">
-                        <li className="col-md-3 text-start text-dark"><label className="device-meter-list" htmlFor="">rassiGateWay:</label> {rassiGateWay}</li>
-                        <li className="col-md-3 text-start text-dark"><label className="device-meter-list" htmlFor="">resistance:</label> {resistance}</li>
-                        <li className="col-md-3 text-start text-dark"><label className="device-meter-list" htmlFor="">temperature:</label> {temperature}</li>
-                        <li className="col-md-3 text-start text-dark"><label className="device-meter-list" htmlFor="">nMessages:</label> {nMessages}</li>
+                        {rassiGateWay >= 0 && <li className="col-md-3 text-start text-dark"><label className="device-meter-list" htmlFor="">rassiGateWay:</label> {rassiGateWay}</li>}
+                        {resistance >= 0 && <li className="col-md-3 text-start text-dark"><label className="device-meter-list" htmlFor="">resistance:</label> {resistance}</li>}
+                        {temperature >= 0 && <li className="col-md-3 text-start text-dark"><label className="device-meter-list" htmlFor="">temperature:</label> {temperature}</li>}
+                        {nMessages >= 0 && <li className="col-md-3 text-start text-dark"><label className="device-meter-list" htmlFor="">nMessages:</label> {nMessages}</li>}
                     </ul>
                 </div>
             
