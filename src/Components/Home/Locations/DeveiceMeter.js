@@ -114,49 +114,52 @@ const DeveiceMeter = (props) => {
                     </div>
                 </div>
             </div>
+            <div className="device-meter-scroll">
+                <div className="chart-container">
+                    <LineChart width={800} height={150} className="charts" data={data}>
+                        <XAxis dataKey="name"/>
+                        <YAxis/>
+                        <CartesianGrid stroke="#eee" strokeDasharray="5 5"/>
+                        <Line type="monotone" dataKey="uv" stroke="#8884d8" />
+                        <Line type="monotone" dataKey="pv" stroke="#82ca9d" />
+                    </LineChart>
+                </div>
+                <div>
+                    <p className="row title-control">Control</p>
+                    <div className="row">
+                        <div className="col-xl-3 col-lg-3">
+                            <p className="control-input-text">Period :</p>
+                        </div>
+                        <div className="col-xl-5 col-lg-5 control-input-box"><input className="control-input-number" type="number" value={latitude}/></div>
+                        <div className="col-xl-4 col-lg-4"></div>
+                    </div>
+                    <div className="row">
+                        <div className="col-xl-3 col-lg-3">
+                            <p className="control-input-text">Freq :</p>
+                        </div>
+                        <div className="col-xl-5 col-lg-5 control-input-box"><input className="control-input-number" type="number" value={longitude}/></div>
+                        <div className="col-xl-4 col-lg-4"></div>
+                    </div>
+                    <div className="meter-button d-flex justify-content-end">
+                        <div className="btn btn-primary button1"><span>INT CYCLE</span></div>
+                        <div className="btn btn-primary button2"><span>ON / OFF</span></div>
+                    </div> 
+                    
+                </div>
+                <ul className="row d-flex justify-content-lg-around text-light">
+                    <li className="col-md-3">txPower: {txPower}</li>
+                    <li className="col-md-3">rssiGateway: {rssiGateway}</li>
+                    <li className="col-md-3">nMedicion: {nMedicion}</li>
+                    <li className="col-md-3">msActivo: {msActivo}</li>
+                </ul>
+                <ul className="row d-flex justify-content-lg-around text-light">
+                    <li className="col-md-3">rassiGateWay: {rassiGateWay}</li>
+                    <li className="col-md-3">resistance: {resistance}</li>
+                    <li className="col-md-3">temperature: {temperature}</li>
+                    <li className="col-md-3">nMessages:{nMessages}</li>
+                </ul>
+            </div>
             
-            <div className="chart-container">
-                <LineChart width={800} height={150} className="charts" data={data}>
-                    <XAxis dataKey="name"/>
-                    <YAxis/>
-                    <CartesianGrid stroke="#eee" strokeDasharray="5 5"/>
-                    <Line type="monotone" dataKey="uv" stroke="#8884d8" />
-                    <Line type="monotone" dataKey="pv" stroke="#82ca9d" />
-                </LineChart>
-            </div>
-            <div>
-                <p className="row title-control">Control</p>
-                <div className="row">
-                    <div className="col-xl-3 col-lg-3">
-                        <p className="control-input-text">Period :</p>
-                    </div>
-                    <div className="col-xl-5 col-lg-5 control-input-box"><input className="control-input-number" type="number" value={latitude}/></div>
-                    <div className="col-xl-4 col-lg-4"></div>
-                </div>
-                <div className="row">
-                    <div className="col-xl-3 col-lg-3">
-                        <p className="control-input-text">Freq :</p>
-                    </div>
-                    <div className="col-xl-5 col-lg-5 control-input-box"><input className="control-input-number" type="number" value={longitude}/></div>
-                    <div className="col-xl-4 col-lg-4"></div>
-                </div>
-                <div className="meter-button d-flex justify-content-end">
-                    <div className="btn btn-primary button1"><span>INT CYCLE</span></div>
-                    <div className="btn btn-primary button2"><span>ON / OFF</span></div>
-                </div> 
-                
-            </div>
-            <ul>
-                <li className='text-dark'>txPower: {txPower}</li>
-                <li className='text-dark'>rssiGateway: {rssiGateway}</li>
-                <li className='text-dark'>nMedicion: {nMedicion}</li>
-                <li className='text-dark'>msActivo: {msActivo}</li>
-                <li className='text-dark'>rassiGateWay: {rassiGateWay}</li>
-                <li className='text-dark'>resistance: {resistance}</li>
-                <li className='text-dark'>temperature: {temperature}</li>
-                <li className='text-dark'>nMessages:{nMessages}</li>
-                
-            </ul>
         </div>
     );
 };

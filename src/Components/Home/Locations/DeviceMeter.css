@@ -46,7 +46,7 @@
 }
 .meter-button{
     margin-top: 2%;
-    margin-bottom: 10%;
+    margin-bottom: 1%;
 }
 .status-title{
     font-weight: bold;
@@ -74,4 +74,12 @@
 }
 .thead{
     
+}
+.device-meter-list{
+    list-style: none;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+.device-meter-scroll{
 }
