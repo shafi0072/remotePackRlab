@@ -42,11 +42,12 @@
     font-weight: bold;
     font-size: 20px;
     margin-bottom: 2%;
+    margin-left: 0;
     border-bottom: 2px solid rgb(190, 190, 190);
 }
 .meter-button{
     margin-top: 2%;
-    margin-bottom: 1%;
+    margin-bottom: 2%;
 }
 .status-title{
     font-weight: bold;
@@ -75,11 +76,15 @@
 .thead{
     
 }
-.device-meter-list{
+.device-meter-list-container{
     list-style: none;
-    color: white;
     margin: 0;
     padding: 0;
 }
+.device-meter-list{
+    width: 55%;
+}
 .device-meter-scroll{
+    height: 5%;
+    overflow: hidden;
 }

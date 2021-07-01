@@ -1,18 +1,16 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import './DeviceMeter.css';
 import '../../../responsive.css';
-import Rechart from '../UserHome/Rechart';
+
 import {
     LineChart,
     Line,
     XAxis,
     YAxis,
     CartesianGrid,
-    Tooltip,
-    Legend,
-    ResponsiveContainer
+   
 } from 'recharts';
-import { userContext } from '../../../App';
+
 
 const DeveiceMeter = (props) => {
      const{voltege01, voltage02, voltage03, voltage04, voltage05,vBat, txPower, rssiGateway, nMedicion, msActivo, longitude,latitude, current01, rassiGateWay, resistance, temperature, nMessages} = props.data;
@@ -114,52 +112,54 @@ const DeveiceMeter = (props) => {
                     </div>
                 </div>
             </div>
-            <div className="device-meter-scroll">
-                <div className="chart-container">
+            <div className="chart-container">
                     <LineChart width={800} height={150} className="charts" data={data}>
                         <XAxis dataKey="name"/>
                         <YAxis/>
                         <CartesianGrid stroke="#eee" strokeDasharray="5 5"/>
                         <Line type="monotone" dataKey="uv" stroke="#8884d8" />
                         <Line type="monotone" dataKey="pv" stroke="#82ca9d" />
-                    </LineChart>
-                </div>
-                <div>
-                    <p className="row title-control">Control</p>
-                    <div className="row">
-                        <div className="col-xl-3 col-lg-3">
-                            <p className="control-input-text">Period :</p>
-                        </div>
-                        <div className="col-xl-5 col-lg-5 control-input-box"><input className="control-input-number" type="number" value={latitude}/></div>
-                        <div className="col-xl-4 col-lg-4"></div>
-                    </div>
-                    <div className="row">
-                        <div className="col-xl-3 col-lg-3">
-                            <p className="control-input-text">Freq :</p>
-                        </div>
-                        <div className="col-xl-5 col-lg-5 control-input-box"><input className="control-input-number" type="number" value={longitude}/></div>
-                        <div className="col-xl-4 col-lg-4"></div>
-                    </div>
-                    <div className="meter-button d-flex justify-content-end">
-                        <div className="btn btn-primary button1"><span>INT CYCLE</span></div>
-                        <div className="btn btn-primary button2"><span>ON / OFF</span></div>
-                    </div> 
-                    
-                </div>
-                <ul className="row d-flex justify-content-lg-around text-light">
-                    <li className="col-md-3">txPower: {txPower}</li>
-                    <li className="col-md-3">rssiGateway: {rssiGateway}</li>
-                    <li className="col-md-3">nMedicion: {nMedicion}</li>
-                    <li className="col-md-3">msActivo: {msActivo}</li>
-                </ul>
-                <ul className="row d-flex justify-content-lg-around text-light">
-                    <li className="col-md-3">rassiGateWay: {rassiGateWay}</li>
-                    <li className="col-md-3">resistance: {resistance}</li>
-                    <li className="col-md-3">temperature: {temperature}</li>
-                    <li className="col-md-3">nMessages:{nMessages}</li>
-                </ul>
+                    </LineChart> 
             </div>
+            <div className="device-meter-scroll">
+                <div>
+                    <div>
+                        <p className="row title-control">Control</p>
+                        <div className="row">
+                            <div className="col-xl-3 col-lg-3">
+                                <p className="control-input-text">Period :</p>
+                            </div>
+                            <div className="col-xl-5 col-lg-5 control-input-box"><input className="control-input-number" type="number" value={latitude}/></div>
+                            <div className="col-xl-4 col-lg-4"></div>
+                        </div>
+                        <div className="row">
+                            <div className="col-xl-3 col-lg-3">
+                                <p className="control-input-text">Freq :</p>
+                            </div>
+                            <div className="col-xl-5 col-lg-5 control-input-box"><input className="control-input-number" type="number" value={longitude}/></div>
+                            <div className="col-xl-4 col-lg-4"></div>
+                        </div>
+                        <div className="meter-button d-flex justify-content-end">
+                            <div className="btn btn-primary button1"><span>INT CYCLE</span></div>
+                            <div className="btn btn-primary button2"><span>ON / OFF</span></div>
+                        </div> 
+                        
+                    </div>
+                    <ul className="row d-flex justify-content-lg-around text-light device-meter-list-container">
+                        <li className="col-md-3 text-start"><label className="device-meter-list" htmlFor="">txPower:</label> {txPower}</li>
+                        <li className="col-md-3 text-start"><label className="device-meter-list" htmlFor="">rssiGateway:</label> {rssiGateway}</li>
+                        <li className="col-md-3 text-start"><label className="device-meter-list" htmlFor="">nMedicion:</label> {nMedicion}</li>
+                        <li className="col-md-3 text-start"><label className="device-meter-list" htmlFor="">msActivo:</label> {msActivo}</li>
+                    </ul>
+                    <ul className="row d-flex justify-content-lg-around text-light device-meter-list-container">
+                        <li className="col-md-3 text-start"><label className="device-meter-list" htmlFor="">rassiGateWay:</label> {rassiGateWay}</li>
+                        <li className="col-md-3 text-start"><label className="device-meter-list" htmlFor="">resistance:</label> {resistance}</li>
+                        <li className="col-md-3 text-start"><label className="device-meter-list" htmlFor="">temperature:</label> {temperature}</li>
+                        <li className="col-md-3 text-start"><label className="device-meter-list" htmlFor="">nMessages:</label> {nMessages}</li>
+                    </ul>
+                </div>
             
+            </div>
         </div>
     );
 };

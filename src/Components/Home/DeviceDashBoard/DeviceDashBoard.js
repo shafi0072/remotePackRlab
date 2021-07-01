@@ -103,6 +103,7 @@ const DeviceDashBoard = () => {
             </div>
             <div className="col-md-9 dashboard-background text-center">
             <img src={logo} alt="" style={{width:'20%'}} className='mt-5' />
+                <h1 className='text-light mt-2'>Format: {format}</h1>
                 <DeveiceMeter data={status}/>
             </div>
         </div>
