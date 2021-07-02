@@ -89,7 +89,13 @@
     display: block;
     margin-bottom: .5%;
 }
+<<<<<<< HEAD
 .device-meter-scroll{
     height: 150px;
+=======
+
+.overFlow{
+    height: 100px;
+>>>>>>> 4098d1cf889e22b6052d4b76c39a8558276d4290
     overflow-x: scroll;
 }

@@ -119,8 +119,12 @@ const DeveiceMeter = (props) => {
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
             
             {voltege01 >= 0 && <div className="chart-container">
+=======
+            {voltege01 >= 0 && <div className="chart-container ">
+>>>>>>> 4098d1cf889e22b6052d4b76c39a8558276d4290
                     <LineChart width={800} height={150} className="charts" data={data}>
                         <XAxis dataKey="name"/>
                         <YAxis/>
