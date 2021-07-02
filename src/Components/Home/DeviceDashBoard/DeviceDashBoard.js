@@ -94,7 +94,7 @@ const DeviceDashBoard = () => {
         
         
      
-    }, [loading]);
+    }, [loading, format, id]);
   
     return (
         <div className='row'>
