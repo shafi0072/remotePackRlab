@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './user.css'
 
 import firebase from 'firebase';
@@ -28,6 +28,10 @@ const UserForm = () => {
         Role:'admin',
         Uid:'',
     });
+    const [error, setError] = useState({
+        notError: true
+    })
+    const [userUpdate, setUserUpdate] = useState([])
     const handleOnchange = (event) => {
         const newUserInfo = {...userInfo};
         newUserInfo[event.target.name] = event.target.value;
@@ -49,7 +53,49 @@ const UserForm = () => {
         e.preventDefault();
     }
     
-    
+    function arrayFunc(arr,key) {
+        let resultArray = [];
+        for(let i = 0; i < arr.length; i++){
+            if(arr[i].email === key){
+                resultArray = arr[i];
+            }
+            
+        }
+       
+        return resultArray
+    };
+
+
+    useEffect(() => {
+        const userDb =  db.collection("user").onSnapshot((querySnapshot) => {
+            const getDataFirebase = [];
+            querySnapshot.forEach((doc) => {
+              getDataFirebase.push({...doc.data(), key:doc.id});
+            });
+            
+            if(getDataFirebase.length > 0){
+                const functionalArray = arrayFunc(getDataFirebase, userInfo.email);
+                setUserUpdate(functionalArray);
+                console.log('firestore',getDataFirebase)
+                
+               
+            }
+        });
+        return userDb;
+    },[userInfo]);
+    useEffect(() => {
+        if(userUpdate.email === userInfo.email){
+            const newError = {...error}
+            newError.notError = false;
+            setError(newError)
+        }
+        else if(userUpdate.email != userInfo.email){
+            const newError = {...error}
+            newError.notError = true;
+            setError(newError)
+        }
+    }, [userInfo, userUpdate,error])
+    console.log('userData',userUpdate);
     return (
         <div style={{width:'50%', margin:'2% auto'}} className='text-center'>
             <form action="" onSubmit={handleSubmit}>
@@ -73,7 +119,8 @@ const UserForm = () => {
                     <label htmlFor="position"  className='me-5 text-light interface-name'><h5>Position</h5></label>
                     <input type="text" id='position' placeholder='Enter Your position' className='form-control' name="position" onChange={handleOnchange}/>
                 </div>
-                <button className="btn btn-primary create-button" type="submit">Create/Save</button>
+                {error.notError && <button className="btn btn-primary create-button" type="submit">Create/Save</button>}
+                {error.notError===false && <p className="text-danger">This email user Already created. please try with another email.</p>}
             </form>
         </div>
     );
