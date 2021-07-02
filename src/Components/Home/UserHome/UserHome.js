@@ -57,7 +57,7 @@ const UserHome = () => {
             newMenu.hideMenu = true;
             setMenu(newMenu);
         }
-    }, [dbUserData]);
+    }, []);
     const handleMenuClick = (e) => {
         const newMenu = {...menu};
             newMenu.showMenu = true;
