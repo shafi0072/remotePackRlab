@@ -53,6 +53,7 @@ const DeveiceMeter = (props) => {
     return (
         <div className="container">
             <h1 className="meter-text">Meter</h1>
+            <div className="device-meter-container">
             {voltege01 >= 0 && <div>
                 <div className="row thead">
                     <div className="col-md-4 meter-col">
@@ -118,6 +119,7 @@ const DeveiceMeter = (props) => {
                     </div>
                 </div>
             </div>
+            
             {voltege01 >= 0 && <div className="chart-container">
                     <LineChart width={800} height={150} className="charts" data={data}>
                         <XAxis dataKey="name"/>
@@ -151,21 +153,23 @@ const DeveiceMeter = (props) => {
                         </div> 
                         
                     </div>
-                    <ul className="row d-flex justify-content-lg-around text-light device-meter-list-container">
-                        {txPower >= 0 && <li className="col-md-3 text-start text-dark"><label className="device-meter-list" htmlFor="">txPower:</label> {txPower}</li>}
-                        {rssiGateway >= 0 && <li className="col-md-3 text-start text-dark"><label className="device-meter-list" htmlFor="">rssiGateway:</label> {rssiGateway}</li>}
-                        {nMedicion >= 0 && <li className="col-md-3 text-start text-dark"><label className="device-meter-list" htmlFor="">nMedicion:</label> {nMedicion}</li>}
-                       {msActivo >= 0 && <li className="col-md-3 text-start text-dark"><label className="device-meter-list" htmlFor="">msActivo:</label> {msActivo}</li>}
+                    <ul className="row device-meter-list-container">
+                        {txPower >= 0 && <li className=" text-start text-light device-list"><h5 className="device-meter-list" htmlFor="">txPower :</h5> {txPower}</li>}
+                        {rssiGateway >= 0 && <li className=" text-start text-light device-list"><h5 className="device-meter-list" htmlFor="">rssiGateway :</h5> {rssiGateway}</li>}
+                        {nMedicion >= 0 && <li className=" text-start text-light device-list"><h5 className="device-meter-list" htmlFor="">nMedicion :</h5> {nMedicion}</li>}
+                       {msActivo >= 0 && <li className="text-start text-light device-list"><h5 className="device-meter-list" htmlFor="">msActivo :</h5> {msActivo}</li>}
                     </ul>
                     <ul className="row d-flex justify-content-lg-around text-light device-meter-list-container">
-                        {rassiGateWay >= 0 && <li className="col-md-3 text-start text-dark"><label className="device-meter-list" htmlFor="">rassiGateWay:</label> {rassiGateWay}</li>}
-                        {resistance >= 0 && <li className="col-md-3 text-start text-dark"><label className="device-meter-list" htmlFor="">resistance:</label> {resistance}</li>}
-                        {temperature >= 0 && <li className="col-md-3 text-start text-dark"><label className="device-meter-list" htmlFor="">temperature:</label> {temperature}</li>}
-                        {nMessages >= 0 && <li className="col-md-3 text-start text-dark"><label className="device-meter-list" htmlFor="">nMessages:</label> {nMessages}</li>}
+                        {rassiGateWay >= 0 && <li className=" text-start text-light device-list"><h5 className="device-meter-list" htmlFor="">rassiGateWay :</h5> {rassiGateWay}</li>}
+                        {resistance >= 0 && <li className=" text-start text-light device-list"><h5 className="device-meter-list" htmlFor="">resistance :</h5> {resistance}</li>}
+                        {temperature >= 0 && <li className=" text-start text-light device-list"><h5 className="device-meter-list" htmlFor="">temperature :</h5> {temperature}</li>}
+                        {nMessages >= 0 && <li className=" text-start text-light device-list"><h5 className="device-meter-list" htmlFor="">nMessages :</h5> {nMessages}</li>}
                     </ul>
                 </div>
             
             </div>
+            </div>
+            
         </div>
     );
 };

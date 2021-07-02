@@ -47,7 +47,7 @@
 }
 .meter-button{
     margin-top: 2%;
-    margin-bottom: 2%;
+    margin-bottom: 3%;
 }
 .status-title{
     font-weight: bold;
@@ -83,8 +83,13 @@
 }
 .device-meter-list{
     width: 55%;
+    display: inline;
+}
+.device-list{
+    display: block;
+    margin-bottom: .5%;
 }
 .device-meter-scroll{
-    height: 5%;
-    overflow: hidden;
+    height: 150px;
+    overflow-x: scroll;
 }
