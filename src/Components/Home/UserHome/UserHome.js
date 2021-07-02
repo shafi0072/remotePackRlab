@@ -34,7 +34,8 @@ const UserHome = () => {
     const [loading, setLoading] = useState(true)
     const [menu, setMenu] = useState({
         showMenu:true,
-        hideMenu:false
+        hideMenu:false,
+        suspendMenu: false,
     })
     useEffect(() => {
         const getDataFirebase = [];
@@ -61,14 +62,24 @@ const UserHome = () => {
         const newMenu = {...menu};
             newMenu.showMenu = true;
             newMenu.hideMenu = false;
+            newMenu.suspendMenu = true;
+            setMenu(newMenu);
+    }
+    const handleSubMenuClose = () => {
+        const newMenu = {...menu};
+            newMenu.showMenu = false;
+            newMenu.hideMenu = true;
+            newMenu.suspendMenu = false;
             setMenu(newMenu);
     }
     return (
         <div className='row'>
             
             <div className="col-md-3 bg-dark" style={{margin:'0', padding:'0'}}>
+            {menu.suspendMenu && <MenuIcon onClick = {handleSubMenuClose} className="text-light" style={{fontSize:'50px'}}/>}
                 {menu.showMenu && <Navbar/>}
-                {menu.hideMenu && <MenuIcon onClick = {handleMenuClick} className="text-light"/>}
+                {menu.hideMenu && <MenuIcon onClick = {handleMenuClick} className="text-light" style={{fontSize:'50px'}}/>}
+                
             </div>
             <div className="col-md-9 backgroundSIDE text-center">
             
