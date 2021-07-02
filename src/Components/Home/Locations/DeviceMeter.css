@@ -84,7 +84,8 @@
 .device-meter-list{
     width: 55%;
 }
-.device-meter-scroll{
-    height: 5%;
-    overflow: hidden;
+
+.overFlow{
+    height: 100px;
+    overflow-x: scroll;
 }

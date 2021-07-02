@@ -100,6 +100,17 @@ const Login = () => {
         newUser.admin = true;
         newUser.viewer = false;
         setUser(newUser);
+    }else if(userData.Role === 'admin'){
+        const newUser = {...user}
+        newUser.admin = true;
+        newUser.viewer = false;
+        setUser(newUser);
+    }
+    else if(userData.Role === 'oparetors'){
+        const newUser = {...user}
+        newUser.admin = true;
+        newUser.viewer = false;
+        setUser(newUser);
     }
     else{
         const newUser = {...user}
@@ -107,6 +118,7 @@ const Login = () => {
         newUser.viewer = true;
         setUser(newUser);
     }
+    
         
     })
     .catch(function (error) {
@@ -139,7 +151,9 @@ function arrayFunc(arr,key) {
         if(arr[i].email === key){
             resultArray = arr[i];
         }
+        
     }
+   
     return resultArray
 };
 useEffect(() => {
@@ -154,6 +168,7 @@ useEffect(() => {
             setUserData(functionalArray);
             console.log('firestore',getDataFirebase)
             setLoading(false)
+           
         }
     });
     return userDb;
