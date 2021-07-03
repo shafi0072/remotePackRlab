@@ -48,6 +48,7 @@ const RestPassword = () => {
                 </div>
                 <div>
                     <button className="form-control bg-primary text-light" type='submit'>Rest Passoword</button>
+                    <Link to="/auth">Log in</Link>
                 </div>
                 </form>
                 <p className="text-success">{user.message}</p>
