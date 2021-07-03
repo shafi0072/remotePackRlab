@@ -9,6 +9,7 @@ import {
 import UserHome from './Components/Home/UserHome/UserHome';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import DeviceDashBoard from './Components/Home/DeviceDashBoard/DeviceDashBoard';
+import RestPassword from './Components/Login/RestPassword';
 export const userContext = createContext()
 const App = () => {
   const [user, setUser] = useState({
@@ -43,6 +44,7 @@ const App = () => {
           <UserHome/>
         </PrivateRoute>
         <Route path="/:format/:id" component={DeviceDashBoard}/>
+        <Route path='/restPassword' component={RestPassword}/>
       </Switch>
     </Router>
     </userContext.Provider>
