@@ -6,6 +6,7 @@
     font-size: 20px;
     padding: .5% 0 0 1%;
     border-radius: 5px;
+    border: 2px solid black;
 }
 .name p{
     margin-bottom: 0px;

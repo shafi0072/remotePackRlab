@@ -12,6 +12,7 @@
 .command-text{
     width: 15%;
     margin-right: 30px;
+    font-weight: bold;
 }
 .command-input{
     width: 25%;

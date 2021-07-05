@@ -67,11 +67,11 @@ const Locations = () => {
            {user.admin && <div className="row d-flex justify-content-end align-items-center mt-5">
            <form action="" onSubmit={handleSubmit}>
                 <div className="title-name mb-3 d-flex justify-content-end">
-                    <label className="text-light location-title-text" htmlFor="locationId" style={{marginRight:'60px'}} >Location ID</label>
+                    <label className="text-dark location-title-text" htmlFor="locationId" style={{marginRight:'60px'}} >Location ID</label>
                     <input className="location-title-input" type="text" id='locationId' placeholder='PlantaLiners' name="LocationID" onChange={handleChange}/>
                 </div>
                 <div className="title-name mb-3 d-flex justify-content-end">
-                    <label className="text-light location-title-text" htmlFor="DeviceName" style={{marginRight:'56px'}}>Add Device</label>
+                    <label className="text-dark location-title-text" htmlFor="DeviceName" style={{marginRight:'56px'}}>Add Device</label>
                     <input className="location-title-input" type="text" id='DeviceName' placeholder='Device Name' name="addDevices" onChange={handleChange}/>
                 </div>
                 <div className="d-flex justify-content-end location-button-div">
@@ -81,21 +81,21 @@ const Locations = () => {
                  
                 {addDevices.click && <div>
                 <div className="title-name mb-3 d-flex justify-content-end">
-                    <label className="text-light location-title-text" htmlFor="modelOfDevice" style={{marginRight:'60px'}}>Device_id_1</label>
+                    <label className="text-dark location-title-text" htmlFor="modelOfDevice" style={{marginRight:'60px'}}>Device_id_1</label>
                     <input className="location-title-input" type="text" id='modeOfDevice' placeholder='Meter_ABC' name="Device_id_1" onChange={handleChange}/>
                 </div>
                 <div className="title-name mb-3 d-flex justify-content-end">
-                    <label className="text-light location-title-text" htmlFor="modelOfDevice" style={{marginRight:'60px'}}>Device_id_2</label>
+                    <label className="text-dark location-title-text" htmlFor="modelOfDevice" style={{marginRight:'60px'}}>Device_id_2</label>
                     <input className="location-title-input" type="text" id='modeOfDevice' placeholder='Meter_ABC' name="Device_id_2" onChange={handleChange}/>
                 </div>
                 <div className="title-name mb-3 d-flex justify-content-end">
-                    <label className="text-light location-title-text" htmlFor="modelOfDevice" style={{marginRight:'60px'}}>Device_id_3</label>
+                    <label className="text-dark location-title-text" htmlFor="modelOfDevice" style={{marginRight:'60px'}}>Device_id_3</label>
                     <input className="location-title-input" type="text" id='modeOfDevice' placeholder='Meter_ABC' name="Device_id_3" onChange={handleChange}/>
                 </div>
                 </div>}
             
                 <div className="title-name mb-3 d-flex justify-content-end">
-                    <label className="text-light file-text location-title-text" htmlFor="image">Image</label>
+                    <label className="text-dark file-text location-title-text" htmlFor="image">Image</label>
                     <input className="location-title-input" type="file" id='image' placeholder='30.5'/>
                 </div>
                 <div className="d-flex justify-content-end location-button-div">
