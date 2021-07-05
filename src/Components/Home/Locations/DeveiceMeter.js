@@ -15,7 +15,7 @@ import { useState } from 'react';
 
 
 const DeveiceMeter = (props) => {
-     const{voltege01, voltage02, voltage03, voltage04, voltage05,vBat, txPower, rssiGateway, nMedicion, msActivo, longitude,latitude, current01, rassiGateWay, resistance, temperature, nMessages} = props.data;
+     const{voltege01, voltage02, voltage03,fechaSoket, voltage04, voltage05,vBat, txPower, rssiGateway, nMedicion, msActivo, longitude,latitude, current01, rassiGateWay, resistance, temperature, nMessages} = props.data;
 
      const data = [
         {
@@ -49,7 +49,42 @@ const DeveiceMeter = (props) => {
     const [params, setParams] = useState({
         voltage01: false
     });
-    
+    const [isUpdate, setIsUpdate] = React.useState(true);
+    const [deviceDatasAux, setDeviceDatasAux] = React.useState();
+    const [fetchDevice,fetchDeviceData] = useState([]);
+    const [deviceData, setDeviceData] = useState([])
+    const queryValues = {
+        unixTimeX0: 1613833200000,
+        unixTimeX1: 1614006000000,
+        deviceID: "ABCDEFGH"
+      };
+    if (isUpdate) 
+  {
+    setIsUpdate(false)
+
+    try {
+      if (fechaSoket) 
+      {
+        console.log("deviceId: ")
+        console.log(fechaSoket)
+        queryValues.unixTimeX1 = Date.now() - 5*60000;
+        queryValues.unixTimeX0 = queryValues.unixTimeX1 - 7*24*60*60000;
+        queryValues.deviceID = fechaSoket; //"ABCDEFGH";
+        // code that we will 'try' to run
+        fetchDeviceData(queryValues);
+      }
+      else {console.log("no props...")}
+
+    } catch(error) {
+      // code to run if there are any problems
+      console.log(error)
+    } finally {
+      // run this code no matter what the previous outcomes
+      console.log("deviceData en ChartControl - q: ")
+      console.log(deviceData)
+      setDeviceDatasAux(deviceData)
+    }
+  } 
     return (
         <div className="container">
             <h1 className="meter-text">Meter</h1>
