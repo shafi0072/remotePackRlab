@@ -9,4 +9,15 @@
     padding: 1px 2px;
     border-radius: 0;
     width: 53.5%;
+    border: 1px solid black;
+}
+.device-input{
+    border: 1px solid black;
+}
+.device-container{
+    background: #d4d2d2;
+    padding: 20px;
+}
+.device-title{
+    font-weight: bold;
 }

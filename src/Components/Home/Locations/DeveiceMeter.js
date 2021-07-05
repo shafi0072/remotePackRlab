@@ -129,6 +129,16 @@ const DeveiceMeter = (props) => {
                         <Line type="monotone" dataKey="pv" stroke="#82ca9d" />
                     </LineChart> 
             </div>}
+            <div className="chart-btn">
+                <ul className="d-flex justify-content-end chart-lists">
+                    <li className="bg-primary chart-list">2W</li>
+                    <li className="bg-primary chart-list">1W</li>
+                    <li className="bg-primary chart-list">1D</li>
+                    <li className="bg-primary chart-list">12H</li>
+                    <li className="bg-primary chart-list">6H</li>
+                    <li className="bg-primary chart-list">1H</li>
+                </ul>
+            </div>
             <div className="device-meter-scroll">
                 <div>
                     <div>

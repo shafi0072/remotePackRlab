@@ -12,3 +12,12 @@
     height: 120vh;
     background-color: #010221;
 }
+.chart-lists{
+    list-style: none;
+}
+.chart-list{
+    width: 7%;
+    margin-right: 1%;
+    border: 2px solid black;
+    border-radius: 10px;
+}
