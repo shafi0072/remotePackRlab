@@ -29,6 +29,8 @@ if (!firebase.apps.length) {
 const db = firebase.firestore();
 
 
+
+
 const DeviceDashBoard = () => {
     let { format, id } = useParams();
 
@@ -77,7 +79,7 @@ const DeviceDashBoard = () => {
             return userDb
         }
         else if(format === "GTY01"){
-            const userDb =  db.collection("GTY0000001").onSnapshot((querySnapshot) => {
+            const userDb =  db.collection("GTY0000001").where().onSnapshot((querySnapshot) => {
                 const getDataFirebase = [];
                 querySnapshot.forEach((doc) => {
                   getDataFirebase.push({...doc.data(), key:doc.id});
