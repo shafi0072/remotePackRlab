@@ -8,7 +8,7 @@ const DevicesForm = (props) => {
     const data = props.data;
 
     
-   const [deviceData, setDeviceData] = useState([])
+   
 
   
     return (

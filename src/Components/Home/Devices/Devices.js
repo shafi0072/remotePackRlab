@@ -47,7 +47,13 @@ const Devices = () => {
         .catch((error) => {
             
         });
-
+        db.collection(devicesData.model).add(devicesData)
+        .then((docRef) => {
+           
+        })
+        .catch((error) => {
+            
+        });
         e.preventDefault()
         
     }

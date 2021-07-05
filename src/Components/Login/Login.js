@@ -10,6 +10,7 @@ import firebaseConfig from './firebase.config';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import 'firebase/firestore';
+
 firebase.initializeApp(firebaseConfig);
 
 if (!firebase.apps.length) {
@@ -228,7 +229,7 @@ console.log('stateStore',userData);
                     <label htmlFor="">Remember Me</label>
                 </div>
                 <div className="forgotPass">
-                    <a href="#" className="forgotTxt">Forgot Password</a>
+                    <Link to='/restPassword' className="forgotTxt">Forgot Password</Link>
                 </div>
                 <div>
                     <button className="form-control bg-primary text-light" type='submit'>Log In</button>

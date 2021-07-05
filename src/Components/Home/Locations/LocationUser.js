@@ -48,7 +48,7 @@ const LocationUser = () => {
         });
         
        return userDb;
-    }, []);
+    }, [dbUserData]);
     
     return (
         <div className="card-main-container">
