@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { userContext } from '../../../App';
+import './DeviceMeter.css';
 import '../../../responsive.css';
 import {
     BrowserRouter as Router,

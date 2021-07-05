@@ -13,7 +13,7 @@ const DevicesForm = (props) => {
   
     return (
             <div>
-               <div className="container">
+               <div className="container device-form-container">
                 
                 {
                     data.map(item =>  { return <DevicesData data={item}/> })

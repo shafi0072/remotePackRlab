@@ -93,3 +93,6 @@
     height: 150px;
     overflow-x: scroll;
 }
+.form-name{
+    border: 2px solid black;
+}

@@ -86,3 +86,7 @@
 .button .btn:hover{
     background-color: rgb(19, 19, 255);
 }
+.device-form-container{
+    height: 475px;
+    overflow-x: scroll;
+}

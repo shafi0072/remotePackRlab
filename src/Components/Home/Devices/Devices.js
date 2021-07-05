@@ -63,7 +63,7 @@ const Devices = () => {
         <div className="d-flex justify-content-center align-items-center mt-5 mb-5 device-main-container">
             <form action="" onSubmit={handleSubmit} className="device-container">
             <div className='d-flex mb-3 device-div-container' >
-                    <label htmlFor="format" className='text-dark interface-name device-title' style={{marginRight:'102px'}}>Formate</label>
+                    <label htmlFor="format" className='text-dark interface-name device-title' style={{marginRight:'105.5px'}}>Formate</label>
                     <select id="format" className='form-control device-selector device-input' onChange={handleOnChangeSelect}>
                         <option value="ENER01" >ENER01</option>
                         <option value="RTD01">RTD01</option>
@@ -71,15 +71,15 @@ const Devices = () => {
                     </select>
             </div>
                 <div className="d-flex mb-3 device-div-container">
-                    <label className="text-dark device-title" htmlFor="modelOfDevice" style={{marginRight:'60px'}}>Device Model</label>
+                    <label className="text-dark device-title" htmlFor="modelOfDevice" style={{marginRight:'64px'}}>Device Model</label>
                     <input className="device-input" type="text" id='modeOfDevice' placeholder='Meter_ABC' name="model" onChange={handleChange}/>
                 </div>
                 <div className="d-flex mb-3 device-div-container">
-                    <label className="text-dark device-title" htmlFor="serialNumber" style={{marginRight:'56px'}}>Serial Number</label>
+                    <label className="text-dark device-title" htmlFor="serialNumber" style={{marginRight:'58px'}}>Serial Number</label>
                     <input className="device-input" type="text" id='serialNumber' placeholder='ABC012319' name="SerialNumber" onChange={handleChange}/>
                 </div>
                 <div className="d-flex mb-3 device-div-container">
-                    <label className="text-dark device-title" htmlFor="commissioningDate" style={{marginRight:'10px'}}>Commissioning Date</label>
+                    <label className="text-dark device-title" htmlFor="commissioningDate" style={{marginRight:'11px'}}>Commissioning Date</label>
                     <input className="device-input" type="text" id='commissioningDate' placeholder='1699992929202' name="Commission" onChange={handleChange}/>
                 </div>
                 <div className="d-flex mb-3 device-div-container">
