@@ -1,50 +1,27 @@
 import React from 'react';
 import './DeviceMeter.css';
 import '../../../responsive.css';
+import { Line } from 'react-chartjs-2'
 
-import {
-    LineChart,
-    Line,
-    XAxis,
-    YAxis,
-    CartesianGrid,
-   
-} from 'recharts';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 
 const DeveiceMeter = (props) => {
      const{DeviceID,voltage01, voltage02, voltage03,dateSocket, voltage04, voltage05,vBat, txPower, rssiGateway, nMedicion, msActivo, longitude,latitude, current01, rassiGateWay, resistance, temperature, nMessages} = props.data;
-     const {id} = useParams()
+     const {id} = useParams();
+     const [voltageData, setVoltageData] = useState({
+         voltageName:'',
+         voltage:''
+     });
+
      const data = [
         {
-            name: 'Voltage1',
-            uv: voltage01,
-            pv: voltage01,
-            amt: voltage01
-        }, {
-            name: 'Voltage2',
-            uv: voltage02,
-            pv: voltage02,
-            amt: voltage02
-        }, {
-            name: 'Voltage3',
-            uv: voltage03,
-            pv: voltage03,
-            amt: voltage03
-        }, {
-            name: 'Voltage4',
-            uv: voltage04,
-            pv: voltage04,
-            amt: voltage04
-        },
-        {
-            name: 'Voltage4',
-            uv: voltage05,
-            pv: voltage05,
-            amt: voltage05
-        }
+            name: voltageData.voltageName,
+            uv: voltageData.voltage,
+            pv: voltageData.voltage,
+            amt: voltageData.voltage
+        }, 
     ];
     const [params, setParams] = useState({
         voltage01: false
@@ -80,7 +57,18 @@ const DeveiceMeter = (props) => {
 
     } 
   
-  
+  const handleVoltage01 = () => {
+      const newVoltage = {...voltageData};
+      newVoltage.voltage = voltage01;
+      newVoltage.voltageName = 'voltage01'
+      setVoltageData(newVoltage);
+  };
+  const handleVlotage02 = () => {
+    const newVoltage = {...voltageData};
+    newVoltage.voltage = voltage02;
+    newVoltage.voltageName = 'voltage02'
+    setVoltageData(newVoltage);
+  }
 
     // unixtimestamp
     let unix_timestamp = dateSocket
@@ -133,10 +121,10 @@ console.log({formattedTime});
                     <div className="col-md-4 meter-data" data-content="Date">
                         <p>{formattedTime}</p>
                     </div>
-                    <div className="col-md-1 meter-data" data-content="Vcc 1">
+                    <div className="col-md-1 meter-data" data-content="Vcc 1" onClick={handleVoltage01}>
                         <p>{voltage01}V</p>
                     </div>
-                    <div className="col-md-1 meter-data" data-content="Vcc 2">
+                    <div className="col-md-1 meter-data" data-content="Vcc 2" onClick={handleVlotage02}>
                         <p>{voltage02}V</p>
                     </div>
                     <div className="col-md-1 meter-data" data-content="Vcc 3">
@@ -171,7 +159,7 @@ console.log({formattedTime});
                 </div>
             </div>
             
-            {voltage01 >= 0 && <div className="chart-container">
+            {/* {voltage01 >= 0 && <div className="chart-container">
                     <LineChart width={800} height={150} className="charts" data={data}>
                         <XAxis dataKey="name"/>
                         <YAxis/>
@@ -179,7 +167,29 @@ console.log({formattedTime});
                         <Line type="monotone" dataKey="uv" stroke="#8884d8" />
                         <Line type="monotone" dataKey="pv" stroke="#82ca9d" />
                     </LineChart> 
-            </div>}
+            </div>} */}
+            <Line height={100} width={400} data={{labels: [voltageData.voltageName,'voltage01', 'voltage02', 'voltage03', 'voltage04', 'voltage05'],
+        datasets: [{
+            label: 'Voltage Data',
+            data: [voltageData.voltage, voltage01, voltage02,voltage03,voltage05],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]}}/>
             <div className="chart-btn">
                 <ul className="d-flex justify-content-end chart-lists">
                     <li className="bg-primary chart-list">2W</li>
