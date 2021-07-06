@@ -11,18 +11,18 @@ import {
    
 } from 'recharts';
 import { useState } from 'react';
-
+import { useParams } from 'react-router-dom';
 
 
 const DeveiceMeter = (props) => {
-     const{voltege01, voltage02, voltage03,fechaSoket, voltage04, voltage05,vBat, txPower, rssiGateway, nMedicion, msActivo, longitude,latitude, current01, rassiGateWay, resistance, temperature, nMessages} = props.data;
-
+     const{DeviceID,voltage01, voltage02, voltage03,dateSocket, voltage04, voltage05,vBat, txPower, rssiGateway, nMedicion, msActivo, longitude,latitude, current01, rassiGateWay, resistance, temperature, nMessages} = props.data;
+     const {id} = useParams()
      const data = [
         {
             name: 'Voltage1',
-            uv: voltege01,
-            pv: voltege01,
-            amt: voltege01
+            uv: voltage01,
+            pv: voltage01,
+            amt: voltage01
         }, {
             name: 'Voltage2',
             uv: voltage02,
@@ -51,8 +51,13 @@ const DeveiceMeter = (props) => {
     });
     const [isUpdate, setIsUpdate] = React.useState(true);
     const [deviceDatasAux, setDeviceDatasAux] = React.useState();
-    const [fetchDevice,fetchDeviceData] = useState([]);
+    const [fetchDevice,setFetchDeviceData] = useState({
+        unixTimeX0: 1613833200000,
+        unixTimeX1: 1614006000000,
+        deviceID: "ABCDEFGH"
+      });
     const [deviceData, setDeviceData] = useState([])
+    const [deviceId, setDeviceID] = useState(true)
     const queryValues = {
         unixTimeX0: 1613833200000,
         unixTimeX1: 1614006000000,
@@ -62,34 +67,45 @@ const DeveiceMeter = (props) => {
   {
     setIsUpdate(false)
 
-    try {
-      if (fechaSoket) 
+      if (deviceId) 
       {
-        console.log("deviceId: ")
-        console.log(fechaSoket)
+        
         queryValues.unixTimeX1 = Date.now() - 5*60000;
         queryValues.unixTimeX0 = queryValues.unixTimeX1 - 7*24*60*60000;
-        queryValues.deviceID = fechaSoket; //"ABCDEFGH";
+        queryValues.deviceID = id; //"ABCDEFGH";
         // code that we will 'try' to run
-        fetchDeviceData(queryValues);
+        setFetchDeviceData(queryValues);
       }
-      else {console.log("no props...")}
+      else {}
 
-    } catch(error) {
-      // code to run if there are any problems
-      console.log(error)
-    } finally {
-      // run this code no matter what the previous outcomes
-      console.log("deviceData en ChartControl - q: ")
-      console.log(deviceData)
-      setDeviceDatasAux(deviceData)
-    }
-  } 
+    } 
+  
+  
+
+    // unixtimestamp
+    let unix_timestamp = dateSocket
+// Create a new JavaScript Date object based on the timestamp
+// multiplied by 1000 so that the argument is in milliseconds, not seconds.
+var date = new Date(unix_timestamp * 1000);
+// Hours part from the timestamp
+var hours = date.getHours();
+// Minutes part from the timestamp
+var minutes = "0" + date.getMinutes();
+// Seconds part from the timestamp
+var seconds = "0" + date.getSeconds();
+
+// Will display time in 10:30:23 format
+var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+
+console.log({formattedTime});
+ 
+
     return (
         <div className="container">
             <h1 className="meter-text">Meter</h1>
+            
             <div className="device-meter-container">
-            {voltege01 >= 0 && <div>
+            {voltage01 >= 0 && <div>
                 <div className="row thead">
                     <div className="col-md-4 meter-col">
                         <p>Date</p>
@@ -115,10 +131,10 @@ const DeveiceMeter = (props) => {
                 </div>
                 <div className="row tbody">
                     <div className="col-md-4 meter-data" data-content="Date">
-                        <p>12/12/21 08:06:15</p>
+                        <p>{formattedTime}</p>
                     </div>
                     <div className="col-md-1 meter-data" data-content="Vcc 1">
-                        <p>{voltege01}V</p>
+                        <p>{voltage01}V</p>
                     </div>
                     <div className="col-md-1 meter-data" data-content="Vcc 2">
                         <p>{voltage02}V</p>
@@ -155,7 +171,7 @@ const DeveiceMeter = (props) => {
                 </div>
             </div>
             
-            {voltege01 >= 0 && <div className="chart-container">
+            {voltage01 >= 0 && <div className="chart-container">
                     <LineChart width={800} height={150} className="charts" data={data}>
                         <XAxis dataKey="name"/>
                         <YAxis/>

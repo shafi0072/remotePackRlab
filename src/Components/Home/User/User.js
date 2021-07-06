@@ -26,7 +26,7 @@ const User = (props) => {
             
                 <div className="user-map">
                     {
-                        data.map(data =>{return  <UserData data={data}/>})
+                        data.map(data =>{ return  <UserData  data={data}/>})
                     }
                 </div>
             
