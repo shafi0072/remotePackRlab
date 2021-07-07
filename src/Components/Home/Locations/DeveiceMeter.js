@@ -8,7 +8,7 @@ import { useParams } from 'react-router-dom';
 
 
 const DeveiceMeter = (props) => {
-     const{DeviceID,voltage01, voltage02, voltage03,dateSocket, voltage04, voltage05,vBat, txPower, rssiGateway, nMedicion, msActivo, longitude,latitude, current01, rassiGateWay, resistance, temperature, nMessages} = props.data;
+     const{DeviceID,voltage01, voltage02, voltage03,dateSocket, voltage04, vBat, txPower, rssiGateway, nMedicion, msActivo, longitude,latitude, current01, rassiGateWay, resistance, temperature, nMessages} = props.data;
      const {id} = useParams();
      const [voltageData, setVoltageData] = useState({
          voltageName:'',
@@ -69,7 +69,18 @@ const DeveiceMeter = (props) => {
     newVoltage.voltageName = 'voltage02'
     setVoltageData(newVoltage);
   }
-
+  const handleVolage03 = () => {
+    const newVoltage = {...voltageData};
+    newVoltage.voltage = voltage03;
+    newVoltage.voltageName = 'voltage03'
+    setVoltageData(newVoltage);
+  }
+  const handleVlotage04 = () => {
+    const newVoltage = {...voltageData};
+    newVoltage.voltage = voltage04;
+    newVoltage.voltageName = 'voltage04'
+    setVoltageData(newVoltage);
+  }
     // unixtimestamp
     let unix_timestamp = dateSocket
 // Create a new JavaScript Date object based on the timestamp
@@ -81,11 +92,13 @@ var hours = date.getHours();
 var minutes = "0" + date.getMinutes();
 // Seconds part from the timestamp
 var seconds = "0" + date.getSeconds();
-
+var days = date.getDate();
+var month = date.getMonth();
+var year = date.getDay();
 // Will display time in 10:30:23 format
 var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
 
-console.log({formattedTime});
+console.log({days}, {month}, {year});
  
 
     return (
@@ -110,9 +123,7 @@ console.log({formattedTime});
                     <div className="col-md-1 meter-col">
                         <p>Vcc 4</p>
                     </div>
-                    <div className="col-md-1 meter-col">
-                        <p>Vcc 5</p>
-                    </div>
+                    
                     <div className="col-md-3 meter-col">
                         <p>Current 1</p>
                     </div>
@@ -127,15 +138,13 @@ console.log({formattedTime});
                     <div className="col-md-1 meter-data" data-content="Vcc 2" onClick={handleVlotage02}>
                         <p>{voltage02}V</p>
                     </div>
-                    <div className="col-md-1 meter-data" data-content="Vcc 3">
+                    <div className="col-md-1 meter-data" data-content="Vcc 3" onClick={handleVolage03}>
                         <p>{voltage03}V</p>
                     </div>
-                    <div className="col-md-1 meter-data" data-content="Vcc 3">
+                    <div className="col-md-1 meter-data" data-content="Vcc 3" onClick={handleVlotage04}>
                         <p>{voltage04}V</p>
                     </div>
-                    <div className="col-md-1 meter-data" data-content="Vcc 3">
-                        <p>{voltage05}V</p>
-                    </div>
+                   
                     <div className="col-md-3 meter-data" data-content="Current 1">
                         <p>{current01}A</p>
                     </div>
@@ -150,7 +159,7 @@ console.log({formattedTime});
                     <div className="col-xl-6 col-md-8 p-0 status-mid-data">
                         <span className="status-title">Last connection:</span>
                         <span className="status-data-date">12/12/21</span>
-                        <span>06:04:25</span>
+                        <span>{formattedTime}</span>
                     </div>
                     <div className="col-xl-3 col-md-2 text-end p-0 status-data-container">
                         <span className="status-title">Vbat:</span>
@@ -168,10 +177,10 @@ console.log({formattedTime});
                         <Line type="monotone" dataKey="pv" stroke="#82ca9d" />
                     </LineChart> 
             </div>} */}
-            <Line height={100} width={400} data={{labels: [voltageData.voltageName,'voltage01', 'voltage02', 'voltage03', 'voltage04', 'voltage05'],
+            <Line height={100} width={400} data={{labels: [voltageData.voltageName,'voltage01', 'voltage02', 'voltage03', 'voltage04'],
         datasets: [{
             label: 'Voltage Data',
-            data: [voltageData.voltage, voltage01, voltage02,voltage03,voltage05],
+            data: [voltageData.voltage, voltage01, voltage02,voltage03,voltage04],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
