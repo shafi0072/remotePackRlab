@@ -80,7 +80,12 @@ const DeveiceMeter = (props) => {
         setVoltageData(newVoltage);
     }
     // unixtimestamp
-    let mil = dateSocket;
+    // let mil = dateSocket;
+    let unixTimeStamp = Date.now() - 5*60000;
+    let mil = unixTimeStamp - 7*24*60*60000;
+    let date = new Date(mil);
+    let localString = date.toLocaleDateString();
+    let localTIme = date.toLocaleTimeString()
     var seconds = (mil / 1000) | 0;
     mil -= seconds * 1000;
     var minutes = (seconds / 60) | 0;
@@ -93,8 +98,9 @@ const DeveiceMeter = (props) => {
     hours -= days * 24;
 
     var weeks = (days / 7) | 0;
-    days -= weeks * 7;
-    console.log({seconds},{minutes},{hours}, {days}, {weeks})
+    const mainWeek = days -= weeks * 7;
+    console.log({seconds},{minutes},{hours}, {days}, {mainWeek});
+    console.log({localString})
     return (
         <div className="container">
             <h1 className="meter-text">Meter</h1>
@@ -124,7 +130,7 @@ const DeveiceMeter = (props) => {
                     </div>
                     <div className="row tbody">
                         <div className="col-md-4 meter-data" data-content="Date">
-                            <p>{ }</p>
+                            <p>{localString}</p>
                         </div>
                         <div className="col-md-1 meter-data" data-content="Vcc 1" onClick={handleVoltage01}>
                             <p>{voltage01}V</p>
@@ -152,8 +158,8 @@ const DeveiceMeter = (props) => {
                         </div>
                         <div className="col-xl-6 col-md-8 p-0 status-mid-data">
                             <span className="status-title">Last connection:</span>
-                            <span className="status-data-date">12/12/21</span>
-                            <span>{ }</span>
+                            <span className="status-data-date">{localString}</span>
+                            <span>{localTIme}</span>
                         </div>
                         <div className="col-xl-3 col-md-2 text-end p-0 status-data-container">
                             <span className="status-title">Vbat:</span>
