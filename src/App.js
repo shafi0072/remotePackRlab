@@ -11,6 +11,7 @@ import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import DeviceDashBoard from './Components/Home/DeviceDashBoard/DeviceDashBoard';
 import RestPassword from './Components/Login/RestPassword';
 import Home from './Components/Home/HomeMain/Home'
+import TemporaryTest from './Components/Home/DeviceDashBoard/TemporaryTest';
 export const userContext = createContext()
 const App = () => {
   const [user, setUser] = useState({
@@ -41,7 +42,7 @@ const App = () => {
       <Switch>
       <Route exact path='/' component={Home}/>
         <Route path='/auth' component={Login} />
-        
+        <Route path ="/test1" component={TemporaryTest}/>
         <PrivateRoute path = '/dashboard'>
           <UserHome/>
         </PrivateRoute>

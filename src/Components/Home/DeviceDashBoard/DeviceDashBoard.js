@@ -40,7 +40,7 @@ const DeviceDashBoard = () => {
     function arrayFunc(arr,key) {
         let resultArray = [];
         for(let i = 0; i < arr.length; i++){
-            if(arr[i].DeviceID === key){
+            if(arr[i]._id === key){
                 resultArray = arr[i];
             }
         }
@@ -49,7 +49,7 @@ const DeviceDashBoard = () => {
     
     useEffect(() => {
         if(format === "ENER01"){
-            const userDb =  db.collection("ENER000001").onSnapshot((querySnapshot) => {
+            const userDb =  db.collection("SOLARPAN01").onSnapshot((querySnapshot) => {
                 const getDataFirebase = [];
                 querySnapshot.forEach((doc) => {
                   getDataFirebase.push({...doc.data(), key:doc.id});
@@ -97,7 +97,7 @@ const DeviceDashBoard = () => {
         
      
     }, [loading, format, id]);
-  
+  console.log({status});
     return (
         <div className='row'>
             <div className="col-md-3 dashboard-navbar" style={{margin:'0', padding:'0'}}>
@@ -105,7 +105,7 @@ const DeviceDashBoard = () => {
             </div>
             <div className="col-md-9 dashboard-background text-center">
             <img src={logo} alt="" style={{width:'20%'}} className='mt-5' />
-                <h1 className='text-light mt-2'>Format: {format}</h1>
+                <h1 className='text-dark mt-2'>Format: {format}</h1>
                 <DeveiceMeter data={status}/>
             </div>
         </div>

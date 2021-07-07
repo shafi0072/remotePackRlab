@@ -57,7 +57,7 @@ const Devices = () => {
         e.preventDefault()
         
     }
-    console.log(devicesData);
+    
     
     return (
         <div className="d-flex justify-content-center align-items-center mt-5 mb-5 device-main-container">

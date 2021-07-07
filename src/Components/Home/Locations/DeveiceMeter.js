@@ -1,58 +1,40 @@
 import React from 'react';
 import './DeviceMeter.css';
 import '../../../responsive.css';
+import { Line } from 'react-chartjs-2'
 
-import {
-    LineChart,
-    Line,
-    XAxis,
-    YAxis,
-    CartesianGrid,
-   
-} from 'recharts';
 import { useState } from 'react';
-
+import { useParams } from 'react-router-dom';
 
 
 const DeveiceMeter = (props) => {
-     const{voltege01, voltage02, voltage03,fechaSoket, voltage04, voltage05,vBat, txPower, rssiGateway, nMedicion, msActivo, longitude,latitude, current01, rassiGateWay, resistance, temperature, nMessages} = props.data;
+     const{DeviceID,voltage01, voltage02, voltage03,dateSocket, voltage04, vBat, txPower, rssiGateway, nMedicion, msActivo, longitude,latitude, current01, rassiGateWay, resistance, temperature, nMessages} = props.data;
+     const {id} = useParams();
+     const [voltageData, setVoltageData] = useState({
+         voltageName:'',
+         voltage:''
+     });
 
      const data = [
         {
-            name: 'Voltage1',
-            uv: voltege01,
-            pv: voltege01,
-            amt: voltege01
-        }, {
-            name: 'Voltage2',
-            uv: voltage02,
-            pv: voltage02,
-            amt: voltage02
-        }, {
-            name: 'Voltage3',
-            uv: voltage03,
-            pv: voltage03,
-            amt: voltage03
-        }, {
-            name: 'Voltage4',
-            uv: voltage04,
-            pv: voltage04,
-            amt: voltage04
-        },
-        {
-            name: 'Voltage4',
-            uv: voltage05,
-            pv: voltage05,
-            amt: voltage05
-        }
+            name: voltageData.voltageName,
+            uv: voltageData.voltage,
+            pv: voltageData.voltage,
+            amt: voltageData.voltage
+        }, 
     ];
     const [params, setParams] = useState({
         voltage01: false
     });
     const [isUpdate, setIsUpdate] = React.useState(true);
     const [deviceDatasAux, setDeviceDatasAux] = React.useState();
-    const [fetchDevice,fetchDeviceData] = useState([]);
+    const [fetchDevice,setFetchDeviceData] = useState({
+        unixTimeX0: 1613833200000,
+        unixTimeX1: 1614006000000,
+        deviceID: "ABCDEFGH"
+      });
     const [deviceData, setDeviceData] = useState([])
+    const [deviceId, setDeviceID] = useState(true)
     const queryValues = {
         unixTimeX0: 1613833200000,
         unixTimeX1: 1614006000000,
@@ -62,34 +44,69 @@ const DeveiceMeter = (props) => {
   {
     setIsUpdate(false)
 
-    try {
-      if (fechaSoket) 
+      if (deviceId) 
       {
-        console.log("deviceId: ")
-        console.log(fechaSoket)
+        
         queryValues.unixTimeX1 = Date.now() - 5*60000;
         queryValues.unixTimeX0 = queryValues.unixTimeX1 - 7*24*60*60000;
-        queryValues.deviceID = fechaSoket; //"ABCDEFGH";
+        queryValues.deviceID = id; //"ABCDEFGH";
         // code that we will 'try' to run
-        fetchDeviceData(queryValues);
+        setFetchDeviceData(queryValues);
       }
-      else {console.log("no props...")}
+      else {}
 
-    } catch(error) {
-      // code to run if there are any problems
-      console.log(error)
-    } finally {
-      // run this code no matter what the previous outcomes
-      console.log("deviceData en ChartControl - q: ")
-      console.log(deviceData)
-      setDeviceDatasAux(deviceData)
-    }
-  } 
+    } 
+  
+  const handleVoltage01 = () => {
+      const newVoltage = {...voltageData};
+      newVoltage.voltage = voltage01;
+      newVoltage.voltageName = 'voltage01'
+      setVoltageData(newVoltage);
+  };
+  const handleVlotage02 = () => {
+    const newVoltage = {...voltageData};
+    newVoltage.voltage = voltage02;
+    newVoltage.voltageName = 'voltage02'
+    setVoltageData(newVoltage);
+  }
+  const handleVolage03 = () => {
+    const newVoltage = {...voltageData};
+    newVoltage.voltage = voltage03;
+    newVoltage.voltageName = 'voltage03'
+    setVoltageData(newVoltage);
+  }
+  const handleVlotage04 = () => {
+    const newVoltage = {...voltageData};
+    newVoltage.voltage = voltage04;
+    newVoltage.voltageName = 'voltage04'
+    setVoltageData(newVoltage);
+  }
+    // unixtimestamp
+    let unix_timestamp = dateSocket
+// Create a new JavaScript Date object based on the timestamp
+// multiplied by 1000 so that the argument is in milliseconds, not seconds.
+var date = new Date(unix_timestamp * 1000);
+// Hours part from the timestamp
+var hours = date.getHours();
+// Minutes part from the timestamp
+var minutes = "0" + date.getMinutes();
+// Seconds part from the timestamp
+var seconds = "0" + date.getSeconds();
+var days = date.getDate();
+var month = date.getMonth();
+var year = date.getDay();
+// Will display time in 10:30:23 format
+var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+
+console.log({days}, {month}, {year});
+ 
+
     return (
         <div className="container">
             <h1 className="meter-text">Meter</h1>
+            
             <div className="device-meter-container">
-            {voltege01 >= 0 && <div>
+            {voltage01 >= 0 && <div>
                 <div className="row thead">
                     <div className="col-md-4 meter-col">
                         <p>Date</p>
@@ -106,32 +123,28 @@ const DeveiceMeter = (props) => {
                     <div className="col-md-1 meter-col">
                         <p>Vcc 4</p>
                     </div>
-                    <div className="col-md-1 meter-col">
-                        <p>Vcc 5</p>
-                    </div>
+                    
                     <div className="col-md-3 meter-col">
                         <p>Current 1</p>
                     </div>
                 </div>
                 <div className="row tbody">
                     <div className="col-md-4 meter-data" data-content="Date">
-                        <p>12/12/21 08:06:15</p>
+                        <p>{formattedTime}</p>
                     </div>
-                    <div className="col-md-1 meter-data" data-content="Vcc 1">
-                        <p>{voltege01}V</p>
+                    <div className="col-md-1 meter-data" data-content="Vcc 1" onClick={handleVoltage01}>
+                        <p>{voltage01}V</p>
                     </div>
-                    <div className="col-md-1 meter-data" data-content="Vcc 2">
+                    <div className="col-md-1 meter-data" data-content="Vcc 2" onClick={handleVlotage02}>
                         <p>{voltage02}V</p>
                     </div>
-                    <div className="col-md-1 meter-data" data-content="Vcc 3">
+                    <div className="col-md-1 meter-data" data-content="Vcc 3" onClick={handleVolage03}>
                         <p>{voltage03}V</p>
                     </div>
-                    <div className="col-md-1 meter-data" data-content="Vcc 3">
+                    <div className="col-md-1 meter-data" data-content="Vcc 3" onClick={handleVlotage04}>
                         <p>{voltage04}V</p>
                     </div>
-                    <div className="col-md-1 meter-data" data-content="Vcc 3">
-                        <p>{voltage05}V</p>
-                    </div>
+                   
                     <div className="col-md-3 meter-data" data-content="Current 1">
                         <p>{current01}A</p>
                     </div>
@@ -146,7 +159,7 @@ const DeveiceMeter = (props) => {
                     <div className="col-xl-6 col-md-8 p-0 status-mid-data">
                         <span className="status-title">Last connection:</span>
                         <span className="status-data-date">12/12/21</span>
-                        <span>06:04:25</span>
+                        <span>{formattedTime}</span>
                     </div>
                     <div className="col-xl-3 col-md-2 text-end p-0 status-data-container">
                         <span className="status-title">Vbat:</span>
@@ -155,7 +168,7 @@ const DeveiceMeter = (props) => {
                 </div>
             </div>
             
-            {voltege01 >= 0 && <div className="chart-container">
+            {/* {voltage01 >= 0 && <div className="chart-container">
                     <LineChart width={800} height={150} className="charts" data={data}>
                         <XAxis dataKey="name"/>
                         <YAxis/>
@@ -163,7 +176,29 @@ const DeveiceMeter = (props) => {
                         <Line type="monotone" dataKey="uv" stroke="#8884d8" />
                         <Line type="monotone" dataKey="pv" stroke="#82ca9d" />
                     </LineChart> 
-            </div>}
+            </div>} */}
+            <Line height={100} width={400} data={{labels: [voltageData.voltageName,'voltage01', 'voltage02', 'voltage03', 'voltage04'],
+        datasets: [{
+            label: 'Voltage Data',
+            data: [voltageData.voltage, voltage01, voltage02,voltage03,voltage04],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]}}/>
             <div className="chart-btn">
                 <ul className="d-flex justify-content-end chart-lists">
                     <li className="bg-primary chart-list">2W</li>

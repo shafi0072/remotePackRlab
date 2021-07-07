@@ -129,7 +129,7 @@ const Login = () => {
         newUserInfo.error = error.message;
         newUserInfo.success = false;
         setUser(newUserInfo);
-        console.log(error);
+        
     })
     
     
@@ -141,9 +141,9 @@ const Login = () => {
     user.updateProfile({
     displayName: name,
     }).then(function() {
-    console.log("User name Updated SuccessFully")
+   
     }).catch(function(error) {
-     console.log(error)
+    
     });
 }
 function arrayFunc(arr,key) {
@@ -167,7 +167,7 @@ useEffect(() => {
         if(getDataFirebase.length > 0){
             const functionalArray = arrayFunc(getDataFirebase, user.email)
             setUserData(functionalArray);
-            console.log('firestore',getDataFirebase)
+          
             setLoading(false)
            
         }
@@ -176,7 +176,7 @@ useEffect(() => {
 }, [user]);
 
 
-console.log('stateStore',userData);
+
     return (
         <div className='background d-flex justify-content-center p-5'>
 

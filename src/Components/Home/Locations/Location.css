@@ -28,6 +28,9 @@
 .location-title-input{
     color: black;
 }
+.location-title-text{
+    font-weight: bold;
+}
 /* #### DevicesForm CSS ##### */
 
 .container{

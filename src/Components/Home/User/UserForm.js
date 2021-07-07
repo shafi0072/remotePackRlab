@@ -7,12 +7,13 @@ import 'firebase/firestore';
 
 if (!firebase.apps.length) {
     firebase.initializeApp({
-        apiKey: "AIzaSyA47b6Rx0RioZApSMcyDooUmOpQFFs9WLE",
-  authDomain: "test1-68872.firebaseapp.com",
-  projectId: "test1-68872",
-  storageBucket: "test1-68872.appspot.com",
-  messagingSenderId: "504703093399",
-  appId: "1:504703093399:web:50a89636d428ac8bd2f7d2"
+        apiKey: "AIzaSyBXXL_2svIOIRYEArzq7Ai8G8xLQTTTqrU",
+  authDomain: "iot-comm.firebaseapp.com",
+  projectId: "iot-comm",
+  storageBucket: "iot-comm.appspot.com",
+  messagingSenderId: "707981957974",
+  appId: "1:707981957974:web:5e3ecb242770f42e7b14f7",
+  measurementId: "G-VFR4XEJGHK"
     });
  }else {
     firebase.app(); // if already initialized, use that one
@@ -76,7 +77,7 @@ const UserForm = () => {
             if(getDataFirebase.length > 0){
                 const functionalArray = arrayFunc(getDataFirebase, userInfo.email);
                 setUserUpdate(functionalArray);
-                console.log('firestore',getDataFirebase)
+                
                 
                
             }
@@ -95,12 +96,12 @@ const UserForm = () => {
             setError(newError)
         }
     }, [userInfo, userUpdate,error])
-    console.log('userData',userUpdate);
+    
     return (
         <div style={{width:'50%', margin:'2% auto'}} className='text-center'>
             <form action="" onSubmit={handleSubmit}>
             <div className='d-flex justiy-content-around mb-4' >
-                    <label htmlFor="Role"  className='me-5  text-light interface-name'><h5>Role</h5></label>
+                    <label htmlFor="Role"  className='me-5  text-dark interface-name'><h5>Role</h5></label>
                     <select id="role" className='form-control' onChange={handleOnChangeSelect}>
                         <option value="admin" >Admin</option>
                         <option value="oparetors">Oparetors</option>
@@ -108,15 +109,15 @@ const UserForm = () => {
                     </select>
                 </div>
                 <div className='d-flex justiy-content-around mb-4'>
-                    <label htmlFor="userEmail"  className='me-5 text-light interface-name'><h5>Email</h5></label>
+                    <label htmlFor="userEmail"  className='me-5 text-dark interface-name'><h5>Email</h5></label>
                     <input type="email" id='userEmail' className='form-control' placeholder='Enter Your Email' name="email" onChange={handleOnchange}/>
                 </div>
                 <div className='d-flex justiy-content-around mb-4'>
-                    <label htmlFor="name" className='me-5 text-light interface-name'><h5>Name</h5></label>
+                    <label htmlFor="name" className='me-5 text-dark interface-name'><h5>Name</h5></label>
                     <input type="text" id='name' placeholder='Enter Your Name' className='form-control' name="name" onChange={handleOnchange}/>
                 </div>
                 <div className='d-flex justiy-content-around mb-4'>
-                    <label htmlFor="position"  className='me-5 text-light interface-name'><h5>Position</h5></label>
+                    <label htmlFor="position"  className='me-5 text-dark interface-name'><h5>Position</h5></label>
                     <input type="text" id='position' placeholder='Enter Your position' className='form-control' name="position" onChange={handleOnchange}/>
                 </div>
                 {error.notError && <button className="btn btn-primary create-button" type="submit">Create/Save</button>}

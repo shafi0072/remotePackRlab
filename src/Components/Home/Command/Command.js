@@ -41,7 +41,7 @@ const handleSubmit = (e) => {
 }
 
     return (
-        <div className="command-main-container">
+        <div className="command-main-container mb-5">
             <h1 className='text-dark command-title'>Send command in Google Cloud Pub/sub</h1>
             <div className="command-container">
                 <form action="" onSubmit={handleSubmit}>
