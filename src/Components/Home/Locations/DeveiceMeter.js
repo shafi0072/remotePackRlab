@@ -205,7 +205,7 @@ const DeveiceMeter = (props) => {
                         <li className="bg-primary chart-list">{seconds}S</li>
                     </ul>
                 </div>
-                <div className="device-meter-scroll">
+                <div className="">
                     <div>
                         <div>
                             <p className="row title-control">Control</p>
