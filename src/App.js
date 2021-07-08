@@ -13,6 +13,9 @@ import RestPassword from './Components/Login/RestPassword';
 import Home from './Components/Home/HomeMain/Home'
 import TemporaryTest from './Components/Home/DeviceDashBoard/TemporaryTest';
 import MainDevices from './Components/Home/Devices/MainDevices';
+import MainLocation from './Components/Home/Locations/MainLocation';
+import Command from './Components/Home/Command/Command';
+import MainCommand from './Components/Home/Command/MainCommand';
 export const userContext = createContext()
 const App = () => {
   const [user, setUser] = useState({
@@ -45,11 +48,13 @@ const App = () => {
         <Route path='/auth' component={Login} />
         <Route path ="/test1" component={TemporaryTest}/>
         <Route path ="/devices" component={MainDevices}/>
-        <PrivateRoute path = '/dashboard'>
+        <Route path = '/location' component={MainLocation}/>
+        <PrivateRoute path = '/userHome'>
           <UserHome/>
         </PrivateRoute>
         <Route path="/:format/:id" component={DeviceDashBoard}/>
         <Route path='/restPassword' component={RestPassword}/>
+        <Route path ='/command' component={MainCommand}/>
       </Switch>
     </Router>
     </userContext.Provider>
