@@ -58,7 +58,7 @@ const App = () => {
         <Route path ="/test1" component={TemporaryTest}/>
         <Route path ="/devices" component={MainDevices}/>
         <Route path = '/location' component={MainLocation}/>
-        <Route path="/locations/:id" component={LocationDevice}/>
+        <Route path="/locations/:Lid" component={LocationDevice}/>
         <PrivateRoute path = '/userHome'>
           <UserHome/>
         </PrivateRoute>
