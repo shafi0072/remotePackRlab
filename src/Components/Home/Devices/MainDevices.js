@@ -1,7 +1,9 @@
 
 import React from 'react';
 import Navbar from '../../Shared/Navbar';
-import Devices from './Devices'
+import Devices from './Devices';
+import './Devices.css';
+import logo from '../../../Resorces/logo_RLAB.png';
 const MainDevices = () => {
     return (
         <div className='row'>
@@ -9,6 +11,9 @@ const MainDevices = () => {
                 <Navbar/>
             </div>
             <div className="col-md-9">
+            <div className="logo-img">
+                <img src={logo} alt="" style={{width:'20%'}} className='mt-5' />
+            </div>
                 <Devices/>
             </div>
         </div>
