@@ -35,7 +35,7 @@ const Navbar = () => {
                                 <a class="nav-link" href="#">contract us</a>
                             </li>
                             <li class="nav-item">
-                                <Link class="nav-link" to="/dashboard">Dashboard</Link>
+                                <Link class="nav-link" to="/userHome">Dashboard</Link>
                             </li>
                             
                         </ul>
