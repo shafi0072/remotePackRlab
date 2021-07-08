@@ -75,7 +75,7 @@ const UserHome = () => {
     return (
         <div className='row'>
             
-            <div className="col-md-3 " style={{margin:'0', padding:'0',}}>
+            <div className="col-md-3" style={{}}>
             {menu.suspendMenu && <MenuIcon onClick = {handleSubMenuClose} className="" style={{}}/>}
                 {menu.showMenu && <Navbar/>}
                 {menu.hideMenu && <MenuIcon onClick = {handleMenuClick} className="" style={{}}/>}
