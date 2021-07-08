@@ -4,7 +4,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import UserHome from './Components/Home/UserHome/UserHome';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
@@ -14,7 +13,7 @@ import Home from './Components/Home/HomeMain/Home'
 import TemporaryTest from './Components/Home/DeviceDashBoard/TemporaryTest';
 import MainDevices from './Components/Home/Devices/MainDevices';
 import MainLocation from './Components/Home/Locations/MainLocation';
-import Command from './Components/Home/Command/Command';
+
 import MainCommand from './Components/Home/Command/MainCommand';
 export const userContext = createContext()
 const App = () => {

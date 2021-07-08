@@ -7,6 +7,7 @@ import '../../../responsive.css'
 
 import firebase from 'firebase';
 import 'firebase/firestore';
+import { useEffect } from 'react';
 
 
 if (!firebase.apps.length) {
@@ -28,8 +29,8 @@ const db = firebase.firestore();
 
 
 const Locations = () => {
-    const [user, setUser] = useContext(userContext);
-
+    const [user] = useContext(userContext);
+    const [DBLocationData, setDBLocationData] = useState({})
     const [locationData, setLocationData] = useState({
         LocationID:'',
         addDevices:'',
@@ -62,6 +63,16 @@ const Locations = () => {
         newLocationData[e.target.name] = e.target.value;
         setLocationData(newLocationData)
     }; 
+    useEffect(() => {
+        const userDb =  db.collection("location").onSnapshot((querySnapshot) => {
+            const getDataFirebase = [];
+            querySnapshot.forEach((doc) => {
+              getDataFirebase.push({...doc.data(), key:doc.id});
+            });
+            setDBLocationData(getDataFirebase)
+        });
+        return userDb
+    },[])
     
     return (
         <div className="container">
@@ -106,7 +117,7 @@ const Locations = () => {
             </form>
            </div>}
             <div className="row mt-5 ms-5">
-            {user.viewer &&<LocationUser/>}
+            {user.viewer  &&<LocationUser/>}
             </div>
         </div>
     );

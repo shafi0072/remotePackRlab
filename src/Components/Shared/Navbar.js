@@ -22,24 +22,8 @@ const Navbar = (props) => {
         newClick.command = false;
         setUser(newClick);
     };
-    const handleDeviceClick = () => {
-        const newClick = {...user}
-        newClick.userHome = false;
-        newClick.user = false;
-        newClick.devices = true;
-        newClick.locations = false;
-        newClick.command = false;
-        setUser(newClick);
-    }
-    const handleLocationClick = () => {
-        const newClick = {...user}
-        newClick.userHome = false;
-        newClick.user = false;
-        newClick.devices = false;
-        newClick.locations = true;
-        newClick.command = false;
-        setUser(newClick);
-    }
+    
+   
     const handleCommandChanger = () => {
         const newClick = {...user}
         newClick.userHome = false;

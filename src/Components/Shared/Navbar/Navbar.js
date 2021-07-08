@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import logo from '../../../Resorces/logo_RLAB.png';
 import './nav.css';
 import {Link} from 'react-router-dom'
 const Navbar = () => {
-    const [show, handleShow] = useState(false)
+    
    
     return (
         <div >
             <nav class={`navbar navbar-expand-lg navbar-dark  navAvatar navBlack`}>
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#"><img style={{width:'10%'}} src={logo} alt=""/></a>
+                    <Link class="navbar-brand" to="#"><img style={{width:'10%'}} src={logo} alt=""/></Link>
                     <button
                         class="navbar-toggler"
                         type="button"
@@ -23,16 +23,16 @@ const Navbar = () => {
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                <Link class="nav-link active" aria-current="page" to="#">Home</Link>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Products</a>
+                                <Link class="nav-link" to="#">Products</Link>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">About us</a>
+                                <Link class="nav-link" to="#">About us</Link>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">contract us</a>
+                                <Link class="nav-link" to="#">contract us</Link>
                             </li>
                             <li class="nav-item">
                                 <Link class="nav-link" to="/userHome">Dashboard</Link>

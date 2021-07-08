@@ -90,7 +90,7 @@ const UserForm = () => {
             newError.notError = false;
             setError(newError)
         }
-        else if(userUpdate.email != userInfo.email){
+        else if(userUpdate.email !== userInfo.email){
             const newError = {...error}
             newError.notError = true;
             setError(newError)
