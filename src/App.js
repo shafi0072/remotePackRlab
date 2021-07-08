@@ -13,10 +13,18 @@ import Home from './Components/Home/HomeMain/Home'
 import TemporaryTest from './Components/Home/DeviceDashBoard/TemporaryTest';
 import MainDevices from './Components/Home/Devices/MainDevices';
 import MainLocation from './Components/Home/Locations/MainLocation';
-
 import MainCommand from './Components/Home/Command/MainCommand';
+import LocationDevice from './Components/Home/Locations/LocationDevice';
+
+
+
+
 export const userContext = createContext()
+
+
 const App = () => {
+
+
   const [user, setUser] = useState({
     isSignedIn: false,
     name: "",
@@ -39,6 +47,8 @@ const App = () => {
     Role:'',
     deviceId:'', 
   })
+
+
   return (
     <userContext.Provider value={[user, setUser]}>
       <Router>
@@ -48,12 +58,14 @@ const App = () => {
         <Route path ="/test1" component={TemporaryTest}/>
         <Route path ="/devices" component={MainDevices}/>
         <Route path = '/location' component={MainLocation}/>
+        <Route path="/locations/:id" component={LocationDevice}/>
         <PrivateRoute path = '/userHome'>
           <UserHome/>
         </PrivateRoute>
         <Route path="/:format/:id" component={DeviceDashBoard}/>
         <Route path='/restPassword' component={RestPassword}/>
         <Route path ='/command' component={MainCommand}/>
+        
       </Switch>
     </Router>
     </userContext.Provider>

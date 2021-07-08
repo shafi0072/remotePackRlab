@@ -4,8 +4,8 @@ import './Location.css';
 import DevicesData from './DevicesData';
 
 
-const DevicesForm = (props) => {
-    const data = props.data;
+const DevicesForm = () => {
+    
 
     
    
@@ -15,9 +15,9 @@ const DevicesForm = (props) => {
             <div>
                <div className="container device-form-container">
                 
-                {
-                    data.map(item =>  { return <DevicesData data={item}/> })
-                  }
+                
+                  {/* <DevicesData />  */}
+                  
                 </div>
 
                 <div className="button d-flex justify-content-end deviceFrom-location-button">

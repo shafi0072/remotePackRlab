@@ -30,7 +30,7 @@ const db = firebase.firestore();
 
 const Locations = () => {
     const [user] = useContext(userContext);
-    const [DBLocationData, setDBLocationData] = useState({})
+    const [DBLocationData, setDBLocationData] = useState([])
     const [locationData, setLocationData] = useState({
         LocationID:'',
         addDevices:'',
@@ -117,7 +117,7 @@ const Locations = () => {
             </form>
            </div>}
             <div className="row mt-5 ms-5">
-            {user.viewer  &&<LocationUser/>}
+            { DBLocationData.map(data => {return <LocationUser data={data}/>})}
             </div>
         </div>
     );
