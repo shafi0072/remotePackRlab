@@ -51,13 +51,13 @@ const Navbar = (props) => {
     }
 
     return (
-        <div className='navBackground pt-5'>
+        <div className='navBackground'>
             <ul style={{listStyle:'none', margin:'0', padding:'0'}}>
-                <Link to='/userHome'><li className='mb-3 navbar-item' onClick={handleHomeClick} style={{cursor:'pointer'}}><h5 className="navbar-text">User Home</h5></li></Link>
-                {user.admin && <li className='mb-3 navbar-item' onClick={handleUserClick} style={{cursor:'pointer'}}><h5 className="navbar-text">User</h5></li>}
-                <Link to="/devices"><li className='mb-3 navbar-item' style={{cursor:'pointer'}}><h5 className="navbar-text">Devices</h5></li></Link>
-                <Link to='/location'><li className='mb-3 navbar-item' style={{cursor:'pointer'}}><h5 className="navbar-text">Locations</h5></li></Link>
-                <Link to="/command"><li className='mb-3 navbar-item' onClick={handleCommandChanger} style={{cursor:'pointer'}}><h5 className="navbar-text">Commands</h5></li></Link>
+                <Link className="navbar-link" to='/userHome'><li className=' navbar-item' onClick={handleHomeClick} style={{cursor:'pointer'}}><h5 className="navbar-text">User Home</h5></li></Link>
+                {user.admin && <li className=' navbar-item' onClick={handleUserClick} style={{cursor:'pointer'}}><h5 className="navbar-text">User</h5></li>}
+                <Link className="navbar-link" to="/devices"><li className=' navbar-item' style={{cursor:'pointer'}}><h5 className="navbar-text">Devices</h5></li></Link>
+                <Link className="navbar-link" to='/location'><li className=' navbar-item' style={{cursor:'pointer'}}><h5 className="navbar-text">Locations</h5></li></Link>
+                <Link className="navbar-link" to="/command"><li className=' navbar-item' onClick={handleCommandChanger} style={{cursor:'pointer'}}><h5 className="navbar-text">Commands</h5></li></Link>
             </ul>
         </div>
     );

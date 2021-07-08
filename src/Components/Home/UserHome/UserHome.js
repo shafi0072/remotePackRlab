@@ -75,10 +75,10 @@ const UserHome = () => {
     return (
         <div className='row'>
             
-            <div className="col-md-3 " style={{margin:'0', padding:'0', backgroundColor:'#010221'}}>
-            {menu.suspendMenu && <MenuIcon onClick = {handleSubMenuClose} className="text-light" style={{fontSize:'50px'}}/>}
+            <div className="col-md-3 " style={{margin:'0', padding:'0',}}>
+            {menu.suspendMenu && <MenuIcon onClick = {handleSubMenuClose} className="" style={{}}/>}
                 {menu.showMenu && <Navbar/>}
-                {menu.hideMenu && <MenuIcon onClick = {handleMenuClick} className="text-light" style={{fontSize:'50px'}}/>}
+                {menu.hideMenu && <MenuIcon onClick = {handleMenuClick} className="" style={{}}/>}
                 
             </div>
             <div className="col-md-9 backgroundSIDE text-center">
