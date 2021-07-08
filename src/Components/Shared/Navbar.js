@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { userContext } from '../../App';
-import './Navbar.css'
+import './Navbar.css';
+import {Link} from 'react-router-dom'
 const Navbar = (props) => {
     const [user, setUser] = useContext(userContext);
     const handleHomeClick = () => {
@@ -54,7 +55,7 @@ const Navbar = (props) => {
             <ul style={{listStyle:'none', margin:'0', padding:'0'}}>
                 <li className='mb-3 navbar-item' onClick={handleHomeClick} style={{cursor:'pointer'}}><h5 className="navbar-text">User Home</h5></li>
                 {user.admin && <li className='mb-3 navbar-item' onClick={handleUserClick} style={{cursor:'pointer'}}><h5 className="navbar-text">User</h5></li>}
-                <li className='mb-3 navbar-item' onClick={handleDeviceClick} style={{cursor:'pointer'}}><h5 className="navbar-text">Devices</h5></li>
+                <Link to="/devices"><li className='mb-3 navbar-item' style={{cursor:'pointer'}}><h5 className="navbar-text">Devices</h5></li></Link>
                 <li className='mb-3 navbar-item' onClick={handleLocationClick} style={{cursor:'pointer'}}><h5 className="navbar-text">Locations</h5></li>
                 <li className='mb-3 navbar-item' onClick={handleCommandChanger} style={{cursor:'pointer'}}><h5 className="navbar-text">Commands</h5></li>
             </ul>
