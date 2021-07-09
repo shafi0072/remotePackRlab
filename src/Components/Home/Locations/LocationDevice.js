@@ -32,7 +32,7 @@ const LocationDevice = () => {
 
         docRef.get().then((doc) => {
             if (doc.exists) {
-                setDBLocationDV(doc.data());
+                setDBLocationDV({...doc.data(), key:doc.id});
             } else {
                 // doc.data() will be undefined in this case
                 console.log("No such document!");

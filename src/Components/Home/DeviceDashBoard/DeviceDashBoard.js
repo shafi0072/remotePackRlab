@@ -100,7 +100,7 @@ const DeviceDashBoard = () => {
   console.log({status});
     return (
         <div className='row'>
-            <div className="col-md-3 dashboard-navbar" style={{margin:'0', padding:'0'}}>
+            <div className="col-md-3 dashboard-navbar">
                 <Navbar/>
             </div>
             <div className="col-md-9 dashboard-background text-center">
