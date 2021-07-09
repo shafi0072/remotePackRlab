@@ -21,7 +21,7 @@ const DeveiceMeter = (props) => {
         
     });
    
-    const [deviceId, setDeviceID] = useState(true)
+    
   
   
 
@@ -49,35 +49,17 @@ const DeveiceMeter = (props) => {
         newVoltage.voltageName = 'voltage04'
         setVoltageData(newVoltage);
     }
-    // unixtimestamp
-    // let mil = dateSocket;
-   function clock(){
-    const newData = {...fetchDevice}
-    let unixTimeStamp = new Date() - 5*60000;
-    let mil = unixTimeStamp - 7*24*60*60000;
-    let date = new Date(mil);
-    newData.localString = date.toLocaleDateString();
-    newData.localTIme = date.toLocaleTimeString()
-    
-    newData.seconds = Math.floor((unixTimeStamp - (unixTimeStamp))/1000);
-    newData.minutes = (newData.seconds / 60) | 0;
-     
-
-    newData.hours = (newData.minutes / 60) | 0;
-     
-
-    newData.days = (newData.hours/ 24) | 0;
-     
-
-    newData.mainWeek = (newData.days / 7) | 0;
-    
-    setFetchDeviceData(newData)
-    // console.log({seconds},{minutes},{hours}, {days}, {mainWeek});
-    // console.log({localString})
-   }
-
-    
-    setInterval(() => clock(), 1000)
+    let unix_timestamp = dateSocket;
+    var date = new Date(unix_timestamp);
+    let fullDate = date.getDate();
+    let month = date.getMonth() + 1;
+    let year = date.getFullYear();
+    var hours = date.getHours();
+    var minutes = "0" + date.getMinutes();
+    var seconds = "0" + date.getSeconds();
+    var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+    const fullTIme = `${fullDate}/${month}/${year}`
+    console.log({fullDate});
     return (
         <div className="container">
             <h1 className="meter-text">Meter</h1>
@@ -107,7 +89,7 @@ const DeveiceMeter = (props) => {
                     </div>
                     <div className="row tbody">
                         <div className="col-md-4 meter-data" data-content="Date">
-                            {/* <p>{localString}</p> */}
+                            {<p>{fullTIme}</p> }
                         </div>
                         <div className="col-md-1 meter-data" data-content="Vcc 1" onClick={handleVoltage01}>
                             <p>{voltage01}V</p>
@@ -135,8 +117,8 @@ const DeveiceMeter = (props) => {
                         </div>
                         <div className="col-xl-6 col-md-8 p-0 status-mid-data">
                             <span className="status-title">Last connection:</span>
-                            <span className="status-data-date">{fetchDevice.localString}</span>
-                            <span>{fetchDevice.localTIme}</span>
+                            <span className="status-data-date">{formattedTime}</span>
+                            <span>{fullTIme}</span>
                         </div>
                         <div className="col-xl-3 col-md-2 text-end p-0 status-data-container">
                             <span className="status-title">Vbat:</span>
@@ -181,11 +163,11 @@ const DeveiceMeter = (props) => {
                 <div className="chart-btn">
                     <ul className="d-flex justify-content-end chart-lists">
                         
-                        <li className="bg-primary chart-list">{fetchDevice.mainWeek}W</li>
-                        <li className="bg-primary chart-list">{fetchDevice.days}D</li>
-                        <li className="bg-primary chart-list">{fetchDevice.hours}H</li>
-                        <li className="bg-primary chart-list">{fetchDevice.minutes}M</li>
-                        <li className="bg-primary chart-list">{fetchDevice.seconds}S</li>
+                        <li className="bg-primary chart-list">1W</li>
+                        <li className="bg-primary chart-list">2D</li>
+                        <li className="bg-primary chart-list">3H</li>
+                        <li className="bg-primary chart-list">57M</li>
+                        <li className="bg-primary chart-list">60S</li>
                     </ul>
                 </div>
                 <div className="">

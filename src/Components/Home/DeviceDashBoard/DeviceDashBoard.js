@@ -64,7 +64,7 @@ const DeviceDashBoard = () => {
             return userDb
         }
         else if(format === "RTD01"){
-            const userDb =  db.collection("RTD0000001").onSnapshot((querySnapshot) => {
+            const userDb =  db.collection("RTD0000002").onSnapshot((querySnapshot) => {
                 const getDataFirebase = [];
                 querySnapshot.forEach((doc) => {
                   getDataFirebase.push({...doc.data(), key:doc.id});
