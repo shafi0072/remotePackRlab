@@ -12,3 +12,9 @@
     height: 120vh;
     background-color: #010221;
 } */
+.dashboard-background{
+    border-left: 2px solid black;
+}
+.dashboard-navbar{
+    padding: 0;
+}

@@ -23,3 +23,9 @@
 .device-title{
     font-weight: bold;
 }
+.device-background{
+    border-left: 2px solid black;
+}
+.device-navbar{
+    padding: 0;
+}

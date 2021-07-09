@@ -6,10 +6,10 @@ import './Command.css';
 const MainCommand = () => {
     return (
         <div className="row">
-            <div className="col-md-3">
+            <div className="col-md-3 command-navbar">
                 <Navbar/>
             </div>
-            <div className="col-md-9">
+            <div className="col-md-9 command-background">
             <div className="logo-img">
                 <img src={logo} alt="" style={{width:'20%'}} className='mt-5' />
             </div>

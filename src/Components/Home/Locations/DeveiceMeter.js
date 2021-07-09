@@ -21,7 +21,7 @@ const DeveiceMeter = (props) => {
         
     });
    
-    const [deviceId, setDeviceID] = useState(true)
+    
   
   
 
@@ -49,35 +49,17 @@ const DeveiceMeter = (props) => {
         newVoltage.voltageName = 'voltage04'
         setVoltageData(newVoltage);
     }
-    // unixtimestamp
-    // let mil = dateSocket;
-   function clock(){
-    const newData = {...fetchDevice}
-    let unixTimeStamp = new Date() - 5*60000;
-    let mil = unixTimeStamp - 7*24*60*60000;
-    let date = new Date(mil);
-    newData.localString = date.toLocaleDateString();
-    newData.localTIme = date.toLocaleTimeString()
-    
-    newData.seconds = Math.floor((unixTimeStamp - (unixTimeStamp))/1000);
-    newData.minutes = (newData.seconds / 60) | 0;
-     
-
-    newData.hours = (newData.minutes / 60) | 0;
-     
-
-    newData.days = (newData.hours/ 24) | 0;
-     
-
-    newData.mainWeek = (newData.days / 7) | 0;
-    
-    setFetchDeviceData(newData)
-    // console.log({seconds},{minutes},{hours}, {days}, {mainWeek});
-    // console.log({localString})
-   }
-
-    
-    setInterval(() => clock(), 1000)
+    let unix_timestamp = dateSocket;
+    var date = new Date(unix_timestamp);
+    let fullDate = date.getDate();
+    let month = date.getMonth() + 1;
+    let year = date.getFullYear();
+    var hours = date.getHours();
+    var minutes = "0" + date.getMinutes();
+    var seconds = "0" + date.getSeconds();
+    var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+    const fullTIme = `${fullDate}/${month}/${year}`
+    console.log({fullDate});
     return (
         <div className="container">
             <h1 className="meter-text">Meter</h1>
@@ -107,7 +89,7 @@ const DeveiceMeter = (props) => {
                     </div>
                     <div className="row tbody">
                         <div className="col-md-4 meter-data" data-content="Date">
-                            {/* <p>{localString}</p> */}
+                            {<p>{fullTIme}</p> }
                         </div>
                         <div className="col-md-1 meter-data" data-content="Vcc 1" onClick={handleVoltage01}>
                             <p>{voltage01}V</p>
@@ -135,8 +117,8 @@ const DeveiceMeter = (props) => {
                         </div>
                         <div className="col-xl-6 col-md-8 p-0 status-mid-data">
                             <span className="status-title">Last connection:</span>
-                            <span className="status-data-date">{fetchDevice.localString}</span>
-                            <span>{fetchDevice.localTIme}</span>
+                            <span className="status-data-date">{formattedTime}</span>
+                            <span>{fullTIme}</span>
                         </div>
                         <div className="col-xl-3 col-md-2 text-end p-0 status-data-container">
                             <span className="status-title">Vbat:</span>
@@ -181,17 +163,18 @@ const DeveiceMeter = (props) => {
                 <div className="chart-btn">
                     <ul className="d-flex justify-content-end chart-lists">
                         
-                        <li className="bg-primary chart-list">{fetchDevice.mainWeek}W</li>
-                        <li className="bg-primary chart-list">{fetchDevice.days}D</li>
-                        <li className="bg-primary chart-list">{fetchDevice.hours}H</li>
-                        <li className="bg-primary chart-list">{fetchDevice.minutes}M</li>
-                        <li className="bg-primary chart-list">{fetchDevice.seconds}S</li>
+                        <li className="bg-primary chart-list">1W</li>
+                        <li className="bg-primary chart-list">2D</li>
+                        <li className="bg-primary chart-list">3H</li>
+                        <li className="bg-primary chart-list">57M</li>
+                        <li className="bg-primary chart-list">60S</li>
                     </ul>
                 </div>
                 <div className="">
                     <div>
                         <div>
                             <p className="row title-control">Control</p>
+                            
                             <div className="row">
                                 <div className="col-xl-3 col-lg-3">
                                     <p className="control-input-text">Period :</p>
@@ -211,19 +194,20 @@ const DeveiceMeter = (props) => {
                                 <div className="btn btn-primary button2"><span>ON / OFF</span></div>
                             </div>
 
-                        </div>
-                        <ul className="row device-meter-list-container">
-                            {txPower >= 0 && <li className=" text-start text-light device-list"><h5 className="device-meter-list" htmlFor="">txPower :</h5> {txPower}</li>}
-                            {rssiGateway >= 0 && <li className=" text-start text-light device-list"><h5 className="device-meter-list" htmlFor="">rssiGateway :</h5> {rssiGateway}</li>}
-                            {nMedicion >= 0 && <li className=" text-start text-light device-list"><h5 className="device-meter-list" htmlFor="">nMedicion :</h5> {nMedicion}</li>}
-                            {msActivo >= 0 && <li className="text-start text-light device-list"><h5 className="device-meter-list" htmlFor="">msActivo :</h5> {msActivo}</li>}
-                        </ul>
-                        <ul className="row d-flex justify-content-lg-around text-light device-meter-list-container">
-                            {rassiGateWay >= 0 && <li className=" text-start text-light device-list"><h5 className="device-meter-list" htmlFor="">rassiGateWay :</h5> {rassiGateWay}</li>}
-                            {resistance >= 0 && <li className=" text-start text-light device-list"><h5 className="device-meter-list" htmlFor="">resistance :</h5> {resistance}</li>}
-                            {temperature >= 0 && <li className=" text-start text-light device-list"><h5 className="device-meter-list" htmlFor="">temperature :</h5> {temperature}</li>}
-                            {nMessages >= 0 && <li className=" text-start text-light device-list"><h5 className="device-meter-list" htmlFor="">nMessages :</h5> {nMessages}</li>}
-                        </ul>
+                                
+                                <ul className="row device-meter-list-container">
+                                    {txPower >= 0 && <li className=" text-start text-dark device-list"><h5 className="device-meter-list" htmlFor="">txPower :</h5> {txPower}</li>}
+                                    {rssiGateway >= 0 && <li className=" text-start text-dark device-list"><h5 className="device-meter-list" htmlFor="">rssiGateway :</h5> {rssiGateway}</li>}
+                                    {nMedicion >= 0 && <li className=" text-start text-dark device-list"><h5 className="device-meter-list" htmlFor="">nMedicion :</h5> {nMedicion}</li>}
+                                    {msActivo >= 0 && <li className="text-start text-dark device-list"><h5 className="device-meter-list" htmlFor="">msActivo :</h5> {msActivo}</li>}
+                                </ul>
+                                <ul className="row d-flex justify-content-lg-around text-dark device-meter-list-container">
+                                    {rassiGateWay >= 0 && <li className=" text-start text-dark device-list"><h5 className="device-meter-list" htmlFor="">rassiGateWay :</h5> {rassiGateWay}</li>}
+                                    {resistance >= 0 && <li className=" text-start text-dark device-list"><h5 className="device-meter-list" htmlFor="">resistance :</h5> {resistance}</li>}
+                                    {temperature >= 0 && <li className=" text-start text-dark device-list"><h5 className="device-meter-list" htmlFor="">temperature :</h5> {temperature}</li>}
+                                    {nMessages >= 0 && <li className=" text-start text-dark device-list"><h5 className="device-meter-list" htmlFor="">nMessages :</h5> {nMessages}</li>}
+                                </ul>
+                            </div>
                     </div>
 
                 </div>

@@ -21,5 +21,9 @@
 .command-input{
     width: 25%;
 }
-.command-button{
+.command-background{
+    border-left: 2px solid black;
+}
+.command-navbar{
+    padding: 0;
 }

@@ -4,6 +4,7 @@ import Navbar from '../../Shared/Navbar';
 import DeviceForm from './DevicesForm';
 import firebase from 'firebase';
 import 'firebase/firestore';
+import './DeviceMeter.css'
 import { useEffect } from 'react';
 import { useState } from 'react';
 
@@ -44,10 +45,10 @@ const LocationDevice = () => {
     console.log({DBLocationDV});
     return (
         <div className='row'>
-            <div className="col-md-3">
+            <div className="col-md-3 location-device-navbar">
                 <Navbar/>
             </div>
-            <div className="col-md-9">
+            <div className="col-md-9 location-device-background">
                 <DeviceForm data={DBLocationDV}/>
             </div>
         </div>

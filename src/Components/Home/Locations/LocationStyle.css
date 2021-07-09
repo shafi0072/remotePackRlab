@@ -16,3 +16,9 @@
     color: rgb(105, 105, 105);
     margin-bottom: 0;
 }
+.location-background{
+    border-left: 2px solid black;
+}
+.location-navbar{
+    padding: 0;
+}

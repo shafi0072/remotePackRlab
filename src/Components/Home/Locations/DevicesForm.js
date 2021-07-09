@@ -81,19 +81,19 @@ console.log({device3});
                     <div className="form-name"><p className="form-name-p">{device1.model}</p></div>
                      {/* <input type="text" placeholder='edit your Meter' name='one'/> */}
                     <button className="btn btn-dark btnEdit" >Edit</button>
-                    <Link to={`/locationsDevice/${key}/device/${device1.format}/${device2.key}`}  className="btn btn-primary btnArea">Select</Link>
+                    <Link to={`/locationsDevice/${key}/device/${device1.format}/${device1.key}`}  className="btn btn-primary btnArea">Select</Link>
                 </div>
                 <div className="clients d-flex justify-content-evenly mb-5">
                     <div className="form-name"><p className="form-name-p">{device2.model}</p></div>
                      {/* <input type="text" placeholder='edit your Meter' name='one'/> */}
                     <button className="btn btn-dark btnEdit" >Edit</button>
-                    <Link  className="btn btn-primary btnArea">Select</Link>
+                    <Link to={`/locationsDevice/${key}/device/${device2.format}/${device2.key}`}  className="btn btn-primary btnArea">Select</Link>
                 </div>
                 <div className="clients d-flex justify-content-evenly mb-5">
                     <div className="form-name"><p className="form-name-p">{device3.model}</p></div>
                      {/* <input type="text" placeholder='edit your Meter' name='one'/> */}
                     <button className="btn btn-dark btnEdit" >Edit</button>
-                    <Link  className="btn btn-primary btnArea">Select</Link>
+                    <Link to={`/locationsDevice/${key}/device/${device3.format}/${device3.key}`}  className="btn btn-primary btnArea">Select</Link>
                 </div>
                 </div>
 

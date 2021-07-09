@@ -9,6 +9,10 @@
     .command-title{
         font-size: 36px;
     }
+    .device-meter-scroll{
+        height: 130px!important;
+        overflow-x: scroll;
+    }
 }
 
 /* #### Max Width 1299px ----- View 1200px  ####### */

@@ -7,10 +7,10 @@ import logo from '../../../Resorces/logo_RLAB.png';
 const MainDevices = () => {
     return (
         <div className='row'>
-            <div className="col-md-3">
+            <div className="col-md-3 device-navbar">
                 <Navbar/>
             </div>
-            <div className="col-md-9">
+            <div className="col-md-9 device-background">
             <div className="logo-img">
                 <img src={logo} alt="" style={{width:'20%'}} className='mt-5' />
             </div>
