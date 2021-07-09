@@ -55,14 +55,14 @@ const App = () => {
       <Switch>
       <Route exact path='/' component={Home}/>
         <Route path='/auth' component={Login} />
-        <Route path ="/test1" component={TemporaryTest}/>
         <Route path ="/devices" component={MainDevices}/>
         <Route path = '/location' component={MainLocation}/>
         <Route path="/locations/:Lid" component={LocationDevice}/>
+        <Route path="/locationsDevice/:LEid/device/:format/:id" component={DeviceDashBoard}/>
         <PrivateRoute path = '/userHome'>
           <UserHome/>
         </PrivateRoute>
-        <Route path="/:format/:id" component={DeviceDashBoard}/>
+        
         <Route path='/restPassword' component={RestPassword}/>
         <Route path ='/command' component={MainCommand}/>
         
