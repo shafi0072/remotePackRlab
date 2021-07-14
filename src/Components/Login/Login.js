@@ -96,7 +96,7 @@ const Login = () => {
         setUser(newUserInfo);
         history.replace(from);
     
-    if(res.user.email === 'safi29317@gmail.com'){
+    if(res.user.email === 'safi29317@gmail.com' || res.user.email === 'ulisesramos@gmail.com'){
         const newUser = {...user}
         newUser.admin = true;
         newUser.viewer = false;
