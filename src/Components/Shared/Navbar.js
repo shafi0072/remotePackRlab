@@ -1,8 +1,14 @@
 import React, { useContext } from 'react';
 import { userContext } from '../../App';
 import './Navbar.css';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import {useHistory, useLocation } from 'react-router-dom';
 const Navbar = (props) => {
+    const history = useHistory();
+    const location = useLocation();
+
+    const { from } = location.state || { from: { pathname: "/auth" } };
+
     const [user, setUser] = useContext(userContext);
     const handleHomeClick = () => {
         const newClick = {...user}
@@ -27,7 +33,9 @@ const Navbar = (props) => {
        const newUser = {...user};
        newUser.email = "";
        newUser.isSignedIn = false;
+       newUser.success = false;
        setUser(newUser)
+       history.replace(from)
    }
 
     return (

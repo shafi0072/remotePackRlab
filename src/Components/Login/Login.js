@@ -53,6 +53,7 @@ const Login = () => {
         firebase.auth().createUserWithEmailAndPassword(user.email, user.ConfirmPassword)
         .then(res => {
             const newUserInfo = {...user};
+            newUserInfo.isSignedIn = true
             newUserInfo.error = "";
             newUserInfo.success = true;
             setUser(newUserInfo);

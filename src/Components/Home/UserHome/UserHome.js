@@ -51,7 +51,6 @@ const UserHome = () => {
 
                 {user.userHome && <Rechart/>}
                 {user.user&& user.admin && <User data={dbUserData}/> }
-                
                 {user.devices && <Devices/>}
                 {user.locations && <Location/>}
                 {user.command && <Command/>}
