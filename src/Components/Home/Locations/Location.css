@@ -99,3 +99,6 @@
     height: 475px;
     overflow-x: scroll;
 }
+.location-user-text{
+    text-decoration: none;
+}

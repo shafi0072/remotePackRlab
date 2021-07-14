@@ -115,10 +115,11 @@ const Locations = () => {
                 </div>
                 
             </form>
-           </div>}
-            <div className="row mt-5 ms-5">
-            { DBLocationData.map(data => {return <LocationUser data={data}/>})}
-            </div>
+            </div>}
+                <div className="row mt-5">
+                { DBLocationData.map(data => {return <LocationUser data={data}/>})}
+                </div>
+            
         </div>
     );
 };
