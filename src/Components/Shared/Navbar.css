@@ -30,3 +30,14 @@
 .navbar-link{
     text-decoration: none;
 }
+.navbar-log-out{
+    color: white;
+    text-shadow: none;
+}
+.navbar-log-out-item{
+    background-color: black;
+}
+.navbar-log-out-item:hover .navbar-log-out{
+    color: red;
+    text-shadow: none;
+}

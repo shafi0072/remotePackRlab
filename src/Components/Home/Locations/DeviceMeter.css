@@ -30,12 +30,13 @@
     border-right: 1px solid black;
 }
 .meter-col p{
+    height: 2%;
     margin: 0;
-    padding: 3% 0;
+    padding: 9px 0;
 }
 .meter-data p{
     margin: 0;
-    padding: 3% 0;
+    padding: 9px 0!important;
 }
 .title-control{
     padding-bottom: .5%;
