@@ -10,9 +10,9 @@ import firebaseConfig from './firebase.config';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import db from '../FirebaseConfig/Firebase'
-
+if (!firebase.apps.length){
 firebase.initializeApp(firebaseConfig);
-
+}
 
 
 const Login = () => {

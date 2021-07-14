@@ -9,17 +9,15 @@ import Devices from '../Devices/Devices';
 import Location from '../Locations/Locations';
 
 import Command from '../Command/Command';
-import MenuIcon from '@material-ui/icons/Menu';
-
 import db from '../../FirebaseConfig/Firebase'
 
 const UserHome = () => {
    
-    const [user, setUser] = useContext(userContext);
+    const [user] = useContext(userContext);
     
     const [dbUserData, setDbUserData] = useState();
-    const [loading, setLoading] = useState(true)
-    const [menu, setMenu] = useState({
+    const [ setLoading] = useState(true)
+    const [menu ] = useState({
         showMenu:true,
         hideMenu:false,
         suspendMenu: false,
@@ -35,37 +33,16 @@ const UserHome = () => {
         });
         
        return userDb;
-    }, []);
+    }, [setLoading]);
    
-    useEffect(() => {
-        if(window.outerWidth <= 500){
-            const newMenu = {...menu};
-            newMenu.showMenu = false;
-            newMenu.hideMenu = true;
-            setMenu(newMenu);
-        }
-    }, []);
-    const handleMenuClick = (e) => {
-        const newMenu = {...menu};
-            newMenu.showMenu = true;
-            newMenu.hideMenu = false;
-            newMenu.suspendMenu = true;
-            setMenu(newMenu);
-    }
-    const handleSubMenuClose = () => {
-        const newMenu = {...menu};
-            newMenu.showMenu = false;
-            newMenu.hideMenu = true;
-            newMenu.suspendMenu = false;
-            setMenu(newMenu);
-    }
+    
     return (
         <div className='row'>
             
             <div className="col-md-3" style={{padding:0}}>
-            {menu.suspendMenu && <MenuIcon onClick = {handleSubMenuClose} className="" style={{}}/>}
+            
                 {menu.showMenu && <Navbar/>}
-                {menu.hideMenu && <MenuIcon onClick = {handleMenuClick} className="" style={{}}/>}
+                
                 
             </div>
             <div className="col-md-9 backgroundSIDE text-center">
