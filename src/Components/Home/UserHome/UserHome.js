@@ -16,8 +16,8 @@ const UserHome = () => {
     const [user] = useContext(userContext);
     
     const [dbUserData, setDbUserData] = useState();
-    const [ setLoading] = useState(true)
-    const [menu ] = useState({
+    const [loading, setLoading] = useState(true)
+    const [menu, setMenu ] = useState({
         showMenu:true,
         hideMenu:false,
         suspendMenu: false,
@@ -51,7 +51,6 @@ const UserHome = () => {
 
                 {user.userHome && <Rechart/>}
                 {user.user&& user.admin && <User data={dbUserData}/> }
-                
                 {user.devices && <Devices/>}
                 {user.locations && <Location/>}
                 {user.command && <Command/>}
