@@ -41,7 +41,8 @@ const Navbar = (props) => {
                 {user.admin && <li className=' navbar-item' onClick={handleUserClick} style={{cursor:'pointer'}}><h5 className="navbar-text">User</h5></li>}
                 <Link className="navbar-link" to="/devices"><li className=' navbar-item' style={{cursor:'pointer'}}><h5 className="navbar-text">Devices</h5></li></Link>
                 <Link className="navbar-link" to='/location'><li className=' navbar-item' style={{cursor:'pointer'}}><h5 className="navbar-text">Locations</h5></li></Link>
-                <Link className="navbar-link" to="/command"><li className=' navbar-item' onClick={handleCommandChanger} style={{cursor:'pointer'}}><h5 className="navbar-text">Commands</h5></li></Link>
+                <Link className="navbar-link" to="/command"><li className=' navbar-item'  style={{cursor:'pointer'}}><h5 className="navbar-text">Commands</h5></li></Link>
+                <li className=' navbar-item d-flex justify-content-center align-items-center' onClick={handleCommandChanger} style={{cursor:'pointer'}}><button className='btn btn-dark'>Log out</button></li>
             </ul>
         </div>
     );

@@ -7,32 +7,17 @@ import { userContext } from '../../../App';
 import Rechart from './Rechart';
 import Devices from '../Devices/Devices';
 import Location from '../Locations/Locations';
-import firebase from 'firebase/app';
-import 'firebase/firestore';
-import Command from '../Command/Command';
-import MenuIcon from '@material-ui/icons/Menu';
-if (!firebase.apps.length) {
-    firebase.initializeApp({
-        apiKey: "AIzaSyA47b6Rx0RioZApSMcyDooUmOpQFFs9WLE",
-        authDomain: "test1-68872.firebaseapp.com",
-        projectId: "test1-68872",
-        storageBucket: "test1-68872.appspot.com",
-        messagingSenderId: "504703093399",
-        appId: "1:504703093399:web:50a89636d428ac8bd2f7d2"
-    });
- }else {
-    firebase.app(); // if already initialized, use that one
- }
 
-const db = firebase.firestore();
+import Command from '../Command/Command';
+import db from '../../FirebaseConfig/Firebase'
 
 const UserHome = () => {
    
-    const [user, setUser] = useContext(userContext);
+    const [user] = useContext(userContext);
     
     const [dbUserData, setDbUserData] = useState();
-    const [loading, setLoading] = useState(true)
-    const [menu, setMenu] = useState({
+    const [ setLoading] = useState(true)
+    const [menu ] = useState({
         showMenu:true,
         hideMenu:false,
         suspendMenu: false,
@@ -48,37 +33,16 @@ const UserHome = () => {
         });
         
        return userDb;
-    }, []);
+    }, [setLoading]);
    
-    useEffect(() => {
-        if(window.outerWidth <= 500){
-            const newMenu = {...menu};
-            newMenu.showMenu = false;
-            newMenu.hideMenu = true;
-            setMenu(newMenu);
-        }
-    }, []);
-    const handleMenuClick = (e) => {
-        const newMenu = {...menu};
-            newMenu.showMenu = true;
-            newMenu.hideMenu = false;
-            newMenu.suspendMenu = true;
-            setMenu(newMenu);
-    }
-    const handleSubMenuClose = () => {
-        const newMenu = {...menu};
-            newMenu.showMenu = false;
-            newMenu.hideMenu = true;
-            newMenu.suspendMenu = false;
-            setMenu(newMenu);
-    }
+    
     return (
         <div className='row'>
             
             <div className="col-md-3" style={{padding:0}}>
-            {menu.suspendMenu && <MenuIcon onClick = {handleSubMenuClose} className="" style={{}}/>}
+            
                 {menu.showMenu && <Navbar/>}
-                {menu.hideMenu && <MenuIcon onClick = {handleMenuClick} className="" style={{}}/>}
+                
                 
             </div>
             <div className="col-md-9 backgroundSIDE text-center">
