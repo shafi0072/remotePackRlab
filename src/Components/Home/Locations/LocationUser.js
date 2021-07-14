@@ -23,7 +23,7 @@ const LocationUser = (props) => {
                             </div>
                         </div>
                         </div>
-                        </Link>
+                    </Link>
                         
                     
                         
