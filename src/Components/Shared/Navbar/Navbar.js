@@ -2,17 +2,30 @@ import React from 'react';
 import logo from '../../../Resorces/logo_RLAB.png';
 import './nav.css';
 import {Link} from 'react-router-dom'
-import { useState } from 'react';
+
 import { useContext } from 'react';
 import { userContext } from '../../../App';
+import {useHistory, useLocation } from 'react-router-dom';
 const Navbar = () => {
+    const history = useHistory();
+    const location = useLocation();
+
+    const { from } = location.state || { from: { pathname: "/" } };
+    
     const [user, setUser] = useContext(userContext);
     const handleSignOutActice = () => {
         const newUser = {...user}
         newUser.isSignedIn = true;
         setUser(newUser)
     }
-   
+   const handleLogout = () => {
+    const newUser = {...user};
+    newUser.email = "";
+    newUser.isSignedIn = false;
+    newUser.success = false;
+    setUser(newUser)
+    history.replace(from)
+   }
     return (
         <div >
             <nav class={`navbar navbar-expand-lg navbar-dark bg-dark`}>
@@ -42,14 +55,14 @@ const Navbar = () => {
                             <li class="nav-item">
                                 <Link class="nav-link" to="#">contract us</Link>
                             </li>
-                            <li class="nav-item">
+                            {user.isSignedIn &&<li class="nav-item">
                                 <Link class="nav-link" to="/userHome">Dashboard</Link>
-                            </li>
+                            </li>}
                             {!user.isSignedIn && <li class="nav-item">
                                 <Link to='/auth'><button className="btn btn-primary" onClick={handleSignOutActice}>Log in</button></Link>
                             </li>}
                             {user.isSignedIn && <li class="nav-item">
-                                <button className="btn btn-primary">Log out</button>
+                                <button className="btn btn-primary" onClick={handleLogout}>Log out</button>
                             </li>}
                         </ul>
                     </div>
