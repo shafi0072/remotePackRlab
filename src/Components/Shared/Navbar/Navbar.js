@@ -42,9 +42,9 @@ const Navbar = () => {
                             <li class="nav-item">
                                 <Link class="nav-link" to="#">contract us</Link>
                             </li>
-                            <li class="nav-item">
+                            {user.isSignedIn &&<li class="nav-item">
                                 <Link class="nav-link" to="/userHome">Dashboard</Link>
-                            </li>
+                            </li>}
                             {!user.isSignedIn && <li class="nav-item">
                                 <Link to='/auth'><button className="btn btn-primary" onClick={handleSignOutActice}>Log in</button></Link>
                             </li>}

@@ -7,7 +7,7 @@ import { userContext } from '../../../App';
 import Rechart from './Rechart';
 import Devices from '../Devices/Devices';
 import Location from '../Locations/Locations';
-
+import Navbar2 from '../../Shared/Navbar/Navbar'
 import Command from '../Command/Command';
 import db from '../../FirebaseConfig/Firebase'
 
@@ -38,7 +38,7 @@ const UserHome = () => {
     
     return (
         <div className='row'>
-            
+            <Navbar2/>
             <div className="col-md-3" style={{padding:0}}>
             
                 {menu.showMenu && <Navbar/>}

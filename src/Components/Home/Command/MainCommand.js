@@ -3,9 +3,11 @@ import logo from '../../../Resorces/logo_RLAB.png';
 import Navbar from '../../Shared/Navbar';
 import Command from './Command';
 import './Command.css';
+import Navbar2 from '../../Shared/Navbar/Navbar'
 const MainCommand = () => {
     return (
         <div className="row">
+        <Navbar2/>
             <div className="col-md-3 command-navbar">
                 <Navbar/>
             </div>

@@ -126,16 +126,6 @@ const DeveiceMeter = (props) => {
                         </div>
                     </div>
                 </div>
-
-                {/* {voltage01 >= 0 && <div className="chart-container">
-                    <LineChart width={800} height={150} className="charts" data={data}>
-                        <XAxis dataKey="name"/>
-                        <YAxis/>
-                        <CartesianGrid stroke="#eee" strokeDasharray="5 5"/>
-                        <Line type="monotone" dataKey="uv" stroke="#8884d8" />
-                        <Line type="monotone" dataKey="pv" stroke="#82ca9d" />
-                    </LineChart> 
-                </div>} */}
                 <Line height={100} width={400} data={{
                     labels: [voltageData.voltageName, 'voltage01', 'voltage02', 'voltage03', 'voltage04'],
                     datasets: [{
