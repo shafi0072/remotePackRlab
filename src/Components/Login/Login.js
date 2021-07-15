@@ -247,7 +247,7 @@ useEffect(() => {
                 </div>
                 <p className='text-danger'>{user.error}</p>
                 {user.success && <p className='text-success'>SignUp SuccessFull</p>}
-                <form action="" onSubmit={handleCreateAccount}>
+                <form className="mt-4 creat-form" action="" onSubmit={handleCreateAccount}>
                 <div className="">
                     <div class="mb-3 row">
 
