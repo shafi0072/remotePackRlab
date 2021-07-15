@@ -58,6 +58,7 @@ const Login = () => {
             newUserInfo.success = true;
             setUser(newUserInfo);
             updateUserInfo(user.name)
+            history.replace(from);
         }
         )
         .catch(error => {
