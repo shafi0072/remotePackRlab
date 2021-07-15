@@ -58,6 +58,7 @@ const Login = () => {
             newUserInfo.success = true;
             setUser(newUserInfo);
             updateUserInfo(user.name)
+            history.replace(from);
         }
         )
         .catch(error => {
@@ -245,7 +246,7 @@ useEffect(() => {
                             fontFamily: "'Raleway', sans-serif"
                         }}>Sign Up</h2>
                 </div>
-                <p className='text-danger'>{user.error}</p>
+                <p className='text-danger singup-error'>{user.error}</p>
                 {user.success && <p className='text-success'>SignUp SuccessFull</p>}
                 <form className="mt-4 creat-form" action="" onSubmit={handleCreateAccount}>
                 <div className="">

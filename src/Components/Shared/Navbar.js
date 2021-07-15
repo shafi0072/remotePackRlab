@@ -46,7 +46,6 @@ const Navbar = (props) => {
                 <Link className="navbar-link" to="/devices"><li className=' navbar-item' style={{cursor:'pointer'}}><h5 className="navbar-text">Devices</h5></li></Link>
                 <Link className="navbar-link" to='/location'><li className=' navbar-item' style={{cursor:'pointer'}}><h5 className="navbar-text">Locations</h5></li></Link>
                 <Link className="navbar-link" to="/command"><li className=' navbar-item'  style={{cursor:'pointer'}}><h5 className="navbar-text">Commands</h5></li></Link>
-                
             </ul>
         </div>
     );
