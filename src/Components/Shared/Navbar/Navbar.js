@@ -2,12 +2,20 @@ import React from 'react';
 import logo from '../../../Resorces/logo_RLAB.png';
 import './nav.css';
 import {Link} from 'react-router-dom'
+import { useState } from 'react';
+import { useContext } from 'react';
+import { userContext } from '../../../App';
 const Navbar = () => {
-    
+    const [user, setUser] = useContext(userContext);
+    const handleSignOutActice = () => {
+        const newUser = {...user}
+        newUser.isSignedIn = true;
+        setUser(newUser)
+    }
    
     return (
         <div >
-            <nav class={`navbar navbar-expand-lg navbar-dark  navAvatar navBlack`}>
+            <nav class={`navbar navbar-expand-lg navbar-dark bg-dark`}>
                 <div class="container-fluid">
                     <Link class="navbar-brand" to="#"><img style={{width:'10%'}} src={logo} alt=""/></Link>
                     <button
@@ -37,7 +45,12 @@ const Navbar = () => {
                             <li class="nav-item">
                                 <Link class="nav-link" to="/userHome">Dashboard</Link>
                             </li>
-                            
+                            {!user.isSignedIn && <li class="nav-item">
+                                <Link to='/auth'><button className="btn btn-primary" onClick={handleSignOutActice}>Log in</button></Link>
+                            </li>}
+                            {user.isSignedIn && <li class="nav-item">
+                                <button className="btn btn-primary">Log out</button>
+                            </li>}
                         </ul>
                     </div>
                 </div>
