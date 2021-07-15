@@ -135,7 +135,7 @@ const DeveiceMeter = (props) => {
                         <Line type="monotone" dataKey="uv" stroke="#8884d8" />
                         <Line type="monotone" dataKey="pv" stroke="#82ca9d" />
                     </LineChart> 
-            </div>} */}
+                </div>} */}
                 <Line height={100} width={400} data={{
                     labels: [voltageData.voltageName, 'voltage01', 'voltage02', 'voltage03', 'voltage04'],
                     datasets: [{
