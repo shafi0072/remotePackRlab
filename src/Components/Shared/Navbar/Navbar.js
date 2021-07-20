@@ -42,6 +42,7 @@ const Navbar = () => {
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
+                    
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item">
                                 <Link class="nav-link active" aria-current="page" to="#">Home</Link>

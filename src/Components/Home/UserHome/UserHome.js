@@ -38,14 +38,14 @@ const UserHome = () => {
     
     return (
         <div className='row'>
-            <Navbar2/>
-            <div className="col-md-3" style={{padding:0}}>
+           
+            <div className="col-md-1">
             
-                {menu.showMenu && <Navbar/>}
+                 <Navbar/>
                 
                 
             </div>
-            <div className="col-md-9 backgroundSIDE text-center">
+            <div className="col-md-11 backgroundSIDE text-center">
             
             <img src={logo} alt="" style={{width:'20%'}} className='mt-5' />
 

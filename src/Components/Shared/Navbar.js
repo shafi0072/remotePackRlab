@@ -1,52 +1,114 @@
-import React, { useContext } from 'react';
-import { userContext } from '../../App';
-import './Navbar.css';
-import {Link} from 'react-router-dom';
-import {useHistory, useLocation } from 'react-router-dom';
-const Navbar = (props) => {
-    const history = useHistory();
-    const location = useLocation();
+import React from 'react';
+import './Navbar.css'
+const Navbar = () => {
 
-    const { from } = location.state || { from: { pathname: "/auth" } };
+  let sidebar = document.querySelector(".sidebar");
+let closeBtn = document.querySelector("#btn");
+let searchBtn = document.querySelector(".bx-search");
 
-    const [user, setUser] = useContext(userContext);
-    const handleHomeClick = () => {
-        const newClick = {...user}
-        newClick.userHome = true;
-        newClick.user = false;
-        newClick.devices = false;
-        newClick.locations = false;
-        newClick.command = false;
-        setUser(newClick);
-    }
-    const handleUserClick = () => {
-        const newClick = {...user}
-        newClick.userHome = false;
-        newClick.user = true;
-        newClick.devices = false;
-        newClick.locations = false;
-        newClick.command = false;
-        setUser(newClick);
-    };
-    
-   const handleLogout = () => {
-       const newUser = {...user};
-       newUser.email = "";
-       newUser.isSignedIn = false;
-       newUser.success = false;
-       setUser(newUser)
-       history.replace(from)
-   }
+function btnCLick(){
+  sidebar.classList.toggle("open");
+  menuBtnChange();//calling the function(optional)
+};
+
+function serch(){ // Sidebar open when you click on the search iocn
+  sidebar.classList.toggle("open");
+  menuBtnChange(); //calling the function(optional)
+};
+
+// following are the code to change sidebar button(optional)
+function menuBtnChange() {
+ if(sidebar.classList.contains("open")){
+   closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+ }else {
+   closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
+ }
+}
 
     return (
-        <div className='navBackground'>
-            <ul style={{listStyle:'none', margin:'0', padding:'0'}}>
-                <Link className="navbar-link" to='/userHome'><li className=' navbar-item' onClick={handleHomeClick} style={{cursor:'pointer'}}><h5 className="navbar-text">User Home</h5></li></Link>
-                {user.admin && <li className=' navbar-item' onClick={handleUserClick} style={{cursor:'pointer'}}><h5 className="navbar-text">User</h5></li>}
-                <Link className="navbar-link" to="/devices"><li className=' navbar-item' style={{cursor:'pointer'}}><h5 className="navbar-text">Devices</h5></li></Link>
-                <Link className="navbar-link" to='/location'><li className=' navbar-item' style={{cursor:'pointer'}}><h5 className="navbar-text">Locations</h5></li></Link>
-                <Link className="navbar-link" to="/command"><li className=' navbar-item'  style={{cursor:'pointer'}}><h5 className="navbar-text">Commands</h5></li></Link>
-            </ul>
+        <div>
+            <div class="sidebar">
+    <div class="logo-details">
+      
+        <div class="logo_name">RLAB</div>
+        <i class='bx bx-menu' id="btn" onClick={btnCLick}></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+          <i class='bx bx-search' onClick={serch}></i>
+         <input type="text" placeholder="Search..."/>
+         <span class="tooltip">Search</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class='bx bx-grid-alt'></i>
+          <span class="links_name">Dashboard</span>
+        </a>
+         <span class="tooltip">Dashboard</span>
+      </li>
+      <li>
+       <a href="#">
+         <i class='bx bx-user' ></i>
+         <span class="links_name">User</span>
+       </a>
+       <span class="tooltip">User</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-chat' ></i>
+         <span class="links_name">Messages</span>
+       </a>
+       <span class="tooltip">Messages</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-pie-chart-alt-2' ></i>
+         <span class="links_name">Analytics</span>
+       </a>
+       <span class="tooltip">Analytics</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-folder' ></i>
+         <span class="links_name">File Manager</span>
+       </a>
+       <span class="tooltip">Files</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-cart-alt' ></i>
+         <span class="links_name">Order</span>
+       </a>
+       <span class="tooltip">Order</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-heart' ></i>
+         <span class="links_name">Saved</span>
+       </a>
+       <span class="tooltip">Saved</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-cog' ></i>
+         <span class="links_name">Setting</span>
+       </a>
+       <span class="tooltip">Setting</span>
+     </li>
+     <li class="profile">
+         <div class="profile-details">
+           <div class="name_job">
+             <div class="name">Prem Shahi</div>
+             <div class="job">Web designer</div>
+           </div>
+         </div>
+         <i class='bx bx-log-out' id="log_out" ></i>
+     </li>
+    </ul>
+  </div>
+  <section class="home-section">
+      
+  </section>
         </div>
     );
 };
