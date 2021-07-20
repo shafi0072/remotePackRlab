@@ -1,5 +1,10 @@
 import React from 'react';
-import './Navbar.css'
+import './Navbar.css';
+import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
+import {Link} from 'react-router-dom'
+import { useContext } from 'react';
+import { userContext } from './../../App';
+
 const Navbar = () => {
 
   let sidebar = document.querySelector(".sidebar");
@@ -25,6 +30,17 @@ function menuBtnChange() {
  }
 }
 
+const [user, setUser] = useContext(userContext)
+
+// log out
+const handleLogout = () => {
+  const newUser = {...user}
+    newUser.email = "";
+    newUser.isSignedIn = false;
+    newUser.success = false;
+  setUser(newUser)
+}
+
     return (
         <div>
             <div class="sidebar">
@@ -40,11 +56,11 @@ function menuBtnChange() {
          <span class="tooltip">Search</span>
       </li>
       <li>
-        <a href="#">
+        <Link to="/userHome">
           <i class='bx bx-grid-alt'></i>
-          <span class="links_name">Dashboard</span>
-        </a>
-         <span class="tooltip">Dashboard</span>
+          <span class="links_name">User Home</span>
+        </Link>
+         <span class="tooltip">User Home</span>
       </li>
       <li>
        <a href="#">
@@ -54,55 +70,34 @@ function menuBtnChange() {
        <span class="tooltip">User</span>
      </li>
      <li>
-       <a href="#">
-         <i class='bx bx-chat' ></i>
-         <span class="links_name">Messages</span>
-       </a>
-       <span class="tooltip">Messages</span>
+       <Link to="/location">
+       <i class='bx bx-current-location'></i>
+         <span class="links_name">Location</span>
+       </Link>
+       <span class="tooltip">Location</span>
      </li>
      <li>
-       <a href="#">
-         <i class='bx bx-pie-chart-alt-2' ></i>
-         <span class="links_name">Analytics</span>
-       </a>
-       <span class="tooltip">Analytics</span>
+       <Link to="/devices">
+       <i class='bx bxs-devices'></i>
+         <span class="links_name">Device</span>
+       </Link>
+       <span class="tooltip">Device</span>
      </li>
      <li>
-       <a href="#">
-         <i class='bx bx-folder' ></i>
-         <span class="links_name">File Manager</span>
-       </a>
-       <span class="tooltip">Files</span>
-     </li>
-     <li>
-       <a href="#">
-         <i class='bx bx-cart-alt' ></i>
-         <span class="links_name">Order</span>
-       </a>
-       <span class="tooltip">Order</span>
-     </li>
-     <li>
-       <a href="#">
-         <i class='bx bx-heart' ></i>
-         <span class="links_name">Saved</span>
-       </a>
-       <span class="tooltip">Saved</span>
-     </li>
-     <li>
-       <a href="#">
-         <i class='bx bx-cog' ></i>
-         <span class="links_name">Setting</span>
-       </a>
-       <span class="tooltip">Setting</span>
+       <Link to="/command">
+       <i class='bx bx-message-dots'></i>
+         <span class="links_name">Command</span>
+       </Link>
+       <span class="tooltip">Command</span>
      </li>
      <li class="profile">
          <div class="profile-details">
            <div class="name_job">
-             <div class="name">Prem Shahi</div>
-             <div class="job">Web designer</div>
+             <div class="name">{user.email}</div>
+             <div class="job">{user.Role}</div>
            </div>
          </div>
-         <i class='bx bx-log-out' id="log_out" ></i>
+         <i class='bx bx-log-out' id="log_out"  onClick={handleLogout}></i>
      </li>
     </ul>
   </div>

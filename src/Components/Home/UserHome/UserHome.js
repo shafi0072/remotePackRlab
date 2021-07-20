@@ -38,22 +38,18 @@ const UserHome = () => {
     
     return (
         <div className='row'>
-           
             <div className="col-md-1">
-            
                  <Navbar/>
-                
-                
             </div>
             <div className="col-md-11 backgroundSIDE text-center">
             
             <img src={logo} alt="" style={{width:'20%'}} className='mt-5' />
 
                 {user.userHome && <Rechart/>}
-                {user.user&& user.admin && <User data={dbUserData}/> }
-                {user.devices && <Devices/>}
-                {user.locations && <Location/>}
-                {user.command && <Command/>}
+            
+                
+               
+                
             </div>
         </div>
     );
