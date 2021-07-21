@@ -3,15 +3,15 @@ import logo from '../../../Resorces/logo_RLAB.png';
 import Navbar from '../../Shared/Navbar';
 import Command from './Command';
 import './Command.css';
-import Navbar2 from '../../Shared/Navbar/Navbar'
+
 const MainCommand = () => {
     return (
         <div className="row">
-        <Navbar2/>
-            <div className="col-md-3 command-navbar">
+        
+            <div className="col-md-1">
                 <Navbar/>
             </div>
-            <div className="col-md-9 command-background">
+            <div className="col-md-11">
             <div className="logo-img">
                 <img src={logo} alt="" style={{width:'20%'}} className='mt-5' />
             </div>
