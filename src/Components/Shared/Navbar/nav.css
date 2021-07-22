@@ -15,5 +15,8 @@
   background-color: #212429;
 }
 .navbar-brand{
-  width: 56%;
+  width: 43%;
+}
+.navbar-brand-img{
+  width: 15%;
 }

@@ -13,6 +13,9 @@
         height: 130px!important;
         overflow-x: scroll;
     }
+    .slide-head{
+        font-size: 70px;
+    }
 }
 
 /* #### Max Width 1299px ----- View 1200px  ####### */
@@ -72,6 +75,12 @@
         width: 9rem!important;
         height: 100%;
     }
+    .slide-head{
+        font-size: 60px;
+    }
+    .navbar-brand-img{
+        width: 20%;
+      }
 }
 
 /* #### Max Width 999px ----- View 850px  ####### */
@@ -120,7 +129,6 @@
         font-size: 15px;
     }
 }
-
 /* #### Max Width 849px ----- View 700px  ####### */
 
 @media(max-width:849px){
@@ -144,6 +152,9 @@
     .chart-list{
         width: 10%!important;
     }
+    .navbar-brand-img{
+        width: 25%!important;
+      }
 }
 @media(max-width:767px){
     .device-meter-container{
@@ -208,6 +219,9 @@
     }
     .command-title{
         font-size: 26.5px;
+    }
+    .slide-head{
+        font-size: 50px;
     }
 }
 /* #### Max Width 699px ----- View 600px  ####### */
@@ -302,7 +316,9 @@
     .command-title{
         font-size: 19.8px;
     }
-    
+    .slide-head{
+        font-size: 45px;
+    }
 }
 @media(max-width:516px){
     

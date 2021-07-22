@@ -28,21 +28,21 @@ const Carusel = () => {
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active frstSlider text-center">
-                        <h1 className='text-light' style={{marginTop:'10%', fontSize:'70px'}}>RLAB</h1>
+                        <h1 className='text-light slide-head' style={{marginTop:'10%'}}>RLAB</h1>
                         <h2 className='text-light'>Your First choice</h2>
                         <p className='text-secondary'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error magnam ducimus <br />  
                             perspiciatis totam dolores vitae quo esse porro repudiandae voluptate, eos, <br />
                             voluptatem provident, mollitia atque. Aut ducimus corporis eligendi alias.</p>
                     </div>
                     <div class="carousel-item secondSlider text-center">
-                        <h1 className='text-light' style={{marginTop:'10%', fontSize:'70px'}}>Electric Devices</h1>
+                        <h1 className='text-light slide-head' style={{marginTop:'10%'}}>Electric Devices</h1>
                         <h2 className='text-light'>Your choice</h2>
                         <p className='text-secondary'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error magnam ducimus <br />  
                             perspiciatis totam dolores vitae quo esse porro repudiandae voluptate, eos, <br />
                             voluptatem provident, mollitia atque. Aut ducimus corporis eligendi alias.</p>
                     </div>
                     <div class="carousel-item thirdSlider text-center">
-                    <h1 className='text-light' style={{marginTop:'10%', fontSize:'70px'}}>IOT Devices</h1>
+                    <h1 className='text-light slide-head' style={{marginTop:'10%'}}>IOT Devices</h1>
                         <h2 className='text-light'>Your IOT</h2>
                         <p className='text-secondary'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error magnam ducimus <br />  
                             perspiciatis totam dolores vitae quo esse porro repudiandae voluptate, eos, <br />

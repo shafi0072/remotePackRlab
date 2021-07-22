@@ -1,52 +1,109 @@
-import React, { useContext } from 'react';
-import { userContext } from '../../App';
+import React from 'react';
 import './Navbar.css';
-import {Link} from 'react-router-dom';
-import {useHistory, useLocation } from 'react-router-dom';
-const Navbar = (props) => {
-    const history = useHistory();
-    const location = useLocation();
+import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
+import {Link} from 'react-router-dom'
+import { useContext } from 'react';
+import { userContext } from './../../App';
 
-    const { from } = location.state || { from: { pathname: "/auth" } };
+const Navbar = () => {
 
-    const [user, setUser] = useContext(userContext);
-    const handleHomeClick = () => {
-        const newClick = {...user}
-        newClick.userHome = true;
-        newClick.user = false;
-        newClick.devices = false;
-        newClick.locations = false;
-        newClick.command = false;
-        setUser(newClick);
-    }
-    const handleUserClick = () => {
-        const newClick = {...user}
-        newClick.userHome = false;
-        newClick.user = true;
-        newClick.devices = false;
-        newClick.locations = false;
-        newClick.command = false;
-        setUser(newClick);
-    };
-    
-   const handleLogout = () => {
-       const newUser = {...user};
-       newUser.email = "";
-       newUser.isSignedIn = false;
-       newUser.success = false;
-       setUser(newUser)
-       history.replace(from)
-   }
+  let sidebar = document.querySelector(".sidebar");
+let closeBtn = document.querySelector("#btn");
+let searchBtn = document.querySelector(".bx-search");
+
+function btnCLick(){
+  sidebar.classList.toggle("open");
+  menuBtnChange();//calling the function(optional)
+};
+
+function serch(){ // Sidebar open when you click on the search iocn
+  sidebar.classList.toggle("open");
+  menuBtnChange(); //calling the function(optional)
+};
+
+// following are the code to change sidebar button(optional)
+function menuBtnChange() {
+ if(sidebar.classList.contains("open")){
+   closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+ }else {
+   closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
+ }
+}
+
+const [user, setUser] = useContext(userContext)
+
+// log out
+const handleLogout = () => {
+  const newUser = {...user}
+    newUser.email = "";
+    newUser.isSignedIn = false;
+    newUser.success = false;
+  setUser(newUser)
+}
 
     return (
-        <div className='navBackground'>
-            <ul style={{listStyle:'none', margin:'0', padding:'0'}}>
-                <Link className="navbar-link" to='/userHome'><li className=' navbar-item' onClick={handleHomeClick} style={{cursor:'pointer'}}><h5 className="navbar-text">User Home</h5></li></Link>
-                {user.admin && <li className=' navbar-item' onClick={handleUserClick} style={{cursor:'pointer'}}><h5 className="navbar-text">User</h5></li>}
-                <Link className="navbar-link" to="/devices"><li className=' navbar-item' style={{cursor:'pointer'}}><h5 className="navbar-text">Devices</h5></li></Link>
-                <Link className="navbar-link" to='/location'><li className=' navbar-item' style={{cursor:'pointer'}}><h5 className="navbar-text">Locations</h5></li></Link>
-                <Link className="navbar-link" to="/command"><li className=' navbar-item'  style={{cursor:'pointer'}}><h5 className="navbar-text">Commands</h5></li></Link>
-            </ul>
+        <div>
+            <div class="sidebar">
+    <div class="logo-details">
+      
+        <div class="logo_name">RLAB</div>
+        <i class='bx bx-menu' id="btn" onClick={btnCLick}></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+          <i class='bx bx-search' onClick={serch}></i>
+         <input type="text" placeholder="Search..."/>
+         <span class="tooltip">Search</span>
+      </li>
+      <li>
+        <Link to="/userHome">
+          <i class='bx bx-grid-alt'></i>
+          <span class="links_name">User Home</span>
+        </Link>
+         <span class="tooltip">User Home</span>
+      </li>
+      <li>
+       <a href="#">
+         <i class='bx bx-user' ></i>
+         <span class="links_name">User</span>
+       </a>
+       <span class="tooltip">User</span>
+     </li>
+     <li>
+       <Link to="/location">
+       <i class='bx bx-current-location'></i>
+         <span class="links_name">Location</span>
+       </Link>
+       <span class="tooltip">Location</span>
+     </li>
+     <li>
+       <Link to="/devices">
+       <i class='bx bxs-devices'></i>
+         <span class="links_name">Device</span>
+       </Link>
+       <span class="tooltip">Device</span>
+     </li>
+     <li>
+       <Link to="/command">
+       <i class='bx bx-message-dots'></i>
+         <span class="links_name">Command</span>
+       </Link>
+       <span class="tooltip">Command</span>
+     </li>
+     <li class="profile">
+         <div class="profile-details">
+           <div class="name_job">
+             <div class="name">{user.email}</div>
+             <div class="job">{user.Role}</div>
+           </div>
+         </div>
+         <i class='bx bx-log-out' id="log_out"  onClick={handleLogout}></i>
+     </li>
+    </ul>
+  </div>
+  <section class="home-section">
+      
+  </section>
         </div>
     );
 };

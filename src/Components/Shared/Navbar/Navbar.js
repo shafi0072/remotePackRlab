@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from '../../../Resorces/logo_RLAB.png';
 import './nav.css';
+import '../../../responsive.css';
 import {Link} from 'react-router-dom'
 
 import { useContext } from 'react';
@@ -30,7 +31,7 @@ const Navbar = () => {
         <div >
             <nav class={`navbar navbar-expand-lg navbar-dark bg-dark`}>
                 <div class="container-fluid">
-                    <Link class="navbar-brand" to="#"><img style={{width:'10%'}} src={logo} alt=""/></Link>
+                    <Link class="navbar-brand" to="#"><img className="navbar-brand-img" style={{}} src={logo} alt=""/></Link>
                     <button
                         class="navbar-toggler"
                         type="button"
@@ -42,6 +43,7 @@ const Navbar = () => {
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
+                    
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item">
                                 <Link class="nav-link active" aria-current="page" to="#">Home</Link>

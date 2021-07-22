@@ -2,14 +2,14 @@ import React from 'react';
 import './DeviceMeter.css';
 import '../../../responsive.css';
 import { Line } from 'react-chartjs-2'
-
+import Spinner from '../../Shared/Spinner/Spinner'
 import { useState } from 'react';
-import { useParams } from 'react-router-dom';
+
 
 
 const DeveiceMeter = (props) => {
-    const { DeviceID, voltage01, voltage02, voltage03, dateSocket, voltage04, vBat, txPower, rssiGateway, nMedicion, msActivo, longitude, latitude, current01, rassiGateWay, resistance, temperature, nMessages } = props.data;
-    const { id } = useParams();
+    const { voltage01, voltage02, voltage03, dateSocket, voltage04, vBat, txPower, rssiGateway, nMedicion, msActivo, longitude, latitude, current01, rassiGateWay, resistance, temperature, nMessages } = props.data;
+    
     const [voltageData, setVoltageData] = useState({
         voltageName: '',
         voltage: ''
@@ -17,10 +17,6 @@ const DeveiceMeter = (props) => {
 
     
 
-    const [fetchDevice, setFetchDeviceData] = useState({
-        
-    });
-   
     
   
   
@@ -111,19 +107,20 @@ const DeveiceMeter = (props) => {
                 </div>}
                 <div>
                     <div className="row my-2 status-container">
-                        <div className="col-xl-3 col-md-2 text-start p-0 status-data-container">
+                        {vBat >= 0 &&<div className="col-xl-3 col-md-2 text-start p-0 status-data-container">
                             <span className="status-title">Status:</span>
                             <span>Ok</span>
-                        </div>
-                        <div className="col-xl-6 col-md-8 p-0 status-mid-data">
+                        </div>}
+                        {fullTIme !== "NaN/NaN/NaN" && <div className="col-xl-6 col-md-8 p-0 status-mid-data">
                             <span className="status-title">Last connection:</span>
                             <span className="status-data-date">{formattedTime}</span>
                             <span>{fullTIme}</span>
-                        </div>
-                        <div className="col-xl-3 col-md-2 text-end p-0 status-data-container">
+                        </div>}
+                        {fullTIme === "NaN/NaN/NaN" && <Spinner/>}
+                       {vBat >= 0 && <div className="col-xl-3 col-md-2 text-end p-0 status-data-container">
                             <span className="status-title">Vbat:</span>
                             <span>{vBat}V</span>
-                        </div>
+                        </div>}
                     </div>
                 </div>
                 <Line height={100} width={400} data={{
