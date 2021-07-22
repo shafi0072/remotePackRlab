@@ -7,6 +7,8 @@ import db from '../../FirebaseConfig/Firebase'
 
 import {Button, Form, Segment} from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css'
+import { useEffect } from 'react';
+import DeviceList from './DeviceList';
 const Devices = () => {
     const [devicesData, setDevicesData] = useState({
         model: '',
@@ -17,7 +19,7 @@ const Devices = () => {
         format: 'ENER01'
     });
     const [devices, setDevices] = useState([
-        
+
     ])
     const handleChange = (event) => {
         const newDevices = {
@@ -42,6 +44,19 @@ const Devices = () => {
         e.preventDefault()
 
     }
+
+    useEffect(() => {
+        const getDataFirebase = [];
+        const userDb = db.collection("Devices").onSnapshot((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+              getDataFirebase.push({...doc.data(), key:doc.id});
+            });
+            setDevices(getDataFirebase);
+            
+        });
+        
+       return userDb;
+    },[])
 
     return (
 
@@ -87,7 +102,9 @@ const Devices = () => {
                 </Form.Group>
                 <button className="btn btn-primary">Add/Save</button>
             </Form>
-
+            {
+                devices.map(data => {return <DeviceList data={data}/>})
+            }
         </div>
 
     );
