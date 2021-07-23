@@ -29,10 +29,10 @@ const LocationDevice = () => {
     console.log({DBLocationDV});
     return (
         <div className='row'>
-            <div className="col-md-3 location-device-navbar">
+            <div className="col-md-1">
                 <Navbar/>
             </div>
-            <div className="col-md-9 location-device-background">
+            <div className="col-md-11">
                 <DeviceForm data={DBLocationDV}/>
             </div>
         </div>
