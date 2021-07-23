@@ -21,16 +21,16 @@ const User = (props) => {
     const data = props.data;
     return (
         <div className='mt-5 text-center'>
-        
           {click.clickToUser && <div>
               <div className="user-map">
                     {
                         data.map((data) =>  <UserData  data={data}/>)
                     }
-                </div>
-            <div className="button d-flex justify-content-end">
-                <button className="btn btn-primary" onClick={handleClick}>Add User</button>
+                    <div className="button d-flex justify-content-end">
+                <button className="btn btn-dark" onClick={handleClick}>Add User</button>
             </div> 
+                </div>
+           
            </div>}
             <div>
                 {click.clickToFrom && <UserForm/>}
