@@ -15,22 +15,57 @@ const Footer = () => {
     }
     
     return (
-        <div className='bg-dark mt-5 p-3 text-light text-center' style={{fontFamily: "'Poppins', sans-serif"}}>
-            <div className = "">
-            <h3 className='mt-5'>Email Us</h3>
-            <form action='https://formspree.io/f/xbjqygpq' method="POST">
-                <label htmlFor="firstName" style={{margin:"5px"}}>First Name</label><br/>
-                <input className="footer-input" type="text" name='firstName' placeholder="First Name" id="firstName" style={{width:'20%', height:'40px', borderRadius:'5px', padding:'10px'}} onChange={handleChange}/><br/>
-                <label htmlFor="lastName" style={{margin:"5px"}}>Last Name</label><br />
-                <input className="footer-input" type="text" name="lastName" placeholder="Last Name" id="lastName" style={{width:'20%' , borderRadius:'5px', height:'40px', padding:'10px'}} onChange={handleChange}/><br/>
-                <label htmlFor="email" style={{margin:"5px"}}>Email Adress</label><br />
-                <input className="footer-input" type="email" name="email" placeholder="Email Adress" id="email" style={{width:'20%',borderRadius:'5px', height:'40px', padding:'10px' }} onChange={handleChange}/><br />
-                <label htmlFor="message" style={{margin:"5px"}}>Message</label><br />
-                <textarea className="footer-textarea mb-2" name="message" id="message" cols="40" rows="3" placeholder="Write Something" style={{resize:'vartical', borderRadius:"5px", padding:'10px'}} onChange={handleChange}></textarea>
-                <br />
-                <button className="btn btn-primary footer-button" type="submit">Submit</button>
-               
-            </form>
+        <div>
+            <div className="footer-section">
+                <div className="row">
+                    <div className="col-md-4">
+                        <div className="left-section">
+                            <h2>This is RLAB</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias eum nobis neque ipsum, qui dolor.</p>
+                            <button>Parches Here</button>
+                        </div>
+                    </div>
+                    <div className="col-md-8">
+                        <div className="row">
+                            <div className="col-md-3">
+                                <h5>Discover</h5>
+                                <ul>
+                                    <li><label htmlFor="">Discover1</label></li>
+                                    <li><label htmlFor="">Discover2</label></li>
+                                    <li><label htmlFor="">Discover3</label></li>
+                                    <li><label htmlFor="">Discover4</label></li>
+                                    <li><label htmlFor="">Discover5</label></li>
+                                    <li><label htmlFor="">Discover6</label></li>
+                                </ul>
+                            </div>
+                            <div className="col-md-3">
+                            <h5>Discover</h5>
+                                <ul>
+                                    <li><label htmlFor="">Discover1</label></li>
+                                    <li><label htmlFor="">Discover2</label></li>
+                                    <li><label htmlFor="">Discover3</label></li>
+                                    <li><label htmlFor="">Discover4</label></li>
+                                    <li><label htmlFor="">Discover5</label></li>
+                                    <li><label htmlFor="">Discover6</label></li>
+                                </ul>
+                            </div>
+                            <div className="col-md-3">
+                            <h5>Discover</h5>
+                                <ul>
+                                    <li><label htmlFor="">Discover1</label></li>
+                                    <li><label htmlFor="">Discover2</label></li>
+                                    <li><label htmlFor="">Discover3</label></li>
+                                    <li><label htmlFor="">Discover4</label></li>
+                                    <li><label htmlFor="">Discover5</label></li>
+                                    <li><label htmlFor="">Discover6</label></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="copyright-footer text-center">
+                    <p>© 2019 POLO - Responsive Multi-Purpose HTML5 Template. All Rights Reserved. INSPIRO</p>
+                </div>
             </div>
         </div>
     );
