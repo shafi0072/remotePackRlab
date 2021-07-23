@@ -77,7 +77,7 @@ useEffect(() => {
                     </div>
                     <Link title="select" to={`/locationsDevice/${key}/device/${device2.format}/${device2.key}`}  className="meta_icon2"><ArrowForwardIcon/></Link>
                 </div>
-                <div data-aos="fade-up"  className="clients d-flex justify-content-evenly mb-5">
+                <div data-aos="fade-left"  className="clients d-flex justify-content-evenly mb-5">
                     <div className="form-name">{!device1.model && <span><MeaSpinner/></span>}<p className="form-name-p">{device3.model}</p></div>
                      
                     <div title="Edit" className="meta_icon">
@@ -85,11 +85,11 @@ useEffect(() => {
                     </div>
                     <Link title="select" to={`/locationsDevice/${key}/device/${device3.format}/${device3.key}`}  className="meta_icon2"><ArrowForwardIcon/></Link>
                 </div>
+                <div data-aos="fade-right" className="d-flex justify-content-end buttonArea">
+                    <button className="btn btn-dark AddBUtton">Edit Location</button>
                 </div>
-
-                <div className="button d-flex justify-content-end deviceFrom-location-button">
-                    <button className="btn btn-primary">Edit Location</button>
-                </div>    
+                </div>
+                   
           
           
             </div>

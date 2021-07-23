@@ -97,7 +97,7 @@
     padding: .6% 3%;
 }
 .button .btn:hover{
-    background-color: rgb(19, 19, 255);
+   
 }
 .device-form-container{
     height: 475px;
@@ -157,5 +157,19 @@
     align-items: center;
     padding: .2% 0 0 0%;
     border-radius: 5px;
+    border: none!important;
+}
+.buttonArea{
+    position: relative;
+    right: 14%;
+   
+}
+.AddBUtton{
+    box-shadow: 8px 14px 20px 10px lightgrey;
+}
+.AddBUtton:hover{
+    box-shadow: 8px 14px 20px 10px lightgrey;
+    background-color: white!important;
+    color: black;
     border: none!important;
 }
