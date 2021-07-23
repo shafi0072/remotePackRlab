@@ -1,22 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Home.css'
 
-// const Footer = () => {
-//     const [input, setInput] = useState({
-//         firstName:'',
-//         lastName:'',
-//         email:'',
-//         message:''
-//     });
-//     const handleChange = (e) => {
-//         const newForm = {...input};
-//         newForm[e.target.name] = e.target.value;
-        
-//         setInput(newForm)
-//     }
+
     
 
 const Contact = () => {
+    const [input, setInput] = useState({
+        firstName:'',
+        lastName:'',
+        email:'',
+        message:''
+    });
+    
+    const handleChange = (e) => {
+        const newForm = {...input};
+        newForm[e.target.name] = e.target.value;
+        
+        setInput(newForm)
+    }
+    
     return (
         <div>
             <div className="contact-section py-5">
@@ -26,7 +28,7 @@ const Contact = () => {
                         <h1 className="">RLAB</h1>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis dolore dicta eligendi corporis repudiandae tenetur quia sapiente laudantium minima repellendus assumenda laboriosam porro veniam esse hic, illum possimus quas nobis?</p>
                     </div>
-                    {/* <div className="col-md-6">
+                    <div className="col-md-6">
                         <h3 className='mt-5'>Email Us</h3>
                         <form action='https://formspree.io/f/xbjqygpq' method="POST">
                             <label htmlFor="firstName" style={{margin:"5px"}}>First Name</label><br/>
@@ -41,7 +43,7 @@ const Contact = () => {
                             <button className="btn btn-primary footer-button" type="submit">Submit</button>
                         
                         </form>
-                    </div> */}
+                    </div>
                 </div>
             </div>
         </div>
