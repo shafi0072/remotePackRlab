@@ -15,7 +15,7 @@ const UserHome = () => {
    
     const [user] = useContext(userContext);
     
-    const [dbUserData, setDbUserData] = useState();
+    const [dbUserData, setDbUserData] = useState([]);
     const [loading, setLoading] = useState(true)
     const [menu, setMenu ] = useState({
         showMenu:true,
@@ -44,9 +44,8 @@ const UserHome = () => {
             <div className="col-md-11 backgroundSIDE text-center">
             
             <img src={logo} alt="" style={{width:'20%'}} className='mt-5' />
+                <User data={dbUserData}/>
 
-                {user.userHome && <Rechart/>}
-            
                 
                
                 

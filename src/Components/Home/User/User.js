@@ -6,7 +6,7 @@ import {userContext} from '../../../App';
 import UserData from './UserData';
 
 const User = (props) => {
-   const data = props.data;
+   
     const [click, setClick] = useState({
         clickToUser: true,
         clickToFrom:false
@@ -18,18 +18,16 @@ const User = (props) => {
         setClick(newClick)
     }
     const [user, setUser]  = useContext(userContext);
-    
+    const data = props.data;
     return (
         <div className='mt-5 text-center'>
         
           {click.clickToUser && <div>
-            
-                <div className="user-map">
+              <div className="user-map">
                     {
-                        data.map(data =>{ return  <UserData  data={data}/>})
+                        data.map((data) =>  <UserData  data={data}/>)
                     }
                 </div>
-            
             <div className="button d-flex justify-content-end">
                 <button className="btn btn-primary" onClick={handleClick}>Add User</button>
             </div> 
