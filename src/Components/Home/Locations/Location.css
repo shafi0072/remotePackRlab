@@ -42,12 +42,16 @@
 }
 .form-name{
     background-color: rgba(255, 255, 255, 0.679);
+    box-shadow: 8px 14px 20px 10px lightgrey;
     color: black;
-    width: 48%;
+    width: 30%;
     text-align: left;
     font-size: 20px;
-    padding: .5% 0 0 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 0.7%;
     border-radius: 5px;
+    border: none!important;
 }
 .form-name p{
     margin-bottom: 0px;
@@ -101,4 +105,57 @@
 }
 .location-user-text{
     text-decoration: none;
+}
+.meta_icon{
+    background-color: rgba(255, 255, 255, 0.679);
+    box-shadow: 8px 14px 20px 10px lightgrey;
+    color: black;
+    width: 7%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .2% 0 0 0%;
+    border-radius: 5px;
+    border: none!important;
+    transition: all 0.2s ease-in-out;
+}
+.meta_icon:hover{
+    background-color: #11111d;
+    box-shadow: 8px 14px 20px 10px lightgrey;
+    color: white;
+    width: 7%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .2% 0 0 0%;
+    border-radius: 5px;
+    border: none!important;
+}
+.meta_icon2{
+    background-color: #11111d;
+    box-shadow: 8px 14px 20px 10px lightgrey;
+    color: white;
+    width: 7%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .2% 0 0 0%;
+    border-radius: 5px;
+    border: none!important;
+    transition: all 0.2s ease-in-out;
+}
+.meta_icon2:hover{
+    background-color: rgba(255, 255, 255, 0.679);
+    box-shadow: 8px 14px 20px 10px lightgrey;
+    color: black;
+    width: 7%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .2% 0 0 0%;
+    border-radius: 5px;
+    border: none!important;
 }

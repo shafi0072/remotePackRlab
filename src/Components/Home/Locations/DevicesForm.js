@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import './Location.css';
 import logo from '../../../Resorces/logo_RLAB.png';
-import DevicesData from './DevicesData';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-
+import EditIcon from '@material-ui/icons/Edit';
 import db from '../../FirebaseConfig/Firebase'
-
+import Aos from "aos";
+import 'aos/dist/aos.css';
+import MeaSpinner from './MetarialSpinner'
 const DevicesForm = (props) => {
     
 const {Device_id_1, Device_id_2, Device_id_3, key} = props.data;
@@ -49,7 +51,13 @@ db.collection("Devices").doc(Device_id_3).get().then((doc) => {
 }).catch((error) => {
     console.log("Error getting document:", error);
 });
-},[Device_id_1, Device_id_2, Device_id_3])
+},[Device_id_1, Device_id_2, Device_id_3]);
+
+useEffect(() => {
+    Aos.init({duration: 2000});
+}, [])
+
+
 console.log({device1});
 console.log({device2});
 console.log({device3});
@@ -62,23 +70,28 @@ console.log({device3});
                 </div>
                <div className="container device-form-container mt-5">
                 
-               <div className="clients d-flex justify-content-evenly mb-5">
-                    <div className="form-name"><p className="form-name-p">{device1.model}</p></div>
-                     {/* <input type="text" placeholder='edit your Meter' name='one'/> */}
-                    <button className="btn btn-dark btnEdit" >Edit</button>
-                    <Link to={`/locationsDevice/${key}/device/${device1.format}/${device1.key}`}  className="btn btn-primary btnArea">Select</Link>
+               <div data-aos="fade-left"  className="clients d-flex justify-content-evenly mb-5">
+                    <div className="form-name">{!device1.model && <span><MeaSpinner/></span>}<p className="">{device1.model}</p></div>
+                    <div title="Edit" className="meta_icon">
+                    <EditIcon />
+                    </div>
+                    <Link title="select" to={`/locationsDevice/${key}/device/${device1.format}/${device1.key}`}  className="meta_icon2"><ArrowForwardIcon/></Link>
                 </div>
-                <div className="clients d-flex justify-content-evenly mb-5">
-                    <div className="form-name"><p className="form-name-p">{device2.model}</p></div>
-                     {/* <input type="text" placeholder='edit your Meter' name='one'/> */}
-                    <button className="btn btn-dark btnEdit" >Edit</button>
-                    <Link to={`/locationsDevice/${key}/device/${device2.format}/${device2.key}`}  className="btn btn-primary btnArea">Select</Link>
+                <div data-aos="fade-right"  className="clients d-flex justify-content-evenly mb-5">
+                    <div className="form-name">{!device1.model && <span><MeaSpinner/></span>}<p className="form-name-p">{device2.model}</p></div>
+                     
+                    <div title="Edit" className="meta_icon">
+                    <EditIcon />
+                    </div>
+                    <Link title="select" to={`/locationsDevice/${key}/device/${device2.format}/${device2.key}`}  className="meta_icon2"><ArrowForwardIcon/></Link>
                 </div>
-                <div className="clients d-flex justify-content-evenly mb-5">
-                    <div className="form-name"><p className="form-name-p">{device3.model}</p></div>
-                     {/* <input type="text" placeholder='edit your Meter' name='one'/> */}
-                    <button className="btn btn-dark btnEdit" >Edit</button>
-                    <Link to={`/locationsDevice/${key}/device/${device3.format}/${device3.key}`}  className="btn btn-primary btnArea">Select</Link>
+                <div data-aos="fade-up"  className="clients d-flex justify-content-evenly mb-5">
+                    <div className="form-name">{!device1.model && <span><MeaSpinner/></span>}<p className="form-name-p">{device3.model}</p></div>
+                     
+                    <div title="Edit" className="meta_icon">
+                    <EditIcon />
+                    </div>
+                    <Link title="select" to={`/locationsDevice/${key}/device/${device3.format}/${device3.key}`}  className="meta_icon2"><ArrowForwardIcon/></Link>
                 </div>
                 </div>
 
