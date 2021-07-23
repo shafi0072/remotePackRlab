@@ -1,0 +1,66 @@
+/* ####### All Css ###### */
+.homePage-title{
+    font-size: 50px;
+    font-weight: bold;
+}
+.homePage-p{
+    font-size: 20px;
+}
+ /* #### Welcome css ####   */
+ .welcome-section{
+     
+ }
+.full-name{
+    font-size: 23px;
+    margin: 0 0 1% 0;
+}
+.welcome-container{
+    width: 90%;
+    margin: 0 auto;
+}
+.welcome-img img{
+    width: 100%;
+}
+ /* ####### Information Css ##### */
+ .information-section{
+    background-color: #F7F9FB;
+ }
+ .information-container{
+     width: 90%;
+     margin: 0 auto;
+ }
+ /* #### Service Css ##### */
+ .service-section{
+    width: 90%;
+    margin: 0 auto;
+ }
+ .service-icon{
+     font-size: 20px;
+     border-radius: 50%;
+ }
+ /* ###### Rating Css ##### */
+ .rating-section{
+     padding: 5% 0;
+    background-image: url(./../../../Resorces/pexels-pixabay-531321.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+ }
+ .rating-number{
+    font-size: 45px;
+    margin: 1% 0;
+ }
+ .rating-line{
+    font-size: 17px;
+ }
+ /* ###### Client Css ##### */
+ .client-section{
+     width: 90%;
+     margin: 0 auto;
+ }
+ /* ###### Contact Css ########## */
+.contact-section{
+    width: 90%;
+    margin: 0 auto;
+}

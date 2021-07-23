@@ -1,7 +1,9 @@
+
 .navAvatar{
     
    width: 100%;
    height: 70px;
+   position: absolute;
    z-index: 1;
   background-image: linear-gradient(
     #212429af, 
