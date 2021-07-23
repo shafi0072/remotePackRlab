@@ -12,7 +12,9 @@ const Service = () => {
                     <div className="row py-4">
                         <div className="col-md-4">
                             <div className="service-item d-flex">
-                                <div className="service-icon"><AccessibleIcon/></div>
+                                <div className="icon">
+                                    <div><AccessibleIcon id="service-icon"/></div>
+                                </div>
                                 <div className="item-detail">
                                     <h2>Powerful template</h2>
                                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum, odio quis quaerat fuga accusamus quidem.</p>
@@ -21,7 +23,9 @@ const Service = () => {
                         </div>
                         <div className="col-md-4">
                             <div className="service-item d-flex">
-                                <div className="service-icon"><AccessibleIcon/></div>
+                                <div className="icon">
+                                    <div><AccessibleIcon id="service-icon"/></div>
+                                </div>
                                 <div className="item-detail">
                                     <h2>Powerful template</h2>
                                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum, odio quis quaerat fuga accusamus quidem.</p>
@@ -30,7 +34,9 @@ const Service = () => {
                         </div>
                         <div className="col-md-4">
                             <div className="service-item d-flex">
-                                <div className="service-icon"><AccessibleIcon/></div>
+                                <div className="icon">
+                                    <div><AccessibleIcon id="service-icon"/></div>
+                                </div>
                                 <div className="item-detail">
                                     <h2>Powerful template</h2>
                                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum, odio quis quaerat fuga accusamus quidem.</p>
@@ -41,7 +47,9 @@ const Service = () => {
                     <div className="row py-4">
                         <div className="col-md-4">
                             <div className="service-item d-flex">
-                                <div className="service-icon"><AccessibleIcon/></div>
+                                <div className="icon">
+                                    <div><AccessibleIcon id="service-icon"/></div>
+                                </div>
                                 <div className="item-detail">
                                     <h2>Powerful template</h2>
                                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum, odio quis quaerat fuga accusamus quidem.</p>
@@ -50,7 +58,9 @@ const Service = () => {
                         </div>
                         <div className="col-md-4">
                             <div className="service-item d-flex">
-                                <div className="service-icon"><AccessibleIcon/></div>
+                                <div className="icon">
+                                    <div><AccessibleIcon id="service-icon"/></div>
+                                </div>
                                 <div className="item-detail">
                                     <h2>Powerful template</h2>
                                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum, odio quis quaerat fuga accusamus quidem.</p>
@@ -59,7 +69,9 @@ const Service = () => {
                         </div>
                         <div className="col-md-4">
                             <div className="service-item d-flex">
-                                <div className="service-icon"><AccessibleIcon/></div>
+                                <div className="icon">
+                                    <div><AccessibleIcon id="service-icon"/></div>
+                                </div>
                                 <div className="item-detail">
                                     <h2>Powerful template</h2>
                                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum, odio quis quaerat fuga accusamus quidem.</p>

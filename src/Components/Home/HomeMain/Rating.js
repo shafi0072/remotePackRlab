@@ -8,22 +8,22 @@ const Rating = () => {
             <div className="rating-section">
                 <div className="row text-center">
                     <div className="col-md-3">
-                        <div className="icon"><AccessibleIcon/></div>
+                        <div className="r-icon"><AccessibleIcon id="rating-icon"/></div>
                         <h1 className="rating-number">222</h1>
                         <p className="rating-line">Lorem, ipsum dolor.</p>
                     </div>
                     <div className="col-md-3">
-                        <div className="icon"><AccessibleIcon/></div>
+                        <div className="r-icon"><AccessibleIcon id="rating-icon"/></div>
                         <h1 className="rating-number">222</h1>
                         <p className="rating-line">Lorem, ipsum dolor.</p>
                     </div>
                     <div className="col-md-3">
-                        <div className="icon"><AccessibleIcon/></div>
+                        <div className="r-icon"><AccessibleIcon id="rating-icon"/></div>
                         <h1 className="rating-number">222</h1>
                         <p className="rating-line">Lorem, ipsum dolor.</p>
                     </div>
                     <div className="col-md-3">
-                        <div className="icon"><AccessibleIcon/></div>
+                        <div className="r-icon"><AccessibleIcon id="rating-icon"/></div>
                         <h1 className="rating-number">222</h1>
                         <p className="rating-line">Lorem, ipsum dolor.</p>
                     </div>
