@@ -1,5 +1,5 @@
 import React from 'react';
-import template from '../../../Resorces/3-progettazione-elettronica.jpg';
+import template from '../../../Resorces/welcome.jpg';
 import './Home.css';
 
 const Welcome = () => {
