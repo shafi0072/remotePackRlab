@@ -8,6 +8,7 @@ import {
     Route,
     Link
   } from "react-router-dom";
+  import EditIcon from '@material-ui/icons/Edit';
 const DevicesData = (props) => {
     const [user, setUser] = useContext(userContext)
     const {model,key, format} = props.data;
@@ -38,8 +39,7 @@ const DevicesData = (props) => {
         <div>
             <div className="clients d-flex justify-content-evenly mb-5">
                     {edit.editable && <div className="form-name"><p className="form-name-p">{model}</p></div>}
-                    {edit.clickEdit && <input type="text" placeholder='edit your Meter' name='one'/>}
-                    <button className="btn btn-dark btnEdit" onClick={handleEdit}>Edit</button>
+                    <EditIcon/>
                     <Link to={`/${format}/${key}`} className="btn btn-primary btnArea">Select</Link>
                 </div>
         </div>

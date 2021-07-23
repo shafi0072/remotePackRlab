@@ -12,7 +12,7 @@ const MainDevices = () => {
             <div className="col-md-1">
                 <Navbar/>
             </div>
-            <div className="col-md-11 device-background">
+            <div className="col-md-11 ">
             <div className="logo-img">
                 <img src={logo} alt="" style={{width:'20%'}} className='mt-5' />
             </div>
