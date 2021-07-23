@@ -86,10 +86,10 @@ const DeviceDashBoard = () => {
   console.log({status});
     return (
         <div className='row'>
-            <div className="col-md-3 dashboard-navbar">
+            <div className="col-md-1">
                 <Navbar/>
             </div>
-            <div className="col-md-9 dashboard-background text-center">
+            <div className="col-md-11 text-center">
             <img src={logo} alt="" style={{width:'20%'}} className='mt-5' />
                 <h1 className='text-dark mt-2'>Format: {format}</h1>
                 <DeveiceMeter data={status}/>

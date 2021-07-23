@@ -13,7 +13,6 @@ const LocationUser = (props) => {
     return (
         <div className="energy-meter-card-container col-md-4 text-center">
             <div className="card-main-container mb-1 me-2">
-                    
                 <Link className="location-user-text" to={`/locations/${key}`}><div className="mb-3">
                     <div class="card card-container" >
                         

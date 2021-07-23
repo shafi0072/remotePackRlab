@@ -17,9 +17,6 @@ const {Device_id_1, Device_id_2, Device_id_3, key} = props.data;
  const [device2, setDevice2] = useState({});
  const [device3, setDevice3] = useState({});
    
-console.log({Device_id_1});
-console.log({Device_id_2});
-console.log({Device_id_3});
 useEffect(() => {
     db.collection("Devices").doc(Device_id_1).get().then((doc) => {
     if (doc.exists) {
@@ -55,12 +52,7 @@ db.collection("Devices").doc(Device_id_3).get().then((doc) => {
 
 useEffect(() => {
     Aos.init({duration: 2000});
-}, [])
-
-
-console.log({device1});
-console.log({device2});
-console.log({device3});
+}, []);
 
     return (
             
