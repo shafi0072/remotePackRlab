@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 
 import './Devices.css';
 import '../../../responsive.css';
@@ -9,6 +9,7 @@ import {Button, Form, Segment} from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css'
 import { useEffect } from 'react';
 import DeviceList from './DeviceList';
+import { userContext } from '../../../App';
 const Devices = () => {
     const [devicesData, setDevicesData] = useState({
         model: '',
@@ -29,7 +30,8 @@ const Devices = () => {
         console.log(newDevices);
         setDevicesData(newDevices);
 
-    }
+    };
+    const [user, setUser] = useContext(userContext)
     const handleSubmit = (e) => {
         db
             .collection("Devices")
@@ -61,9 +63,10 @@ const Devices = () => {
     return (
 
         <div>
-            <Form unstackable="unstackable" onSubmit={handleSubmit}>
+            {user.admin && <Form unstackable="unstackable" onSubmit={handleSubmit}>
                 <Form.Group widths={2}>
                     <Form.Input
+                        required
                         label='Device Model'
                         name="model"
                         onChange={handleChange}
@@ -72,6 +75,7 @@ const Devices = () => {
                 </Form.Group>
                 <Form.Group widths={2}>
                     <Form.Input
+                        required
                         label='Serial Number'
                         name="SerialNumber"
                         onChange={handleChange}
@@ -79,6 +83,7 @@ const Devices = () => {
                 </Form.Group>
                 <Form.Group widths={2}>
                     <Form.Input
+                        required
                         label='Commissioning Date'
                         name="Commission"
                         onChange={handleChange}
@@ -88,6 +93,7 @@ const Devices = () => {
                 <Form.Group widths={2}>
 
                     <Form.Input
+                        required
                         label='Level_Alarm_Var01'
                         name="alarm1"
                         onChange={handleChange}
@@ -95,13 +101,14 @@ const Devices = () => {
                 </Form.Group>
                 <Form.Group widths={2}>
                     <Form.Input
+                        required
                         label='Level_Alarm_Var02'
                         name="alarm2"
                         onChange={handleChange}
                         placeholder='30.35'/>
                 </Form.Group>
                 <button className="btn btn-primary">Add/Save</button>
-            </Form>
+            </Form>}
             {
                 devices.map(data => {return <DeviceList data={data}/>})
             }

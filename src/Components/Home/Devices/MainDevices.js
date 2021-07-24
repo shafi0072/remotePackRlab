@@ -14,7 +14,7 @@ const MainDevices = () => {
             </div>
             <div className="col-md-11 ">
             <div className="logo-img">
-                <img src={logo} alt="" style={{width:'20%'}} className='mt-5' />
+                <img src={logo} alt="" style={{width:'20%'}} className='mt-5 mb-5' />
             </div>
                 <Devices/>
             </div>
