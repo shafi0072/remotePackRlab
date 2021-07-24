@@ -85,18 +85,18 @@
     transition: all .3s;
 }
 .footer-list-container:hover .footer-list-title::before{
-    width: 15%;
+    width: 22%;
     animation: border 2s infinite;
 }
 @keyframes border {
     0%{
-        left: -15%;
+        left: -10%;
     }
     50%{
-        left: 100%;
+        left: 92%;
     }
     100%{
-        left: -15%;
+        left: -12%;
     }
 }
 .footer-lists{
