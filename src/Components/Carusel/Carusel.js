@@ -27,21 +27,21 @@ const Carusel = () => {
                         aria-label="Slide 3"></button>
                 </div>
                 <div class="carousel-inner">
-                    <div class="carousel-item active frstSlider text-center">
+                    <div class="carousel-item active frstSlider text-center animation">
                         <h1 className='text-light slide-head' style={{marginTop:'10%'}}>RLAB</h1>
                         <h2 className='text-light'>Your First choice</h2>
                         <p className='text-secondary'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error magnam ducimus <br />  
                             perspiciatis totam dolores vitae quo esse porro repudiandae voluptate, eos, <br />
                             voluptatem provident, mollitia atque. Aut ducimus corporis eligendi alias.</p>
                     </div>
-                    <div class="carousel-item secondSlider text-center">
+                    <div class="carousel-item secondSlider text-center animation">
                         <h1 className='text-light slide-head' style={{marginTop:'10%'}}>Electric Devices</h1>
                         <h2 className='text-light'>Your choice</h2>
                         <p className='text-secondary'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error magnam ducimus <br />  
                             perspiciatis totam dolores vitae quo esse porro repudiandae voluptate, eos, <br />
                             voluptatem provident, mollitia atque. Aut ducimus corporis eligendi alias.</p>
                     </div>
-                    <div class="carousel-item thirdSlider text-center">
+                    <div class="carousel-item thirdSlider text-center animation">
                     <h1 className='text-light slide-head' style={{marginTop:'10%'}}>IOT Devices</h1>
                         <h2 className='text-light'>Your IOT</h2>
                         <p className='text-secondary'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error magnam ducimus <br />  

@@ -6,8 +6,8 @@ const Information = () => {
         <div>
             <div className="information-section py-5">
                 <div className="information-container py-3">
-                    <h1 className="homePage-title">Information Our Tecnology</h1>
-                    <p className="homePage-p">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <h1 className="homePage-title text-center">Information Our Tecnology</h1>
+                    <p className="homePage-p text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                     <div className="details-container row py-2">
                         <div className="col-md-4">
                             <div className="detail">

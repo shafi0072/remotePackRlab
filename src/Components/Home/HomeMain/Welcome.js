@@ -12,7 +12,7 @@ const Welcome = () => {
                     <p className="homePage-p">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
                     </div>
                     <div className="welcome-img mt-5">
-                        <img src={template} alt="" />
+                        <img className="welcome-animation" src={template} alt="" />
                     </div>
                 
                 

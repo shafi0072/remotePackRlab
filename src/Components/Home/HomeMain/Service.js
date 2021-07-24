@@ -6,8 +6,8 @@ const Service = () => {
     return (
         <div>
             <div className="service-section py-5">
-                <h1 className="homePage-title">Our Services</h1>
-                <p className="homePage-p">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <h1 className="homePage-title text-center">Our Services</h1>
+                <p className="homePage-p text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                 <div className="service-detail">
                     <div className="row py-4">
                         <div className="col-md-4">
