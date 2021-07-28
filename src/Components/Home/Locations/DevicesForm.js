@@ -9,6 +9,7 @@ import db from '../../FirebaseConfig/Firebase'
 import Aos from "aos";
 import 'aos/dist/aos.css';
 import MeaSpinner from './MetarialSpinner'
+
 const DevicesForm = (props) => {
     
 const {Device_id_1, Device_id_2, Device_id_3, key} = props.data;
@@ -18,36 +19,27 @@ const {Device_id_1, Device_id_2, Device_id_3, key} = props.data;
  const [device3, setDevice3] = useState({});
    
 useEffect(() => {
-    db.collection("Devices").doc(Device_id_1).get().then((doc) => {
-    if (doc.exists) {
-        setDevice1({...doc.data(), key:doc.id});
-    } else {
-        // doc.data() will be undefined in this case
-        console.log("No such document!");
-    }
-}).catch((error) => {
-    console.log("Error getting document:", error);
-});
-db.collection("Devices").doc(Device_id_2).get().then((doc) => {
-    if (doc.exists) {
-        setDevice2({...doc.data(), key:doc.id});
-    } else {
-        // doc.data() will be undefined in this case
-        console.log("No such document!");
-    }
-}).catch((error) => {
-    console.log("Error getting document:", error);
-});
-db.collection("Devices").doc(Device_id_3).get().then((doc) => {
-    if (doc.exists) {
-        setDevice3({...doc.data(), key:doc.id});
-    } else {
-        // doc.data() will be undefined in this case
-        console.log("No such document!");
-    }
-}).catch((error) => {
-    console.log("Error getting document:", error);
-});
+    db.collection(Device_id_1).onSnapshot((querySnapshot) => {
+        const getDataFirebase = [];
+        querySnapshot.forEach((doc) => {
+            getDataFirebase.push({ ...doc.data(), key: doc.id });
+        });
+        setDevice1(getDataFirebase)
+    })
+    db.collection(Device_id_2).onSnapshot((querySnapshot) => {
+        const getDataFirebase = [];
+        querySnapshot.forEach((doc) => {
+            getDataFirebase.push({ ...doc.data(), key: doc.id });
+        });
+        setDevice2(getDataFirebase)
+    });
+    db.collection(Device_id_3).onSnapshot((querySnapshot) => {
+        const getDataFirebase = [];
+        querySnapshot.forEach((doc) => {
+            getDataFirebase.push({ ...doc.data(), key: doc.id });
+        });
+        setDevice2(getDataFirebase)
+    });
 },[Device_id_1, Device_id_2, Device_id_3]);
 
 useEffect(() => {
@@ -89,12 +81,9 @@ useEffect(() => {
                     <button className="btn btn-dark AddBUtton">Edit Location</button>
                 </div>
                 </div>
-                   
-          
-          
             </div>
         
     );
-};
+}
 
 export default DevicesForm;
