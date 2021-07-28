@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
 import './Home.css'
 
 
@@ -17,7 +18,18 @@ const Contact = () => {
         newForm[e.target.name] = e.target.value;
         
         setInput(newForm)
+        if(e.target.name === 'email'){
+            setLength(true)
+        }
+        
     }
+    const [length, setLength] = useState(false)
+    
+    useEffect(() => {
+        if(input.firstName > 0){
+            setLength(true)
+        }
+    },[])
     
     return (
         <div>
@@ -33,22 +45,22 @@ const Contact = () => {
                             </div>
                         </div>
                         <div className="col-md-1"></div>
-                        <div className="col-md-6 text-center">
+                        <div className="col-md-6">
                             <div>
-                                <h3 className=''>Email Us</h3>
-                                <form action='https://formspree.io/f/xbjqygpq' method="POST">
-                                    <h4 htmlFor="firstName" style={{margin:"0"}}>First Name</h4><br/>
-                                    <input className="footer-input" type="text" name='firstName' placeholder="First Name" id="firstName" style={{width:'55%', height:'40px', borderRadius:'5px', padding:'10px'}} onChange={handleChange}/>
+                                <h1 className='text-center'>Email Us</h1>
+                                <form className="form-section" action='https://formspree.io/f/xbjqygpq' method="POST">
+                                    <h4 htmlFor="firstName" className="form-title">First Name</h4><br/>
+                                    <input onChange={handleChange} className="footer-input" type="text" name='firstName' placeholder="First Name" id="firstName"/>
                                     <br/>
-                                    <h4 htmlFor="lastName" style={{margin:"5px"}}>Last Name</h4><br />
-                                    <input className="footer-input" type="text" name="lastName" placeholder="Last Name" id="lastName" style={{width:'55%' , borderRadius:'5px', height:'40px', padding:'10px'}} onChange={handleChange}/><br/>
-                                    <h4 htmlFor="email" style={{margin:"5px"}}>Email Adress</h4><br />
-                                    <input className="footer-input" type="email" name="email" placeholder="Email Adress" id="email" style={{width:'55%',borderRadius:'5px', height:'40px', padding:'10px' }} onChange={handleChange}/><br />
-                                    <h4 htmlFor="message" style={{margin:"5px"}}>Message</h4><br />
-                                    <textarea className="footer-textarea mb-2" name="message" id="message" cols="45" rows="3" placeholder="Write Something" style={{resize:'vartical', borderRadius:"5px", padding:'10px'}} onChange={handleChange}></textarea>
+                                    <h4 htmlFor="lastName" className="form-title">Last Name</h4><br />
+                                    <input className="footer-input" type="text" name="lastName" placeholder="Last Name" id="lastName" style={{ borderRadius:'5px', height:'40px', padding:'10px'}} onChange={handleChange}/><br/>
+                                    <h4 htmlFor="email" className="form-title">Email Adress</h4><br />
+                                    <input className="footer-input" type="email" name="email" placeholder="Email Adress" id="email" style={{borderRadius:'5px', height:'40px', padding:'10px' }} onChange={handleChange}/><br />
+                                    <h4 htmlFor="message" className="form-title">Message</h4><br />
+                                    <textarea className="footer-textarea mb-2" name="message" id="message" cols="45" rows="1" placeholder="Write Something" style={{resize:'vartical', width:'100%', borderRadius:"5px", padding:'10px'}} onChange={handleChange}></textarea>
                                     <br />
-                                    <button className="btn btn-primary footer-button" type="submit">Submit</button>
-                                
+                                    {length && <button className="btn btn-primary footer-button" type="submit">Submit</button>}
+                                    {!length && <button className="btn btn-dark footer-button">Submit</button>}
                                 </form>
                             </div>
                         </div>
