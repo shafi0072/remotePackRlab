@@ -59,9 +59,6 @@ const UserForm = () => {
             if(getDataFirebase.length > 0){
                 const functionalArray = arrayFunc(getDataFirebase, userInfo.email);
                 setUserUpdate(functionalArray);
-                
-                
-               
             }
         });
         return userDb;
