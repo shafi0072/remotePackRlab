@@ -11,12 +11,31 @@ import 'aos/dist/aos.css';
 import MeaSpinner from './MetarialSpinner'
 
 const DevicesForm = (props) => {
-    
-const {Device_id_1, Device_id_2, Device_id_3, key} = props.data;
 
- const [device1, setDevice1] = useState({});
- const [device2, setDevice2] = useState({});
- const [device3, setDevice3] = useState({});
+    
+const {Device_id_1, Device_id_2, Device_id_3, key} = props.data;  //deviceid coming from location database
+
+ const [device1, setDevice1] = useState([]); //device id 1 from database
+ const [device2, setDevice2] = useState([]); // device id 2 from database
+ const [device3, setDevice3] = useState([]); // device id 3 from database
+ 
+//  function for liner search start
+    
+    function maxNumber(arr) {
+        let i;
+
+        let max = arr[0].dateSocket;
+
+        for (i = 1; i < arr.length; i++){
+            max = arr[i].dateSocket;
+        }
+        return max
+    }
+    
+// finish |^ linear search 
+    
+    
+
    
 useEffect(() => {
     db.collection(Device_id_1).onSnapshot((querySnapshot) => {
@@ -38,14 +57,16 @@ useEffect(() => {
         querySnapshot.forEach((doc) => {
             getDataFirebase.push({ ...doc.data(), key: doc.id });
         });
-        setDevice2(getDataFirebase)
+        setDevice3(getDataFirebase)
     });
 },[Device_id_1, Device_id_2, Device_id_3]);
 
 useEffect(() => {
     Aos.init({duration: 2000});
 }, []);
-
+// const result = maxNumber(device1)// testing dateSocket 
+//     console.log({result})
+    console.log(Device_id_1)
     return (
             
             <div>
