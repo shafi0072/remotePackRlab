@@ -38,6 +38,7 @@ const {Device_id_1, Device_id_2, Device_id_3, key} = props.data;  //deviceid com
 
    
 useEffect(() => {
+   setTimeout(() => {
     db.collection(Device_id_1).onSnapshot((querySnapshot) => {
         const getDataFirebase = [];
         querySnapshot.forEach((doc) => {
@@ -45,20 +46,8 @@ useEffect(() => {
         });
         setDevice1(getDataFirebase)
     })
-    db.collection(Device_id_2).onSnapshot((querySnapshot) => {
-        const getDataFirebase = [];
-        querySnapshot.forEach((doc) => {
-            getDataFirebase.push({ ...doc.data(), key: doc.id });
-        });
-        setDevice2(getDataFirebase)
-    });
-    db.collection(Device_id_3).onSnapshot((querySnapshot) => {
-        const getDataFirebase = [];
-        querySnapshot.forEach((doc) => {
-            getDataFirebase.push({ ...doc.data(), key: doc.id });
-        });
-        setDevice3(getDataFirebase)
-    });
+   }, 10000)
+    
 },[Device_id_1, Device_id_2, Device_id_3]);
 
 useEffect(() => {
@@ -76,27 +65,27 @@ useEffect(() => {
                <div className="container device-form-container mt-5">
                 
                <div data-aos="fade-left"  className="clients d-flex justify-content-evenly mb-5">
-                    <div className="form-name">{!device1.model && <span><MeaSpinner/></span>}<p className="">{device1.model}</p></div>
+                    <div className="form-name">{!Device_id_1 && <span><MeaSpinner/></span>}<p className="">{Device_id_1}</p></div>
                     <div title="Edit" className="meta_icon">
                     <EditIcon />
                     </div>
-                    <Link title="select" to={`/locationsDevice/${key}/device/${device1.format}/${device1.key}`}  className="meta_icon2"><ArrowForwardIcon/></Link>
+                    <Link title="select" to={`/locationsDevice/${device1.key}`}  className="meta_icon2"><ArrowForwardIcon/></Link>
                 </div>
                 <div data-aos="fade-right"  className="clients d-flex justify-content-evenly mb-5">
-                    <div className="form-name">{!device1.model && <span><MeaSpinner/></span>}<p className="form-name-p">{device2.model}</p></div>
+                    <div className="form-name">{!Device_id_1 && <span><MeaSpinner/></span>}<p className="form-name-p">{Device_id_2}</p></div>
                      
                     <div title="Edit" className="meta_icon">
                     <EditIcon />
                     </div>
-                    <Link title="select" to={`/locationsDevice/${key}/device/${device2.format}/${device2.key}`}  className="meta_icon2"><ArrowForwardIcon/></Link>
+                    <Link title="select" to={`/locationsDevice/${device1.key}`}   className="meta_icon2"><ArrowForwardIcon/></Link>
                 </div>
                 <div data-aos="fade-left"  className="clients d-flex justify-content-evenly mb-5">
-                    <div className="form-name">{!device1.model && <span><MeaSpinner/></span>}<p className="form-name-p">{device3.model}</p></div>
+                    <div className="form-name">{!Device_id_1 && <span><MeaSpinner/></span>}<p className="form-name-p">{Device_id_3}</p></div>
                      
                     <div title="Edit" className="meta_icon">
                     <EditIcon />
                     </div>
-                    <Link title="select" to={`/locationsDevice/${key}/device/${device3.format}/${device3.key}`}  className="meta_icon2"><ArrowForwardIcon/></Link>
+                    <Link title="select" to={`/locationsDevice/${device1.key}`}  className="meta_icon2"><ArrowForwardIcon/></Link>
                 </div>
                 <div data-aos="fade-right" className="d-flex justify-content-end buttonArea">
                     <button className="btn btn-dark AddBUtton">Edit Location</button>
