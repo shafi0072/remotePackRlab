@@ -32,6 +32,23 @@ const DeviceDashBoard = () => {
         }
         return resultArray
     };
+
+    //  function for liner search start
+    
+    function maxNumber(arr) {
+        let i;
+
+        let max = arr[0].dateSocket;
+
+        for (i = 1; i < arr.length; i++){
+           if(arr[i].dateSocket > max){
+               max = arr[i]
+           }
+        }
+        return max
+    }
+    
+// finish |^ linear search 
     
     useEffect(() => {
         const userDb =  db.collection(id).onSnapshot((querySnapshot) => {
@@ -40,8 +57,8 @@ const DeviceDashBoard = () => {
               getDataFirebase.push({...doc.data(), key:doc.id});
             });
             
-            
-                setStatus(getDataFirebase);
+           const maxFinder =  maxNumber(getDataFirebase)
+                setStatus(maxFinder);
             
         });
         return userDb;
@@ -55,7 +72,7 @@ const DeviceDashBoard = () => {
             </div>
             <div className="col-md-11 text-center">
             <img src={logo} alt="" style={{width:'20%'}} className='mt-5' />
-                <h1 className='text-dark mt-2'>Format: {format}</h1>
+                
                 <DeveiceMeter data={status}/>
             </div>
         </div>
