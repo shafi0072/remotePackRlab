@@ -34,53 +34,17 @@ const DeviceDashBoard = () => {
     };
     
     useEffect(() => {
-        if(format === "ENER01"){
-            const userDb =  db.collection("SOLARPAN01").onSnapshot((querySnapshot) => {
-                const getDataFirebase = [];
-                querySnapshot.forEach((doc) => {
-                  getDataFirebase.push({...doc.data(), key:doc.id});
-                });
-                
-                if(getDataFirebase.length > 0){
-                    const functionalArray = arrayFunc(getDataFirebase, id)
-                    setStatus(functionalArray)
-                    setLoading(false)
-                }
+        const userDb =  db.collection(id).onSnapshot((querySnapshot) => {
+            const getDataFirebase = [];
+            querySnapshot.forEach((doc) => {
+              getDataFirebase.push({...doc.data(), key:doc.id});
             });
-            return userDb
-        }
-        else if(format === "RTD01"){
-            const userDb =  db.collection("RTD0000002").onSnapshot((querySnapshot) => {
-                const getDataFirebase = [];
-                querySnapshot.forEach((doc) => {
-                  getDataFirebase.push({...doc.data(), key:doc.id});
-                });
-                
-                if(getDataFirebase.length > 0){
-                    const functionalArray = arrayFunc(getDataFirebase, id)
-                    setStatus(functionalArray)
-                    setLoading(false)
-                }
-            });
-            return userDb
-        }
-        else if(format === "GTY01"){
-            const userDb =  db.collection("GTY0000001").where().onSnapshot((querySnapshot) => {
-                const getDataFirebase = [];
-                querySnapshot.forEach((doc) => {
-                  getDataFirebase.push({...doc.data(), key:doc.id});
-                });
-                
-                if(getDataFirebase.length > 0){
-                    const functionalArray = arrayFunc(getDataFirebase, id)
-                    setStatus(functionalArray)
-                    setLoading(false)
-                }
-            });
-            return userDb
-        }
-        
-        
+            
+            
+                setStatus(getDataFirebase);
+            
+        });
+        return userDb;
      
     }, [loading, format, id]);
   console.log({status});
