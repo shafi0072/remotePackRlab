@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
-import './Home.css'
+import './Home.css';
+import AccessibleIcon from '@material-ui/icons/Accessible';
 
 
     
@@ -50,17 +51,21 @@ const Contact = () => {
                                 <h1 className='text-center'>Email Us</h1>
                                 <form className="form-section" action='https://formspree.io/f/xbjqygpq' method="POST">
                                     <h4 htmlFor="firstName" className="form-title">First Name</h4><br/>
-                                    <input onChange={handleChange} className="footer-input" type="text" name='firstName' placeholder="First Name" id="firstName"/>
+                                    <input onChange={handleChange} className="form-input" style={{width:'100%'}} type="text" name='firstName' placeholder="First Name" id="firstName"/>
                                     <br/>
                                     <h4 htmlFor="lastName" className="form-title">Last Name</h4><br />
-                                    <input className="footer-input" type="text" name="lastName" placeholder="Last Name" id="lastName" style={{ borderRadius:'5px', height:'40px', padding:'10px'}} onChange={handleChange}/><br/>
+                                    <input className="form-input" type="text" name="lastName" placeholder="Last Name" id="lastName" style={{width:'100%', borderRadius:'5px', height:'40px', padding:'10px'}} onChange={handleChange}/><br/>
                                     <h4 htmlFor="email" className="form-title">Email Adress</h4><br />
-                                    <input className="footer-input" type="email" name="email" placeholder="Email Adress" id="email" style={{borderRadius:'5px', height:'40px', padding:'10px' }} onChange={handleChange}/><br />
+                                    <input className="form-input" type="email" name="email" placeholder="Email Adress" id="email" style={{width:'100%', borderRadius:'5px', height:'40px', padding:'10px' }} onChange={handleChange}/><br />
                                     <h4 htmlFor="message" className="form-title">Message</h4><br />
-                                    <textarea className="footer-textarea mb-2" name="message" id="message" cols="45" rows="1" placeholder="Write Something" style={{resize:'vartical', width:'100%', borderRadius:"5px", padding:'10px'}} onChange={handleChange}></textarea>
+                                    <textarea className="footer-textarea mb-4" name="message" id="message" cols="45" rows="1" placeholder="Write Something" style={{resize:'vartical', width:'100%', borderRadius:"5px", padding:'10px'}} onChange={handleChange}></textarea>
                                     <br />
-                                    {length && <button className="btn btn-primary footer-button" type="submit">Submit</button>}
-                                    {!length && <button className="btn btn-dark footer-button">Submit</button>}
+                                    <div className="contact-btn text-center">
+                                        {length && <button className="btn footer-button" type="submit">Submit</button>}
+                                    </div>
+                                    <div className="contact-disable-btn text-center">
+                                        {!length && <p className="footer-disable-button">Fill The Form For Unlock The Button.</p>}
+                                    </div>
                                 </form>
                             </div>
                         </div>

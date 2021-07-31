@@ -129,6 +129,112 @@
      margin: 0 auto;
      
  }
+
+ /* ####### Team Css ##### */
+
+.team-section{
+    width: 90%;
+    margin: 0 auto;
+}
+.t-c-margin{
+    margin-right: 4%;
+}
+.team-container{
+    width: 22%;
+    box-shadow: 0px 0px 25px 2px rgb(112, 112, 112);
+    overflow: hidden;
+}
+.team-img{
+    position: relative;
+}
+.t-img{
+    width: 100%;
+}
+.icons{
+    width: 100%;
+}
+.icon1{
+    position: absolute;
+    bottom: 0;
+    
+    right: -25%;
+    transition: all .8s ease-in-out;
+}
+.icon2{
+    position: absolute;
+    bottom: 0;
+    left: -25%;
+    transition: all .8s ease-in-out;
+}
+#team-icon{
+    font-size: 30px;
+    border: 2px solid black;
+    border-radius: 50%;
+    padding: .5%;
+    background-color: white;
+    margin-bottom: 7%;
+    transition: all .5s ease-in;
+}
+#team-icon:hover{
+    color: white;
+    background-color: blue;
+}
+#team-icon:nth-child(even){
+    margin-left: 4.5px;
+}
+.team-container:hover .icon1{
+    right: 49.5%;
+}
+.team-container:hover .icon2{
+    left: 51.5%;
+}
+.teams-title{
+    font-weight: bold;
+    font-size: 17px;
+}
+.teams-profession{
+    font-weight: bold;
+    color: rgb(71, 71, 71);
+}
+.team-btn-container{
+    width: 35%;
+    margin: 0 auto;
+    
+}
+.team-btn{
+    width: 100%;
+    color: white;
+    background-color: black;
+    border: 3px solid black;
+    border-radius: 20px;
+    padding: 5% 0;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 1;
+    transition: all .3s ease-in-out;
+    transition-delay: .1s;
+    overflow: hidden;
+}
+.team-btn::before{
+    content: "";
+    position: absolute;
+    background-color: white;
+    top: 0;
+    left: -110%;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    z-index: -1;
+    transition: all .4s ease-in-out;
+}
+.team-btn:hover.team-btn::before{
+    left: 0;
+}
+.team-btn:hover{
+    color: black;
+}
  /* ###### Contact Css ########## */
 .contact-section{
     background-color: #F7F9FB;
@@ -147,7 +253,7 @@
     width: 80%;
     margin: 0 auto;
 }
-.footer-input, .footer-textarea{
+.form-input, .footer-textarea{
     border: none;
     width: 75%;
     margin: 0 0 3% 0;
@@ -158,7 +264,7 @@
     font-size: 15px;
     font-weight: bold;
 }
-.footer-input:focus{
+.form-input:focus{
     outline: none;
     background-color: none;
     animation: form-input 3s infinite;  
@@ -181,4 +287,64 @@
     100%{
         border-bottom: 2px solid red;
     }
+}
+/* .contact-btn{
+    width: 70%;
+    margin: 0 auto;
+    height: 30px;
+    overflow: hidden;
+} */
+.footer-disable-button{
+    font-size: 17px;
+    cursor:default!important;
+    animation: form-submit 6s infinite;
+    color: red;
+}
+/* @keyframes form-submit {
+    0%{
+        left: 100%;
+    }
+    100%{
+        left: -100%;
+    }
+} */
+.footer-disable-button::selection{
+    background-color: #F7F9FB;
+}
+.footer-button{
+    font-size: 17px;
+    font-weight: bold;
+    width: 100%;
+    border-radius: 20px;
+    background-color: white;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition-delay: .1s;
+    transition: all .5s ease-in-out;
+}
+.contact-btn{
+    width: 25%;
+    margin: 0 auto;
+    position: relative;
+    
+}
+.footer-button::after{
+    z-index: -1;
+    content: "";
+    position: absolute;
+    bottom: -300%;
+    right: -20%;
+    width: 170px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: purple;
+    transition: all .5s ease-in-out;
+}
+.contact-btn:hover .footer-button::after{
+    contain: "";
+    bottom: -100%;
+}
+.contact-btn:hover .footer-button{
+    color: white;
 }

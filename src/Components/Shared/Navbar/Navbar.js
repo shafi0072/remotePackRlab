@@ -46,7 +46,7 @@ const Navbar = () => {
                     
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item">
-                                <Link class="nav-link active" aria-current="page" to="#">Home</Link>
+                                <Link class="nav-link" aria-current="page" to="#">Home</Link>
                             </li>
                             <li class="nav-item">
                                 <Link class="nav-link" to="#">Products</Link>

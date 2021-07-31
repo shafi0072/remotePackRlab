@@ -8,6 +8,7 @@ import Information from './Information';
 import Service from './Service';
 import Rating from './Rating.js';
 import Client from './Client';
+import Team from './Team';
 import Contact from './Contact';
 import './Home.css';
 import './HomeResponsive.css';
@@ -22,6 +23,7 @@ const Home = () => {
             <Service/>
             <Rating/>
             {/* <Client/> */}
+            <Team/>
             <Contact/>
             </div>
             <Footer/>
