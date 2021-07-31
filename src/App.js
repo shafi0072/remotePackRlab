@@ -58,7 +58,7 @@ const App = () => {
         <Route path ="/devices" component={MainDevices}/>
         <Route path = '/location' component={MainLocation}/>
         <Route path="/locations/:Lid" component={LocationDevice}/>
-        <Route path="/locationsDevice/:LEid/device/:format/:id" component={DeviceDashBoard}/>
+        <Route path="/locationsDevice/:id" component={DeviceDashBoard}/>
         <PrivateRoute path = '/userHome'>
           <UserHome/>
         </PrivateRoute>
