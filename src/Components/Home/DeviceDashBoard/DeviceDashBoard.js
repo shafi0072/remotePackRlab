@@ -77,17 +77,28 @@ async function selectionSort(arr) {
   }
     
     useEffect(() => {
-        const userDb =  db.collection(id).orderBy("dateSocket", "desc").onSnapshot((querySnapshot) => {
-            const getDataFirebase = [];
-            querySnapshot.forEach((doc) => {
-              getDataFirebase.push({...doc.data(), key:doc.id});
+        const userDb =  db.collection("RealTime").doc(id).onSnapshot((querySnapshot) => {
+            
+          setStatus({...querySnapshot.data(), key:querySnapshot.id});
               
-            });
+           
             // const maxNumber1 = maxNumber(getDataFirebase);
-            setStatus(getDataFirebase[0])
-            console.log(getDataFirebase[0])
+            
         });
         return userDb;
+//         var docRef = db.collection("RealTime").doc(id);
+
+// docRef.get().then((doc) => {
+  
+//     if (doc.exists) {
+//       setStatus({...doc.data(), key:doc.id});
+//     } else {
+//         // doc.data() will be undefined in this case
+//         console.log("No such document!");
+//     }
+// }).catch((error) => {
+//     console.log("Error getting document:", error);
+// });
      
     }, [loading, format, id]);
   console.log({status});
