@@ -77,15 +77,15 @@ async function selectionSort(arr) {
   }
     
     useEffect(() => {
-        const userDb =  db.collection(id).onSnapshot((querySnapshot) => {
+        const userDb =  db.collection(id).orderBy("dateSocket", "desc").onSnapshot((querySnapshot) => {
             const getDataFirebase = [];
             querySnapshot.forEach((doc) => {
               getDataFirebase.push({...doc.data(), key:doc.id});
               
             });
-            const maxNumber1 = maxNumber(getDataFirebase);
-            setStatus(maxNumber1)
-            console.log({getDataFirebase})
+            // const maxNumber1 = maxNumber(getDataFirebase);
+            setStatus(getDataFirebase[0])
+            console.log(getDataFirebase[0])
         });
         return userDb;
      
