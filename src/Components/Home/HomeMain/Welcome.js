@@ -1,6 +1,8 @@
 import React from 'react';
 import template from '../../../Resorces/welcome.jpg';
 import './Home.css';
+import './HomeResponsive.css';
+
 
 const Welcome = () => {
     return (

@@ -1,5 +1,6 @@
 import React from 'react';
 import './Home.css';
+import './HomeResponsive.css';
 
 const Information = () => {
     return (
@@ -11,19 +12,19 @@ const Information = () => {
                     <div className="details-container row py-2">
                         <div className="col-md-4">
                             <div className="detail">
-                                <h1>Modern Design</h1>
+                                <h1 className="detail-head">Modern Design</h1>
                                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi assumenda quis laudantium amet velit saepe ad corporis animi. Eaque, tempora.</p>
                             </div>
                         </div>
                         <div className="col-md-4">
                             <div className="detail">
-                                <h1>Modern Design</h1>
+                                <h1 className="detail-head">Modern Design</h1>
                                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi assumenda quis laudantium amet velit saepe ad corporis animi. Eaque, tempora.</p>
                             </div>
                         </div>
                         <div className="col-md-4">
                             <div className="detail">
-                                <h1>Modern Design</h1>
+                                <h1 className="detail-head">Modern Design</h1>
                                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi assumenda quis laudantium amet velit saepe ad corporis animi. Eaque, tempora.</p>
                             </div>
                         </div>
@@ -31,19 +32,19 @@ const Information = () => {
                     <div className="details-container row py-2">
                         <div className="col-md-4">
                             <div className="detail">
-                                <h1>Modern Design</h1>
+                                <h1 className="detail-head">Modern Design</h1>
                                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi assumenda quis laudantium amet velit saepe ad corporis animi. Eaque, tempora.</p>
                             </div>
                         </div>
                         <div className="col-md-4">
                             <div className="detail">
-                                <h1>Modern Design</h1>
+                                <h1 className="detail-head">Modern Design</h1>
                                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi assumenda quis laudantium amet velit saepe ad corporis animi. Eaque, tempora.</p>
                             </div>
                         </div>
                         <div className="col-md-4">
                             <div className="detail">
-                                <h1>Modern Design</h1>
+                                <h1 className="detail-head">Modern Design</h1>
                                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi assumenda quis laudantium amet velit saepe ad corporis animi. Eaque, tempora.</p>
                             </div>
                         </div>
