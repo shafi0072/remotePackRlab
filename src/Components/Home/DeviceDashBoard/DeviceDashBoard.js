@@ -35,9 +35,9 @@ const DeviceDashBoard = () => {
 
     //  function for liner search start
     
-    function maxNumber(arr) {
+function maxNumber(arr) {
+        
         let i;
-
         let max = arr[0].dateSocket;
 
         for (i = 1; i < arr.length; i++){
@@ -45,21 +45,47 @@ const DeviceDashBoard = () => {
                max = arr[i]
            }
         }
-        return max
+    // const lastItem =  await arr[arr.length - 1]
+        return max;
     }
     
 // finish |^ linear search 
+//shorting data 
+async function selectionSort(arr) {
+    let min;
+  
+    //start passes.
+    for (let i = 0; i < arr.length; i++) {
+      //index of the smallest element to be the ith element.
+      min = i;
+  
+      //Check through the rest of the array for a lesser element
+      for (let j = i + 1; j < arr.length; j++) {
+        if (arr[j].dateSocket < arr[min].dateSocket) {
+          min = j;
+        }
+      }
+  
+      //compare the indexes
+      if (min !== i) {
+        //swap
+        [arr[i].dateSocket, arr[min]].dateSocket = [arr[min].dateSocket, arr[i].dateSocket];
+      }
+    }
+  
+    return arr;
+  }
     
     useEffect(() => {
-        const userDb =  db.collection(id).onSnapshot((querySnapshot) => {
+        const userDb =  db.collection(id).orderBy("dateSocket", "desc").onSnapshot((querySnapshot) => {
             const getDataFirebase = [];
             querySnapshot.forEach((doc) => {
               getDataFirebase.push({...doc.data(), key:doc.id});
+              
             });
-            
-           const maxFinder =  maxNumber(getDataFirebase)
-                setStatus(maxFinder);
-            
+            // const maxNumber1 = maxNumber(getDataFirebase);
+            setStatus(getDataFirebase[0])
+            console.log(getDataFirebase[0])
         });
         return userDb;
      
