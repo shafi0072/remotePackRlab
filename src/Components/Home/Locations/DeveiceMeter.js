@@ -4,6 +4,8 @@ import '../../../responsive.css';
 import { Line } from 'react-chartjs-2'
 import Spinner from '../../Shared/Spinner/Spinner'
 import { useState } from 'react';
+import { useContext } from 'react';
+import { userContext } from '../../../App';
 
 
 
@@ -15,7 +17,7 @@ const DeveiceMeter = (props) => {
         voltage: ''
     });
 
-    
+    const [user, setUser] = useContext(userContext)
 
     
   
@@ -53,47 +55,47 @@ const DeveiceMeter = (props) => {
         newClick.halfDay = false;
         newClick.sixH= false;
         newClick.oneH= false;
-        props.setPastData(newClick)
+        setUser(newClick)
     }
     const handleDay =() => {
-        const newClick = {...props.pastDataTrig}
+        const newClick = {...user}
         newClick.present = false
         newClick.week= false;
         newClick.day = true;
         newClick.halfDay = false;
         newClick.sixH= false;
         newClick.oneH= false;
-        props.setPastData(newClick)
+        setUser(newClick)
     }
     const handleHalfDay = () => {
-        const newClick = {...props.pastDataTrig}
+        const newClick = {...user}
         newClick.present = false
         newClick.week= false;
         newClick.day = false;
         newClick.halfDay = true;
         newClick.sixH= false;
         newClick.oneH= false;
-        props.setPastData(newClick)
+        setUser(newClick)
     }
     const handleSixH = () => {
-        const newClick = {...props.pastDataTrig}
+        const newClick = {...user}
         newClick.present = false
         newClick.week= false;
         newClick.day = false;
         newClick.halfDay = false;
         newClick.sixH= true;
         newClick.oneH= false;
-        props.setPastData(newClick)
+        setUser(newClick)
     }
     const handleOneH = () => {
-        const newClick = {...props.pastDataTrig}
+        const newClick = {...user}
         newClick.present = false
         newClick.week= false;
         newClick.day = false;
         newClick.halfDay = false;
         newClick.sixH= false;
         newClick.oneH= true;
-        props.setPastData(newClick)
+        setUser(newClick)
     }
     let unix_timestamp = dateSocket;
     var date = new Date(unix_timestamp);
