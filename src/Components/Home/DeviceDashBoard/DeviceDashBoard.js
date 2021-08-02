@@ -24,8 +24,8 @@ const DeviceDashBoard = () => {
     const [status,setStatus] = useState([])
     const [loading, setLoading] = useState(true);
     const [pastData, setPastData] = useState({
-      present:false,
-      week:true,
+      present:true,
+      week:false,
       day:false,
       halfDay:false,
       sixH:false,
@@ -100,7 +100,7 @@ async function selectionSort(arr) {
         return userDb;
        }
        else if(pastData.week === true){
-        const userDb2 =  db.collection(id).orderBy('dateSocket', 'desc').limit(100).onSnapshot((querySnapshot) => {
+        const userDb2 =  db.collection(id).orderBy('dateSocket', 'desc').limit(1999).onSnapshot((querySnapshot) => {
           let getDataFirebase = [];
           querySnapshot.forEach((doc) => {
             getDataFirebase.push({...doc.data(), key:doc.id});
@@ -110,10 +110,10 @@ async function selectionSort(arr) {
           return userDb2
         });
        }
-       
      
     }, [loading, format, id, pastData]);
   console.log({status});
+  console.log('dateSocket', 1627894069369 - 6.048e+8)
     return (
         <div className='row'>
             <div className="col-md-1">
@@ -122,7 +122,7 @@ async function selectionSort(arr) {
             <div className="col-md-11 text-center">
             <img src={logo} alt="" style={{width:'20%'}} className='mt-5' />
                 
-                <DeveiceMeter data={status}/>
+                <DeveiceMeter data={status} pastDataTrig={pastData} setProps = {setPastData}/>
             </div>
         </div>
     );

@@ -45,6 +45,56 @@ const DeveiceMeter = (props) => {
         newVoltage.voltageName = 'voltage04'
         setVoltageData(newVoltage);
     }
+    const handleWeek = () => {
+        const newClick = {...props.pastDataTrig}
+        newClick.present = false
+        newClick.week= true;
+        newClick.day = false;
+        newClick.halfDay = false;
+        newClick.sixH= false;
+        newClick.oneH= false;
+        props.setPastData(newClick)
+    }
+    const handleDay =() => {
+        const newClick = {...props.pastDataTrig}
+        newClick.present = false
+        newClick.week= false;
+        newClick.day = true;
+        newClick.halfDay = false;
+        newClick.sixH= false;
+        newClick.oneH= false;
+        props.setPastData(newClick)
+    }
+    const handleHalfDay = () => {
+        const newClick = {...props.pastDataTrig}
+        newClick.present = false
+        newClick.week= false;
+        newClick.day = false;
+        newClick.halfDay = true;
+        newClick.sixH= false;
+        newClick.oneH= false;
+        props.setPastData(newClick)
+    }
+    const handleSixH = () => {
+        const newClick = {...props.pastDataTrig}
+        newClick.present = false
+        newClick.week= false;
+        newClick.day = false;
+        newClick.halfDay = false;
+        newClick.sixH= true;
+        newClick.oneH= false;
+        props.setPastData(newClick)
+    }
+    const handleOneH = () => {
+        const newClick = {...props.pastDataTrig}
+        newClick.present = false
+        newClick.week= false;
+        newClick.day = false;
+        newClick.halfDay = false;
+        newClick.sixH= false;
+        newClick.oneH= true;
+        props.setPastData(newClick)
+    }
     let unix_timestamp = dateSocket;
     var date = new Date(unix_timestamp);
     let fullDate = date.getDate();
@@ -150,11 +200,11 @@ const DeveiceMeter = (props) => {
                 <div className="chart-btn">
                     <ul className="d-flex justify-content-end chart-lists">
                         
-                        <li className="bg-primary chart-list">1W</li>
-                        <li className="bg-primary chart-list">2D</li>
-                        <li className="bg-primary chart-list">3H</li>
-                        <li className="bg-primary chart-list">57M</li>
-                        <li className="bg-primary chart-list">60S</li>
+                        <li className="bg-primary chart-list text-light" onClick={handleWeek}>1W</li>
+                        <li className="bg-primary chart-list text-light" onClick={handleDay}>1D</li>
+                        <li className="bg-primary chart-list text-light" onClick={handleHalfDay}>12H</li>
+                        <li className="bg-primary chart-list text-light" onClick={handleSixH}>6h</li>
+                        <li className="bg-primary chart-list text-light" onClick={handleOneH}>1h</li>
                     </ul>
                 </div>
                 <div className="">
