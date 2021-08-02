@@ -22,7 +22,15 @@ const DeviceDashBoard = () => {
 
 
     const [status,setStatus] = useState([])
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(true);
+    const [pastData, setPastData] = useState({
+      present:false,
+      week:true,
+      day:false,
+      halfDay:false,
+      sixH:false,
+      oneH:false
+    })
     function arrayFunc(arr,key) {
         let resultArray = [];
         for(let i = 0; i < arr.length; i++){
@@ -75,8 +83,12 @@ async function selectionSort(arr) {
   
     return arr;
   }
-    
+  const unixTimeX1 = Date.now() - 5*60000;
+  const unixTimex0 =  unixTimeX1 - 8*24*60*60000;
+  const day = unixTimeX1 / 24
+  console.log({day})
     useEffect(() => {
+       if(pastData.present === true){
         const userDb =  db.collection("RealTime").doc(id).onSnapshot((querySnapshot) => {
             
           setStatus({...querySnapshot.data(), key:querySnapshot.id});
@@ -86,21 +98,21 @@ async function selectionSort(arr) {
             
         });
         return userDb;
-//         var docRef = db.collection("RealTime").doc(id);
-
-// docRef.get().then((doc) => {
-  
-//     if (doc.exists) {
-//       setStatus({...doc.data(), key:doc.id});
-//     } else {
-//         // doc.data() will be undefined in this case
-//         console.log("No such document!");
-//     }
-// }).catch((error) => {
-//     console.log("Error getting document:", error);
-// });
+       }
+       else if(pastData.week === true){
+        const userDb2 =  db.collection(id).orderBy('dateSocket', 'desc').limit(100).onSnapshot((querySnapshot) => {
+          let getDataFirebase = [];
+          querySnapshot.forEach((doc) => {
+            getDataFirebase.push({...doc.data(), key:doc.id});
+          });
+          setStatus(getDataFirebase);
+            // const maxNumber1 = maxNumber(getDataFirebase);
+          return userDb2
+        });
+       }
+       
      
-    }, [loading, format, id]);
+    }, [loading, format, id, pastData]);
   console.log({status});
     return (
         <div className='row'>
