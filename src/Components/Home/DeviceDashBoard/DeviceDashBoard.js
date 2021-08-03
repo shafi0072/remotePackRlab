@@ -50,23 +50,10 @@ const DeviceDashBoard = () => {
                 });
             return userDb;
         } else if (user.week === true) {
-          // let UnixTimeFOrToday = Date.now() ;
-          //           let unixToWeek = UnixTimeFOrToday - 604800;
-          //   const userDb2 = db.collection(id).orderBy('dateSocket', 'desc').where('dateSocket', '<', unixToWeek).onSnapshot((querySnapshot) => {
-          //           let getDataFirebase = [];
-          //           querySnapshot.forEach((doc) => {
-          //               getDataFirebase.push({...doc.data(),key: doc.id});
-          //           });
-                    
-                    
-          //           const Aweek = arrayFunc(getDataFirebase, unixToWeek)
-          //           setPastData(Aweek)
-          //           console.log({getDataFirebase})
-          //           return userDb2
-          //       });
+          
           let UnixTimeFOrToday = Date.now() - 5*60000;
-          let unixToWeek = UnixTimeFOrToday - 7*24*60*60000;;
-          db.collection(id).where("dateSocket", ">", unixToWeek).where("dateSocket", "<", UnixTimeFOrToday).limit(300)
+          let unixToWeek = UnixTimeFOrToday - 6.048e+8;
+          db.collection(id).where("dateSocket", ">=", unixToWeek).where("dateSocket", "<=", UnixTimeFOrToday).limit(100)
           .get()
           .then((querySnapshot) => {
             let getDataFirebase = [];
@@ -74,14 +61,83 @@ const DeviceDashBoard = () => {
                   // doc.data() is never undefined for query doc snapshots
                   getDataFirebase.push({...doc.data(),key: doc.id});
               });
-              console.log({getDataFirebase})
+              setPastData(getDataFirebase[0])
           })
           .catch((error) => {
               console.log("Error getting documents: ", error);
           });
-           
         }
-
+        else if (user.day === true) {
+            
+            let UnixTimeFOrToday = Date.now() - 5*60000;
+            let unixToWeek = UnixTimeFOrToday - 8.64e+7;
+            db.collection(id).where("dateSocket", ">=", unixToWeek).where("dateSocket", "<=", UnixTimeFOrToday).limit(100)
+            .get()
+            .then((querySnapshot) => {
+              let getDataFirebase = [];
+                querySnapshot.forEach((doc) => {
+                    // doc.data() is never undefined for query doc snapshots
+                    getDataFirebase.push({...doc.data(),key: doc.id});
+                });
+                setPastData(getDataFirebase[0])
+            })
+            .catch((error) => {
+                console.log("Error getting documents: ", error);
+            });
+          }
+          else if (user.halfDay === true) {
+            
+            let UnixTimeFOrToday = Date.now() - 5*60000;
+            let unixToWeek = UnixTimeFOrToday - 4.32e+7;
+            db.collection(id).where("dateSocket", ">=", unixToWeek).where("dateSocket", "<=", UnixTimeFOrToday).limit(100)
+            .get()
+            .then((querySnapshot) => {
+              let getDataFirebase = [];
+                querySnapshot.forEach((doc) => {
+                    // doc.data() is never undefined for query doc snapshots
+                    getDataFirebase.push({...doc.data(),key: doc.id});
+                });
+                setPastData(getDataFirebase[0])
+            })
+            .catch((error) => {
+                console.log("Error getting documents: ", error);
+            });
+          }
+          else if (user.sixH === true) {
+            
+            let UnixTimeFOrToday = Date.now() - 5*60000;
+            let unixToWeek = UnixTimeFOrToday - 2.16e+7;
+            db.collection(id).where("dateSocket", ">=", unixToWeek).where("dateSocket", "<=", UnixTimeFOrToday).limit(100)
+            .get()
+            .then((querySnapshot) => {
+              let getDataFirebase = [];
+                querySnapshot.forEach((doc) => {
+                    // doc.data() is never undefined for query doc snapshots
+                    getDataFirebase.push({...doc.data(),key: doc.id});
+                });
+                setPastData(getDataFirebase[0])
+            })
+            .catch((error) => {
+                console.log("Error getting documents: ", error);
+            });
+          }
+          else if (user.oneH === true) {
+            let UnixTimeFOrToday = Date.now() - 5*60000;
+            let unixToWeek = UnixTimeFOrToday - 3.6e+6;
+            db.collection(id).where("dateSocket", ">=", unixToWeek).where("dateSocket", "<=", UnixTimeFOrToday).limit(100)
+            .get()
+            .then((querySnapshot) => {
+              let getDataFirebase = [];
+                querySnapshot.forEach((doc) => {
+                    // doc.data() is never undefined for query doc snapshots
+                    getDataFirebase.push({...doc.data(),key: doc.id});
+                });
+                setPastData(getDataFirebase[0])
+            })
+            .catch((error) => {
+                console.log("Error getting documents: ", error);
+            });
+          }
     }, [loading, format, id, user]);
     
     console.log('dateSocket', 1627894069369 - 6.048e+8)
@@ -100,7 +156,7 @@ const DeviceDashBoard = () => {
                     }}
                     className='mt-5'/>
 
-                <DeveiceMeter data={status} pastDataTrig={user} setProps={user}/>
+                <DeveiceMeter data={status} pastData={pastData}/>
             </div>
         </div>
     );
