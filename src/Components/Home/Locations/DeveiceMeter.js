@@ -48,12 +48,12 @@ const DeveiceMeter = (props) => {
     }
     const handleWeek = () => {
         const newClick = {...props.pastDataTrig}
-        newClick.present = false
+        newClick.present = true
         newClick.week= true;
-        newClick.day = false;
-        newClick.halfDay = false;
-        newClick.sixH= false;
-        newClick.oneH= false;
+        newClick.day = true;
+        newClick.halfDay = true;
+        newClick.sixH= true;
+        newClick.oneH= true;
         setUser(newClick)
     }
     const handleDay =() => {
@@ -174,11 +174,12 @@ const DeveiceMeter = (props) => {
                         </div>}
                     </div>
                 </div>
+                <h1>Past Data</h1>
                 <Line height={100} width={400} data={{
-                    labels: [voltageData.voltageName, 'voltage01', 'voltage02', 'voltage03', 'voltage04'],
+                    labels: ["1 Week", '1 Day', '12 Hours', '6 Hours', '1 Hours', 'Current'],
                     datasets: [{
                         label: 'Voltage Data',
-                        data: [voltageData.voltage, props.pastData.voltage01, props.pastData.voltage02, props.pastData.voltage03, props.pastData.voltage04],
+                        data: [voltageData.voltage, props.pastData.voltage01, props.day.voltage01, props.halfDay.voltage01, props.sixH.voltage01, props.oneH.voltage01, voltage01],
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',
                             'rgba(54, 162, 235, 0.2)',
@@ -207,30 +208,7 @@ const DeveiceMeter = (props) => {
                         <li className="bg-primary chart-list text-light" onClick={handleOneH}>1h</li>
                     </ul>
                 </div>
-                <Line height={100} width={400} data={{
-                    labels: [voltageData.voltageName, 'voltage01', 'voltage02', 'voltage03', 'voltage04'],
-                    datasets: [{
-                        label: 'Voltage Data',
-                        data: [voltageData.voltage, voltage01, voltage02, voltage03, voltage04],
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(255, 99, 132, 1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)',
-                            'rgba(153, 102, 255, 1)',
-                            'rgba(255, 159, 64, 1)'
-                        ],
-                        borderWidth: 1
-                    }]
-                }} />
+                
                 <div className="">
                     <div>
                         <div>
