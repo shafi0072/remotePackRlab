@@ -197,6 +197,27 @@ const DeveiceMeter = (props) => {
                             'rgba(255, 159, 64, 1)'
                         ],
                         borderWidth: 1
+                    }],
+                    datasets2: [{
+                        label: 'Voltage Data2',
+                        data: [voltageData.voltage, props.pastData.voltage02, props.day.voltage02, props.halfDay.voltage02, props.sixH.voltage02, props.oneH.voltage02, voltage02],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
                     }]
                 }} />
                 <div className="chart-btn">
