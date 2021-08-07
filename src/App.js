@@ -46,6 +46,12 @@ const App = () => {
     click: false,
     Role:'',
     deviceId:'', 
+    present:true,
+    week:false,
+    day:false,
+    halfDay:false,
+    sixH:false,
+    oneH:false
   })
 
 

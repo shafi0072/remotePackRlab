@@ -4,6 +4,8 @@ import '../../../responsive.css';
 import { Line } from 'react-chartjs-2'
 import Spinner from '../../Shared/Spinner/Spinner'
 import { useState } from 'react';
+import { useContext } from 'react';
+import { userContext } from '../../../App';
 
 
 
@@ -14,8 +16,7 @@ const DeveiceMeter = (props) => {
         voltageName: '',
         voltage: ''
     });
-
-    
+    const [user, setUser] = useContext(userContext)
 
     
   
@@ -44,6 +45,56 @@ const DeveiceMeter = (props) => {
         newVoltage.voltage = voltage04;
         newVoltage.voltageName = 'voltage04'
         setVoltageData(newVoltage);
+    }
+    const handleWeek = () => {
+        const newClick = {...props.pastDataTrig}
+        newClick.present = true
+        newClick.week= true;
+        newClick.day = true;
+        newClick.halfDay = true;
+        newClick.sixH= true;
+        newClick.oneH= true;
+        setUser(newClick)
+    }
+    const handleDay =() => {
+        const newClick = {...user}
+        newClick.present = false
+        newClick.week= false;
+        newClick.day = true;
+        newClick.halfDay = false;
+        newClick.sixH= false;
+        newClick.oneH= false;
+        setUser(newClick)
+    }
+    const handleHalfDay = () => {
+        const newClick = {...user}
+        newClick.present = false
+        newClick.week= false;
+        newClick.day = false;
+        newClick.halfDay = true;
+        newClick.sixH= false;
+        newClick.oneH= false;
+        setUser(newClick)
+    }
+    const handleSixH = () => {
+        const newClick = {...user}
+        newClick.present = false
+        newClick.week= false;
+        newClick.day = false;
+        newClick.halfDay = false;
+        newClick.sixH= true;
+        newClick.oneH= false;
+        setUser(newClick)
+    }
+    const handleOneH = () => {
+        const newClick = {...user}
+        newClick.present = false
+        newClick.week= false;
+        newClick.day = false;
+        newClick.halfDay = false;
+        newClick.sixH= false;
+        newClick.oneH= true;
+        setUser(newClick)
     }
     let unix_timestamp = dateSocket;
     var date = new Date(unix_timestamp);
@@ -123,11 +174,33 @@ const DeveiceMeter = (props) => {
                         </div>}
                     </div>
                 </div>
+                <h1>Past Data</h1>
                 <Line height={100} width={400} data={{
-                    labels: [voltageData.voltageName, 'voltage01', 'voltage02', 'voltage03', 'voltage04'],
+                    labels: ["1 Week", '1 Day', '12 Hours', '6 Hours', '1 Hours', 'Current'],
                     datasets: [{
                         label: 'Voltage Data',
-                        data: [voltageData.voltage, voltage01, voltage02, voltage03, voltage04],
+                        data: [voltageData.voltage, props.pastData.voltage01, props.day.voltage01, props.halfDay.voltage01, props.sixH.voltage01, props.oneH.voltage01, voltage01],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }],
+                    datasets2: [{
+                        label: 'Voltage Data2',
+                        data: [voltageData.voltage, props.pastData.voltage02, props.day.voltage02, props.halfDay.voltage02, props.sixH.voltage02, props.oneH.voltage02, voltage02],
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',
                             'rgba(54, 162, 235, 0.2)',
@@ -149,14 +222,14 @@ const DeveiceMeter = (props) => {
                 }} />
                 <div className="chart-btn">
                     <ul className="d-flex justify-content-end chart-lists">
-                        
-                        <li className="bg-primary chart-list">1W</li>
-                        <li className="bg-primary chart-list">2D</li>
-                        <li className="bg-primary chart-list">3H</li>
-                        <li className="bg-primary chart-list">57M</li>
-                        <li className="bg-primary chart-list">60S</li>
+                        <li className="bg-primary chart-list text-light" onClick={handleWeek}>1W</li>
+                        <li className="bg-primary chart-list text-light" onClick={handleDay}>1D</li>
+                        <li className="bg-primary chart-list text-light" onClick={handleHalfDay}>12H</li>
+                        <li className="bg-primary chart-list text-light" onClick={handleSixH}>6h</li>
+                        <li className="bg-primary chart-list text-light" onClick={handleOneH}>1h</li>
                     </ul>
                 </div>
+                
                 <div className="">
                     <div>
                         <div>
